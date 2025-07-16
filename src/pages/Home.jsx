@@ -3,7 +3,7 @@ import HomeCard from "../components/HomeCard";
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-6 bg-gray-50">
+    <main className="flex-1 p-6">
       <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <HomeCard title="Pianificazione" desc="Pagina di gestione delle richieste e delle consegne." to="/pianificazione" icon={<Wrench />} />
         <HomeCard title="Richieste" desc="Pagina di gestione delle richieste. Qui è possibile creare le richieste e controllarne lo stato." to="/richieste" icon={<Mail />} />
@@ -15,6 +15,6 @@ export default function Home() {
       <div className="mt-10 flex justify-center">
         <HomeCard title="Amministratore" desc="Pannello di gestione database" to="/admin" icon={<Database />} />
       </div>
-    </div>
+    </main>
   );
 }
