@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home as HomeIcon, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight } from "lucide-react";
+import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight } from "lucide-react";
+import homeImage from '../assets/Image 30 giu 2025, 08_12_36.png';
+import { useAuth } from "../context/AuthContext";
 
 const menuItems = [
   { to: "/pianificazione", label: "Pianificazione", icon: <Wrench size={20} /> },
@@ -14,24 +16,32 @@ const menuItems = [
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(true); // Sidebar collassata di default
+  const { user } = useAuth();
 
   return (
     <aside className={`fixed inset-y-0 left-0 bg-white shadow p-4 transition-all duration-300 ${collapsed ? "min-w-[60px] w-[60px]" : "min-w-[220px] w-[220px]"}`}>
-      <button
-        className="mb-4 flex items-center justify-end w-full"
-        onClick={() => setCollapsed(!collapsed)}
-        aria-label={collapsed ? "Espandi sidebar" : "Collassa sidebar"}
-      >
-        {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-      </button>
-      <nav className="flex flex-col gap-4">
+      <div className={`flex flex-col items-center mb-4`}>
         <Link
           to="/"
           className={`flex items-center gap-2 p-2 rounded hover:bg-gray-100 font-semibold transition-all duration-200 ${collapsed ? "justify-center" : ""}`}
         >
-          <HomeIcon size={20} />
+          <img
+            src={homeImage}
+            alt="Home"
+            className={collapsed ? "w-8 h-8 object-contain" : "w-5 h-5 object-contain"}
+            style={collapsed ? { minWidth: '32px', minHeight: '32px' } : {}}
+          />
           {!collapsed && <span>Home</span>}
         </Link>
+        <button
+          className="mt-2 flex items-center justify-center"
+          onClick={() => setCollapsed(!collapsed)}
+          aria-label={collapsed ? "Espandi sidebar" : "Collassa sidebar"}
+        >
+          {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+        </button>
+      </div>
+      <nav className="flex flex-col gap-4">
         <hr className="my-2" />
         {menuItems.map(item => (
           <Link
@@ -43,6 +53,16 @@ export default function Sidebar() {
             {!collapsed && <span>{item.label}</span>}
           </Link>
         ))}
+        {/* Pulsante gestione utenti visibile solo ad admin */}
+        {user?.role === "admin" && (
+          <Link
+            to="/gestione-utenti"
+            className={`flex items-center gap-2 p-2 rounded hover:bg-blue-100 text-blue-700 font-semibold transition-all duration-200 ${collapsed ? "justify-center" : ""}`}
+          >
+            <User size={20} />
+            {!collapsed && <span>Gestione Utenti</span>}
+          </Link>
+        )}
       </nav>
     </aside>
   );

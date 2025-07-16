@@ -8,20 +8,69 @@ import Posizioni from "./pages/Posizioni";
 import Autista from "./pages/Autista";
 import Chat from "./pages/Chat";
 import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+import GestioneUtenti from "./pages/GestioneUtenti";
+import { useAuth } from "./context/AuthContext";
+import { Navigate } from "react-router-dom";
+
+function ProtectedRoute({ allowedRoles, children }) {
+  const { user } = useAuth();
+  if (!user) return <Navigate to="/login" />;
+  if (allowedRoles && !allowedRoles.includes(user.role)) return <Navigate to="/" />;
+  return children;
+}
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pianificazione" element={<Pianificazione />} />
-          <Route path="/richieste" element={<Richieste />} />
-          <Route path="/stato-consegne" element={<StatoConsegne />} />
-          <Route path="/posizioni" element={<Posizioni />} />
-          <Route path="/autista" element={<Autista />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <Admin />
+            </ProtectedRoute>
+          } />
+          <Route path="/autista" element={
+            <ProtectedRoute allowedRoles={["admin", "autista"]}>
+              <Autista />
+            </ProtectedRoute>
+          } />
+          <Route path="/pianificazione" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
+              <Pianificazione />
+            </ProtectedRoute>
+          } />
+          <Route path="/richieste" element={
+            <ProtectedRoute allowedRoles={["admin", "richiedente"]}>
+              <Richieste />
+            </ProtectedRoute>
+          } />
+          <Route path="/stato-consegne" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente"]}>
+              <StatoConsegne />
+            </ProtectedRoute>
+          } />
+          <Route path="/posizioni" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+              <Posizioni />
+            </ProtectedRoute>
+          } />
+          <Route path="/chat" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+              <Chat />
+            </ProtectedRoute>
+          } />
+          <Route path="/gestione-utenti" element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <GestioneUtenti />
+            </ProtectedRoute>
+          } />
+          <Route path="/" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+              <Home />
+            </ProtectedRoute>
+          } />
         </Routes>
       </Layout>
     </Router>
