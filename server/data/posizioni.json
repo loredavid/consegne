@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": "1",
+    "azienda": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "lat": 45.9111,
+    "lng": 12.5632,
+    "referente": "Mario Rossi",
+    "telefono": "+39 0434 123456",
+    "email": "info@tekno31.it",
+    "logo": "logo-1752695686745.jpg"
+  },
+  {
+    "id": 2,
+    "azienda": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "lat": 45.4642,
+    "lng": 9.19,
+    "referente": "Luca Bianchi",
+    "telefono": "+39 02 9876543",
+    "email": "contatti@alfalogistica.it",
+    "logo": ""
+  },
+  {
+    "id": 3,
+    "azienda": "BETA DISTRIBUZIONE SRL",
+    "indirizzo": "Viale Europa, 50, 00144, ROMA",
+    "lat": 41.8301,
+    "lng": 12.4708,
+    "referente": "Giulia Verdi",
+    "telefono": "+39 06 11223344",
+    "email": "info@betadistribuzione.it",
+    "logo": ""
+  },
+  {
+    "id": 4,
+    "azienda": "GAMMA TRASPORTI SNC",
+    "indirizzo": "Corso Vittorio Emanuele, 1, 80121, NAPOLI",
+    "lat": 40.8369,
+    "lng": 14.2476,
+    "referente": "Antonio Russo",
+    "telefono": "+39 081 5566778",
+    "email": "gamma@trasporti.it",
+    "logo": ""
+  }
+]

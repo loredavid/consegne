@@ -3,12 +3,40 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
+import multer from 'multer';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
+
+// Ottieni la directory corrente del file (compatibile con ES modules)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve file statici per i loghi SOLO dalla cartella corretta
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Assicura che la cartella uploads esista SOLO in server/uploads
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+// Multer per upload immagini SOLO in server/uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadsDir);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    const name = file.fieldname + '-' + Date.now() + ext;
+    cb(null, name);
+  }
+});
+const upload = multer({ storage });
 
 // Utility per leggere/scrivere file JSON
 function readData(file) {
@@ -70,16 +98,46 @@ app.delete('/api/spedizioni/:id', (req, res) => {
 app.get('/api/posizioni', (req, res) => {
   res.json(readData('posizioni.json'));
 });
-app.post('/api/posizioni', (req, res) => {
+app.post('/api/posizioni', upload.single('logo'), (req, res) => {
   const posizioni = readData('posizioni.json');
-  const nuova = { ...req.body, id: Date.now() };
-  posizioni.push(nuova);
+  // id numerico univoco
+  const nuovo = { ...req.body, id: Date.now() };
+  if (req.file) {
+    nuovo.logo = req.file.filename;
+  } else {
+    nuovo.logo = '';
+  }
+  // Assicura che i campi numerici siano numeri
+  if (nuovo.lat) nuovo.lat = Number(nuovo.lat);
+  if (nuovo.lng) nuovo.lng = Number(nuovo.lng);
+  posizioni.push(nuovo);
   writeData('posizioni.json', posizioni);
-  res.json(nuova);
+  res.json(nuovo);
 });
-app.put('/api/posizioni/:id', (req, res) => {
+app.put('/api/posizioni/:id', upload.single('logo'), (req, res) => {
   let posizioni = readData('posizioni.json');
-  posizioni = posizioni.map(p => p.id == req.params.id ? { ...p, ...req.body } : p);
+  posizioni = posizioni.map(p => {
+    if (String(p.id) === String(req.params.id)) {
+      const updated = { ...p, ...req.body };
+      if (req.file) {
+        // Elimina il vecchio logo se esiste e diverso
+        if (p.logo && p.logo !== req.file.filename) {
+          const oldLogoPath = path.join(uploadsDir, p.logo);
+          if (fs.existsSync(oldLogoPath)) {
+            fs.unlinkSync(oldLogoPath);
+          }
+        }
+        updated.logo = req.file.filename;
+      } else {
+        updated.logo = p.logo || '';
+      }
+      // Assicura che i campi numerici siano numeri
+      if (updated.lat) updated.lat = Number(updated.lat);
+      if (updated.lng) updated.lng = Number(updated.lng);
+      return updated;
+    }
+    return p;
+  });
   writeData('posizioni.json', posizioni);
   res.json({ success: true });
 });
