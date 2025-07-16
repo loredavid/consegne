@@ -1,16 +1,26 @@
 # Consegne
 
-Consegne è una web app per la gestione delle richieste e delle consegne, pensata per amministratori, autisti e utenti interni. L'app offre funzionalità di pianificazione, monitoraggio dello stato delle consegne, gestione delle destinazioni, messaggistica interna e un pannello di amministrazione.
+Consegne è una web app per la gestione delle richieste e delle consegne, pensata per amministratori, autisti, pianificatori e utenti interni. L'app offre funzionalità di pianificazione, monitoraggio dello stato delle consegne, gestione delle destinazioni, messaggistica interna e un pannello di amministrazione con gestione utenti e ruoli.
 
-## Funzionalità
+## Funzionalità principali
 
-- **Pianificazione:** Gestione delle richieste e delle consegne.
-- **Richieste:** Creazione e monitoraggio delle richieste.
-- **Stato Consegne:** Visualizzazione dello stato delle consegne in tempo reale.
-- **Posizioni:** Gestione delle destinazioni.
-- **Autista:** Visualizzazione delle consegne assegnate agli autisti.
-- **Chat:** Messaggistica istantanea interna.
-- **Admin:** Pannello di gestione database.
+- **Login con email e password**
+- **Gestione utenti e ruoli** (Admin, Pianificatore, Richiedente, Autista)
+- **Pianificazione:** Gestione delle richieste e delle consegne
+- **Richieste:** Creazione e monitoraggio delle richieste
+- **Stato Consegne:** Visualizzazione dello stato delle consegne in tempo reale
+- **Posizioni:** Gestione delle destinazioni
+- **Autista:** Visualizzazione delle consegne assegnate agli autisti
+- **Chat:** Messaggistica istantanea interna
+- **Admin:** Pannello di gestione database e utenti
+
+## Ruoli e permessi
+
+- **Admin:** Accesso a tutte le pagine e gestione utenti
+- **Pianificatore:** Accesso a Pianificazione, Stato Consegne, Posizioni
+- **Richiedente:** Accesso a Richieste, Stato Consegne, Posizioni
+- **Autista:** Accesso a Autista, Posizioni
+- **Tutti i ruoli:** Accesso a Chat e Home
 
 ## Tecnologie utilizzate
 
@@ -47,8 +57,12 @@ src/
   App.jsx
   main.jsx
   index.css
+  context/
+    AuthContext.jsx
   components/
     HomeCard.jsx
+    Layout.jsx
+    Sidebar.jsx
   pages/
     Admin.jsx
     Autista.jsx
@@ -58,9 +72,9 @@ src/
     Posizioni.jsx
     Richieste.jsx
     StatoConsegne.jsx
+    GestioneUtenti.jsx
 ```
 
 ## Licenza
 
 Questo progetto è distribuito con licenza MIT.
-```
