@@ -5,19 +5,34 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const { login, users } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
-    login(mail, password);
-    navigate("/");
+    const success = login(mail, password);
+    if (success) {
+      setError("");
+      const found = users.find(u => u.mail === mail && u.password === password);
+      if (found) {
+        if (found.role === "autista") navigate("/autista");
+        else if (found.role === "pianificatore") navigate("/pianificazione");
+        else if (found.role === "richiedente") navigate("/richieste");
+        else navigate("/");
+      } else {
+        navigate("/");
+      }
+    } else {
+      setError("Email o password non corretti.");
+    }
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow w-80">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        {error && <div className="text-red-600 text-center mb-4">{error}</div>}
         <input
           type="email"
           placeholder="Email"

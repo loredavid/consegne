@@ -8,6 +8,7 @@ export default function GestioneUtenti() {
   const [editId, setEditId] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [actionUserId, setActionUserId] = useState(null);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   if (!user || user.role !== "admin") return <div className="p-8 text-center text-red-600">Accesso negato</div>;
 
@@ -19,6 +20,7 @@ export default function GestioneUtenti() {
     e.preventDefault();
     addUser(form);
     setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
+    setShowAddModal(false);
   };
 
   const handleEdit = u => {
@@ -29,7 +31,7 @@ export default function GestioneUtenti() {
 
   const handleUpdate = e => {
     e.preventDefault();
-    updateUser(editId, form);
+    updateUser(editId, { ...form, id: editId });
     setEditId(null);
     setShowEditModal(false);
     setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
@@ -55,19 +57,11 @@ export default function GestioneUtenti() {
   return (
     <div className="max-w-4xl mx-auto p-8">
       <h2 className="text-2xl font-bold mb-6">Utenti</h2>
-      <form onSubmit={handleAdd} className="mb-8 flex gap-4 flex-wrap items-end">
-        <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-32" required />
-        <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-32" required />
-        <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-32" required />
-        <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-32" required />
-        <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-32">
-          <option value="admin">Admin</option>
-          <option value="pianificatore">Pianificatore</option>
-          <option value="richiedente">Richiedente</option>
-          <option value="autista">Autista</option>
-        </select>
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Aggiungi</button>
-      </form>
+      <div className="flex justify-end mb-6">
+        <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold" onClick={() => setShowAddModal(true)}>
+          + Aggiungi Utente
+        </button>
+      </div>
       <div className="bg-white rounded shadow p-4">
         {Object.entries(gruppi).map(([ruolo, utenti]) => (
           <div key={ruolo} className="mb-6">
@@ -115,6 +109,40 @@ export default function GestioneUtenti() {
           </div>
         ))}
       </div>
+      {/* Modal aggiunta utente */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+          <div className="bg-white rounded shadow-lg p-8 w-full max-w-md">
+            <h3 className="text-xl font-bold mb-4">Aggiungi Utente</h3>
+            <form onSubmit={handleAdd} className="flex flex-col gap-4">
+              <label className="text-sm font-semibold">Username
+                <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required />
+              </label>
+              <label className="text-sm font-semibold">Password
+                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required />
+              </label>
+              <label className="text-sm font-semibold">Nome
+                <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required />
+              </label>
+              <label className="text-sm font-semibold">Mail
+                <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-full mt-1" required />
+              </label>
+              <label className="text-sm font-semibold">Ruolo
+                <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-full mt-1">
+                  <option value="admin">Admin</option>
+                  <option value="pianificatore">Pianificatore</option>
+                  <option value="richiedente">Richiedente</option>
+                  <option value="autista">Autista</option>
+                </select>
+              </label>
+              <div className="flex gap-2 mt-4">
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Aggiungi</button>
+                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => { setShowAddModal(false); setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" }); }}>Annulla</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
       {/* Modal modifica utente */}
       {showEditModal && (
         <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">

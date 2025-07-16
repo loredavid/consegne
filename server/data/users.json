@@ -1,0 +1,6 @@
+[
+  { "id": 1, "username": "admin", "password": "admin", "role": "admin", "nome": "Mario Rossi", "mail": "mario@rossi.it" },
+  { "id": 2, "username": "autista", "password": "autista", "role": "autista", "nome": "Anna Neri", "mail": "anna@neri.it" },
+  { "id": 3, "username": "pianificatore", "password": "pianificatore", "role": "pianificatore", "nome": "Giulia Bianchi", "mail": "giulia@bianchi.it" },
+  { "id": 4, "username": "richiedente", "password": "richiedente", "role": "richiedente", "nome": "Luca Verdi", "mail": "luca@verdi.it" }
+]
