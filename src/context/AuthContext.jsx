@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
       const utenti = await res.json();
       const found = utenti.find(u => u.mail === mail && u.password === password);
       if (found) {
-        setUser({ username: found.username, role: found.role, nome: found.nome, mail: found.mail });
+        setUser({ nome: found.nome, role: found.role, mail: found.mail });
         return true;
       } else {
         setUser(null);

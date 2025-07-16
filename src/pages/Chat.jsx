@@ -35,7 +35,7 @@ export default function Chat() {
       const res = await fetch("http://localhost:3001/api/messaggi", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sender: user?.username || "Anonimo", text })
+        body: JSON.stringify({ sender: { nome: user?.nome || "Anonimo", mail: user?.mail || "" }, text })
       });
       const msg = await res.json();
       setMessages(prev => [...prev, msg]);
@@ -47,20 +47,22 @@ export default function Chat() {
   };
 
   return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Chat</h1>
-      <div className="bg-white rounded shadow p-4 mb-4 h-96 overflow-y-auto flex flex-col">
+    <div className="p-8 max-w-5xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6">Chat</h1>
+      <div className="bg-white rounded shadow p-6 mb-6 h-[600px] overflow-y-auto flex flex-col">
         {loading ? (
           <div className="text-blue-600">Caricamento messaggi...</div>
         ) : error ? (
           <div className="text-red-600">{error}</div>
         ) : (
           messages.map(msg => (
-            <div key={msg.id} className={`mb-2 flex ${msg.sender === user?.username ? "justify-end" : "justify-start"}`}>
-              <div className={`px-3 py-2 rounded-lg ${msg.sender === user?.username ? "bg-blue-100 text-blue-900" : "bg-gray-100 text-gray-800"}`}>
-                <span className="font-semibold mr-2">{msg.sender}:</span>
-                <span>{msg.text}</span>
-                <span className="ml-2 text-xs text-gray-400">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+            <div key={msg.id} className={`mb-2 flex ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "justify-end" : "justify-start"}`}>
+              <div className="flex flex-col items-start max-w-xl">
+                <span className={`font-bold mb-1 text-sm ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "text-blue-700" : "text-gray-700"}`}>{msg.sender?.nome}</span>
+                <div className={`px-4 py-3 rounded-lg break-words ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "bg-blue-100 text-blue-900" : "bg-gray-100 text-gray-800"}`}>
+                  <span>{msg.text}</span>
+                  <span className="ml-2 text-xs text-gray-400">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+                </div>
               </div>
             </div>
           ))
@@ -72,11 +74,11 @@ export default function Chat() {
           type="text"
           value={text}
           onChange={e => setText(e.target.value)}
-          className="flex-1 border rounded p-2"
+          className="flex-1 border rounded p-3 text-lg"
           placeholder="Scrivi un messaggio..."
           disabled={loading}
         />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={loading || !text.trim()}>
+        <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded text-lg font-semibold" disabled={loading || !text.trim()}>
           Invia
         </button>
       </form>
