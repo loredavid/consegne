@@ -1,39 +1,88 @@
-import { createContext, useContext, useState } from "react";
-import { initialUsers } from "../data/users";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null); // { username, role }
-  const [users, setUsers] = useState(initialUsers);
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const login = (mail, password) => {
-    const found = users.find(u => u.mail === mail && u.password === password);
-    if (found) {
-      setUser({ username: found.username, role: found.role, nome: found.nome, mail: found.mail });
-      return true;
-    } else {
-      setUser(null);
+  // Fetch users from backend on mount
+  useEffect(() => {
+    fetch("http://localhost:3001/api/utenti")
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError("Errore nel caricamento utenti");
+        setLoading(false);
+      });
+  }, []);
+
+  const login = async (mail, password) => {
+    try {
+      const res = await fetch("http://localhost:3001/api/utenti");
+      const utenti = await res.json();
+      const found = utenti.find(u => u.mail === mail && u.password === password);
+      if (found) {
+        setUser({ username: found.username, role: found.role, nome: found.nome, mail: found.mail });
+        return true;
+      } else {
+        setUser(null);
+        return false;
+      }
+    } catch {
+      setError("Errore di autenticazione");
       return false;
     }
   };
 
   const logout = () => setUser(null);
 
-  const addUser = (newUser) => {
-    setUsers([...users, { ...newUser, id: Date.now() }]);
+  const addUser = async (newUser) => {
+    try {
+      const res = await fetch("http://localhost:3001/api/utenti", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser)
+      });
+      const added = await res.json();
+      setUsers(prev => [...prev, added]);
+      setError(null);
+    } catch {
+      setError("Errore nell'aggiunta utente");
+    }
   };
 
-  const updateUser = (id, updated) => {
-    setUsers(users.map(u => u.id === id ? { ...u, ...updated } : u));
+  const updateUser = async (id, updated) => {
+    try {
+      await fetch(`http://localhost:3001/api/utenti/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updated)
+      });
+      setUsers(prev => prev.map(u => u.id === id ? { ...u, ...updated } : u));
+      setError(null);
+    } catch {
+      setError("Errore nell'aggiornamento utente");
+    }
   };
 
-  const deleteUser = (id) => {
-    setUsers(users.filter(u => u.id !== id));
+  const deleteUser = async (id) => {
+    try {
+      await fetch(`http://localhost:3001/api/utenti/${id}`, { method: "DELETE" });
+      setUsers(prev => prev.filter(u => u.id !== id));
+      setError(null);
+    } catch {
+      setError("Errore nell'eliminazione utente");
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, users, addUser, updateUser, deleteUser }}>
+    <AuthContext.Provider value={{ user, login, logout, users, addUser, updateUser, deleteUser, loading, error }}>
       {children}
     </AuthContext.Provider>
   );

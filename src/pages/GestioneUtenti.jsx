@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { User } from "lucide-react";
 
 export default function GestioneUtenti() {
-  const { user, users, addUser, updateUser, deleteUser } = useAuth();
+  const { user, users, addUser, updateUser, deleteUser, loading, error } = useAuth();
   const [form, setForm] = useState({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
   const [editId, setEditId] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -16,29 +16,33 @@ export default function GestioneUtenti() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleAdd = e => {
+  const handleAdd = async e => {
     e.preventDefault();
-    addUser(form);
+    const payload = { ...form, role: form.ruolo };
+    delete payload.ruolo;
+    await addUser(payload);
     setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
     setShowAddModal(false);
   };
 
   const handleEdit = u => {
     setEditId(u.id);
-    setForm({ ...u });
+    setForm({ ...u, ruolo: u.role });
     setShowEditModal(true);
   };
 
-  const handleUpdate = e => {
+  const handleUpdate = async e => {
     e.preventDefault();
-    updateUser(editId, { ...form, id: editId });
+    const payload = { ...form, role: form.ruolo, id: editId };
+    delete payload.ruolo;
+    await updateUser(editId, payload);
     setEditId(null);
     setShowEditModal(false);
     setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
   };
 
-  const handleDelete = id => {
-    if (window.confirm("Sei sicuro di voler eliminare questo utente?")) deleteUser(id);
+  const handleDelete = async id => {
+    if (window.confirm("Sei sicuro di voler eliminare questo utente?")) await deleteUser(id);
   };
 
   const handleActionClick = (id) => {
@@ -57,8 +61,10 @@ export default function GestioneUtenti() {
   return (
     <div className="max-w-4xl mx-auto p-8">
       <h2 className="text-2xl font-bold mb-6">Utenti</h2>
+      {loading && <div className="mb-4 text-blue-600">Caricamento utenti...</div>}
+      {error && <div className="mb-4 text-red-600">{error}</div>}
       <div className="flex justify-end mb-6">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold" onClick={() => setShowAddModal(true)}>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold" onClick={() => setShowAddModal(true)} disabled={loading}>
           + Aggiungi Utente
         </button>
       </div>
@@ -88,15 +94,15 @@ export default function GestioneUtenti() {
                     </td>
                     <td className="px-2 py-2 text-sm">{ruolo === "admin" ? "Amministratore" : u.role.charAt(0).toUpperCase() + u.role.slice(1)}</td>
                     <td className="px-2 py-2 text-center relative">
-                      <button className="text-gray-400 hover:text-blue-600 mr-2" title="Azioni" onClick={() => handleActionClick(u.id)}>
+                      <button className="text-gray-400 hover:text-blue-600 mr-2" title="Azioni" onClick={() => handleActionClick(u.id)} disabled={loading}>
                         &#x2026;
                       </button>
                       {actionUserId === u.id && (
                         <div className="absolute right-0 mt-2 bg-white border rounded shadow z-10 min-w-[120px]">
-                          <button className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onClick={() => { handleEdit(u); closeActions(); }}>
+                          <button className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" onClick={() => { handleEdit(u); closeActions(); }} disabled={loading}>
                             Modifica
                           </button>
-                          <button className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-red-600" onClick={() => { handleDelete(u.id); closeActions(); }}>
+                          <button className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-red-600" onClick={() => { handleDelete(u.id); closeActions(); }} disabled={loading}>
                             Elimina
                           </button>
                         </div>
@@ -116,19 +122,19 @@ export default function GestioneUtenti() {
             <h3 className="text-xl font-bold mb-4">Aggiungi Utente</h3>
             <form onSubmit={handleAdd} className="flex flex-col gap-4">
               <label className="text-sm font-semibold">Username
-                <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required />
+                <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Password
-                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required />
+                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Nome
-                <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required />
+                <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Mail
-                <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-full mt-1" required />
+                <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Ruolo
-                <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-full mt-1">
+                <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-full mt-1" disabled={loading}>
                   <option value="admin">Admin</option>
                   <option value="pianificatore">Pianificatore</option>
                   <option value="richiedente">Richiedente</option>
@@ -136,8 +142,8 @@ export default function GestioneUtenti() {
                 </select>
               </label>
               <div className="flex gap-2 mt-4">
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Aggiungi</button>
-                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => { setShowAddModal(false); setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" }); }}>Annulla</button>
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={loading}>Aggiungi</button>
+                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => { setShowAddModal(false); setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" }); }} disabled={loading}>Annulla</button>
               </div>
             </form>
           </div>
@@ -150,19 +156,19 @@ export default function GestioneUtenti() {
             <h3 className="text-xl font-bold mb-4">Modifica Utente</h3>
             <form onSubmit={handleUpdate} className="flex flex-col gap-4">
               <label className="text-sm font-semibold">Username
-                <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required />
+                <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Password
-                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required />
+                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Nome
-                <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required />
+                <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Mail
-                <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-full mt-1" required />
+                <input name="mail" value={form.mail} onChange={handleChange} placeholder="Mail" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Ruolo
-                <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-full mt-1">
+                <select name="ruolo" value={form.ruolo} onChange={handleChange} className="border p-2 rounded w-full mt-1" disabled={loading}>
                   <option value="admin">Admin</option>
                   <option value="pianificatore">Pianificatore</option>
                   <option value="richiedente">Richiedente</option>
@@ -170,8 +176,8 @@ export default function GestioneUtenti() {
                 </select>
               </label>
               <div className="flex gap-2 mt-4">
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Salva</button>
-                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => { setEditId(null); setShowEditModal(false); setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" }); }}>Annulla</button>
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={loading}>Salva</button>
+                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => { setEditId(null); setShowEditModal(false); setForm({ username: "", password: "", nome: "", mail: "", ruolo: "admin" }); }} disabled={loading}>Annulla</button>
               </div>
             </form>
           </div>
