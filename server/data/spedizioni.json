@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": 1,
+    "dataRichiesta": "2025-07-16T09:00:00Z",
+    "dataPianificata": "2025-07-17T14:00:00Z",
+    "scaduta": false,
+    "indirizzo": "Via Roma 10, Milano",
+    "aziendaDestinazione": "ACME S.p.A.",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "pianificata": false,
+    "note": "Lascia il pacco al piano terra",
+    "fotoConferma": "",
+    "autista": { "id": 2, "nome": "Anna Neri", "mail": "anna@neri.it" },
+    "richiedente": { "id": 4, "nome": "Luca Verdi", "mail": "luca@verdi.it" }
+  },
+  {
+    "id": 2,
+    "dataRichiesta": "2025-07-15T11:30:00Z",
+    "dataPianificata": "2025-07-16T16:00:00Z",
+    "scaduta": false,
+    "indirizzo": "Via Milano 22, Torino",
+    "aziendaDestinazione": "Beta Srl",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "pianificata": true,
+    "note": "Chiamare prima di arrivare",
+    "fotoConferma": "",
+    "autista": { "id": 2, "nome": "Anna Neri", "mail": "anna@neri.it" },
+    "richiedente": { "id": 3, "nome": "Giulia Bianchi", "mail": "giulia@bianchi.it" }
+  },
+  {
+    "id": 3,
+    "dataRichiesta": "2025-07-14T08:00:00Z",
+    "dataPianificata": "2025-07-15T10:00:00Z",
+    "scaduta": true,
+    "indirizzo": "Via Firenze 5, Bologna",
+    "aziendaDestinazione": "Gamma Srl",
+    "tipo": "entrambi",
+    "status": "Consegnata",
+    "pianificata": true,
+    "note": "",
+    "fotoConferma": "https://via.placeholder.com/100",
+    "autista": { "id": 2, "nome": "Anna Neri", "mail": "anna@neri.it" },
+    "richiedente": { "id": 1, "nome": "Mario Rossi", "mail": "mario@rossi.it" }
+  },
+  {
+    "id": 4,
+    "dataRichiesta": "2025-07-13T15:00:00Z",
+    "dataPianificata": "2025-07-14T09:00:00Z",
+    "scaduta": false,
+    "indirizzo": "Via Napoli 8, Genova",
+    "aziendaDestinazione": "Delta Spa",
+    "tipo": "consegna",
+    "status": "Fallita",
+    "pianificata": true,
+    "note": "Destinatario assente",
+    "fotoConferma": "",
+    "autista": { "id": 2, "nome": "Anna Neri", "mail": "anna@neri.it" },
+    "richiedente": { "id": 4, "nome": "Luca Verdi", "mail": "luca@verdi.it" }
+  }
+]

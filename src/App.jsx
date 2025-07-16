@@ -10,6 +10,7 @@ import Chat from "./pages/Chat";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import GestioneUtenti from "./pages/GestioneUtenti";
+import SpedizioneDettaglio from "./pages/SpedizioneDettaglio";
 import { useAuth } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
 
@@ -64,6 +65,11 @@ function App() {
           <Route path="/gestione-utenti" element={
             <ProtectedRoute allowedRoles={["admin"]}>
               <GestioneUtenti />
+            </ProtectedRoute>
+          } />
+          <Route path="/spedizioni/:id" element={
+            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+              <SpedizioneDettaglio />
             </ProtectedRoute>
           } />
           <Route path="/" element={
