@@ -50,8 +50,8 @@
     "dataRichiesta": "2025-07-14T08:00:00Z",
     "dataPianificata": "2025-07-15T10:00:00Z",
     "scaduta": true,
-    "indirizzo": "Via Firenze 5, Bologna",
-    "aziendaDestinazione": "Gamma Srl",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
     "tipo": "entrambi",
     "status": "Consegnata",
     "pianificata": true,
@@ -90,5 +90,80 @@
       "nome": "Luca Verdi",
       "mail": "luca@verdi.it"
     }
+  },
+  {
+    "aziendaDestinazione": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "dataRichiesta": "2025-07-16T22:08",
+    "tipo": "consegna",
+    "id": 1752696428511
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-07-31T22:09",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "id": 1752696547973
+  },
+  {
+    "aziendaDestinazione": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "dataRichiesta": "2025-07-09T22:10",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Mario Rossi",
+      "mail": "mario@rossi.it",
+      "role": "admin"
+    },
+    "id": 1752696663177
+  },
+  {
+    "aziendaDestinazione": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "dataRichiesta": "2025-07-12T22:12",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Mario Rossi",
+      "mail": "mario@rossi.it",
+      "role": "admin"
+    },
+    "note": "prova note\n",
+    "id": 1752696785342
+  },
+  {
+    "aziendaDestinazione": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "dataRichiesta": "2025-07-19T22:29",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Mario Rossi",
+      "mail": "mario@rossi.it",
+      "role": "admin"
+    },
+    "note": "nsijdvis isdivcbsd",
+    "id": 1752697785732
+  },
+  {
+    "aziendaDestinazione": "ALFA LOGISTICA SPA",
+    "indirizzo": "Via Roma, 10, 20100, MILANO",
+    "dataRichiesta": "2025-07-24T22:31",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Mario Rossi",
+      "mail": "mario@rossi.it",
+      "role": "admin"
+    },
+    "note": "dsvsadv",
+    "id": 1752697871218
   }
 ]
