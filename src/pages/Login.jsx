@@ -9,14 +9,15 @@ export default function Login() {
   const { login, users } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const success = login(mail, password);
+    const success = await login(mail, password);
     if (success) {
       setError("");
       const found = users.find(u => u.mail === mail && u.password === password);
       if (found) {
-        if (found.role === "autista") navigate("/autista");
+        if (found.role === "admin") navigate("/");
+        else if (found.role === "autista") navigate("/autista");
         else if (found.role === "pianificatore") navigate("/pianificazione");
         else if (found.role === "richiedente") navigate("/richieste");
         else navigate("/");

@@ -1,8 +1,85 @@
+import { useState, useEffect, useRef } from "react";
+import { useAuth } from "../context/AuthContext";
+
 export default function Chat() {
+  const { user } = useAuth();
+  const [messages, setMessages] = useState([]);
+  const [text, setText] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const messagesEndRef = useRef(null);
+
+  // Fetch messages on mount
+  useEffect(() => {
+    fetch("http://localhost:3001/api/messaggi")
+      .then(res => res.json())
+      .then(data => {
+        setMessages(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("Errore nel caricamento dei messaggi");
+        setLoading(false);
+      });
+  }, []);
+
+  // Scroll to bottom on new message
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const sendMessage = async e => {
+    e.preventDefault();
+    if (!text.trim()) return;
+    try {
+      const res = await fetch("http://localhost:3001/api/messaggi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sender: user?.username || "Anonimo", text })
+      });
+      const msg = await res.json();
+      setMessages(prev => [...prev, msg]);
+      setText("");
+      setError("");
+    } catch {
+      setError("Errore nell'invio del messaggio");
+    }
+  };
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">Chat</h1>
-      <p className="text-gray-600">Contenuto della pagina Chat...</p>
+    <div className="p-6 max-w-2xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Chat</h1>
+      <div className="bg-white rounded shadow p-4 mb-4 h-96 overflow-y-auto flex flex-col">
+        {loading ? (
+          <div className="text-blue-600">Caricamento messaggi...</div>
+        ) : error ? (
+          <div className="text-red-600">{error}</div>
+        ) : (
+          messages.map(msg => (
+            <div key={msg.id} className={`mb-2 flex ${msg.sender === user?.username ? "justify-end" : "justify-start"}`}>
+              <div className={`px-3 py-2 rounded-lg ${msg.sender === user?.username ? "bg-blue-100 text-blue-900" : "bg-gray-100 text-gray-800"}`}>
+                <span className="font-semibold mr-2">{msg.sender}:</span>
+                <span>{msg.text}</span>
+                <span className="ml-2 text-xs text-gray-400">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+              </div>
+            </div>
+          ))
+        )}
+        <div ref={messagesEndRef} />
+      </div>
+      <form onSubmit={sendMessage} className="flex gap-2">
+        <input
+          type="text"
+          value={text}
+          onChange={e => setText(e.target.value)}
+          className="flex-1 border rounded p-2"
+          placeholder="Scrivi un messaggio..."
+          disabled={loading}
+        />
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={loading || !text.trim()}>
+          Invia
+        </button>
+      </form>
     </div>
   );
 }

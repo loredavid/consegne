@@ -90,6 +90,23 @@ app.delete('/api/posizioni/:id', (req, res) => {
   res.json({ success: true });
 });
 
+// --- MESSAGGI CHAT ---
+app.get('/api/messaggi', (req, res) => {
+  res.json(readData('messages.json'));
+});
+
+app.post('/api/messaggi', (req, res) => {
+  const messages = readData('messages.json');
+  const nuovo = {
+    ...req.body,
+    id: Date.now(),
+    timestamp: new Date().toISOString()
+  };
+  messages.push(nuovo);
+  writeData('messages.json', messages);
+  res.json(nuovo);
+});
+
 app.listen(PORT, () => {
   console.log(`Backend attivo su http://localhost:${PORT}`);
 });

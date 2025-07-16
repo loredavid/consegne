@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight } from "lucide-react";
 import homeImage from '../assets/Image 30 giu 2025, 08_12_36.png';
 import { useAuth } from "../context/AuthContext";
@@ -16,7 +16,8 @@ const menuItems = [
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(true); // Sidebar collassata di default
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <aside className={`fixed inset-y-0 left-0 bg-white shadow p-4 transition-all duration-300 ${collapsed ? "min-w-[60px] w-[60px]" : "min-w-[220px] w-[220px]"}`}>
@@ -62,6 +63,16 @@ export default function Sidebar() {
             <User size={20} />
             {!collapsed && <span>Gestione Utenti</span>}
           </Link>
+        )}
+        {/* Pulsante logout visibile se loggato */}
+        {user && (
+          <button
+            onClick={() => { logout(); navigate('/login'); }}
+            className={`flex items-center gap-2 p-2 rounded hover:bg-red-100 text-red-700 font-semibold transition-all duration-200 mt-4 w-full ${collapsed ? "justify-center" : ""}`}
+          >
+            <ChevronLeft size={20} />
+            {!collapsed && <span>Logout</span>}
+          </button>
         )}
       </nav>
     </aside>
