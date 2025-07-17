@@ -1,34 +1,42 @@
 [
   {
     "id": 1,
-    "username": "admin",
+    "username": "lorenzodavid",
     "password": "admin",
     "role": "admin",
-    "nome": "Mario Rossi",
-    "mail": "mario@rossi.it"
+    "nome": "Lorenzo David",
+    "mail": "lorenzo.david@elteksrl.it"
   },
   {
     "id": 2,
-    "username": "autista",
+    "username": "alltransport",
     "password": "autista",
     "role": "autista",
-    "nome": "Anna Neri",
-    "mail": "anna@neri.it"
+    "nome": "ALL TRANSPORT",
+    "mail": "autista1.eltek@gmail.com"
   },
   {
     "id": 3,
-    "username": "pianificatore",
+    "username": "Fabiola",
     "password": "pianificatore",
     "role": "pianificatore",
-    "nome": "Giulia Bianchi",
-    "mail": "giulia@bianchi.it"
+    "nome": "Fabiola Nganga",
+    "mail": "logistica2@elteksrl.it"
   },
   {
     "id": 4,
-    "username": "richiedente",
+    "username": "Lorena",
     "password": "richiedente",
     "role": "richiedente",
-    "nome": "Luca Verdi",
-    "mail": "luca@verdi.it"
+    "nome": "Lorena Stolfo",
+    "mail": "lorena.stolfo@elteksrl.it"
+  },
+  {
+    "username": "Cristina",
+    "password": "richiedente",
+    "nome": "Cristina Zaccarin",
+    "mail": "cristina.zaccarin@elteksrl.it",
+    "role": "richiedente",
+    "id": 1752734734308
   }
 ]

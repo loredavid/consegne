@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useAuth } from "../context/AuthContext";
 
 function MapCenter({ coords }) {
   const map = useMap();
@@ -15,6 +16,7 @@ function MapCenter({ coords }) {
 export default function SpedizioneDettaglio() {
   const { id } = useParams();
   const [spedizione, setSpedizione] = useState(null);
+  const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const [form, setForm] = useState(null);
@@ -109,6 +111,9 @@ export default function SpedizioneDettaglio() {
   if (loading) return <div className="p-8">Caricamento...</div>;
   if (!spedizione) return <div className="p-8 text-red-600">Spedizione non trovata</div>;
 
+  // Permessi: può modificare solo se admin o richiedente della spedizione
+  const canEdit = user && (user.role === "admin" || (spedizione?.richiedente && spedizione.richiedente.mail === user.mail));
+
   return (
     <div className="p-6">
       <button onClick={() => navigate(-1)} className="mb-4 text-blue-600">&larr; Indietro</button>
@@ -156,10 +161,12 @@ export default function SpedizioneDettaglio() {
           </div>
           <div className="mt-4 text-lg font-semibold">Richiesta da<br /><span className="text-white font-normal">{spedizione.richiedente?.nome}</span></div>
         </div>
-        <button onClick={() => setEditMode(true)} className="bg-white text-blue-700 px-4 py-2 rounded font-semibold shadow hover:bg-blue-50">Modifica</button>
+        {canEdit && (
+          <button onClick={() => setEditMode(true)} className="bg-white text-blue-700 px-4 py-2 rounded font-semibold shadow hover:bg-blue-50">Modifica</button>
+        )}
       </div>
       {/* Modal for edit form */}
-      {editMode && (
+      {editMode && canEdit && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded shadow p-6 mb-6 flex flex-col gap-4 max-w-2xl w-full relative">
             <button

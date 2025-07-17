@@ -1,169 +1,77 @@
 [
   {
-    "id": 1,
-    "dataRichiesta": "2025-07-16T09:00:00Z",
-    "dataPianificata": "2025-07-17T14:00:00Z",
-    "scaduta": false,
-    "indirizzo": "Viale Europa, 50, 00144, ROMA",
-    "aziendaDestinazione": "BETA DISTRIBUZIONE SRL",
+    "aziendaDestinazione": "ELTEK S.R.L",
+    "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
+    "dataRichiesta": "2025-07-03T08:46",
     "tipo": "consegna",
-    "status": "Completata",
-    "pianificata": false,
-    "note": "Lascia il pacco al piano terra",
-    "fotoConferma": "",
-    "autista": {
-      "id": 2,
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
+    "status": "In attesa",
+    "daPianificare": true,
     "richiedente": {
-      "id": 4,
-      "nome": "Luca Verdi",
-      "mail": "luca@verdi.it"
-    }
+      "nome": "Lorena Stolfo",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "Urgente",
+    "id": 1752734807579
   },
   {
-    "id": 2,
-    "dataRichiesta": "2025-07-15T11:30:00Z",
-    "dataPianificata": "2025-07-16T16:00:00Z",
-    "scaduta": false,
-    "indirizzo": "Via Milano 22, Torino",
-    "aziendaDestinazione": "Beta Srl",
+    "aziendaDestinazione": "SISTEL S.P.A.",
+    "indirizzo": "Via Roma, 10, 33080 Fiume Veneto PN",
+    "dataRichiesta": "2025-07-04T09:30",
     "tipo": "ritiro",
-    "status": "Fallita",
-    "pianificata": true,
-    "note": "Chiamare prima di arrivare",
-    "fotoConferma": "",
-    "autista": {
-      "id": 2,
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
+    "status": "In attesa",
+    "daPianificare": true,
     "richiedente": {
-      "id": 3,
-      "nome": "Giulia Bianchi",
-      "mail": "giulia@bianchi.it"
-    }
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "Documenti allegati",
+    "id": 1752734807580
   },
   {
-    "id": 3,
-    "dataRichiesta": "2025-07-14T08:00:00Z",
-    "dataPianificata": "2025-07-15T10:00:00Z",
-    "scaduta": true,
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "tipo": "entrambi",
-    "status": "Consegnata",
-    "pianificata": true,
+    "indirizzo": "Via Udine, 5, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-07-05T11:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorena Stolfo",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "Fragile",
+    "id": 1752734807581
+  },
+  {
+    "aziendaDestinazione": "EVOKA GROUP S.P.A.",
+    "indirizzo": "Via Venezia, 12, 33077 Sacile PN",
+    "dataRichiesta": "2025-07-06T14:15",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
     "note": "",
-    "fotoConferma": "https://via.placeholder.com/100",
-    "autista": {
-      "id": 2,
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
-    "richiedente": {
-      "id": 1,
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it"
-    }
+    "id": 1752734807582
   },
   {
-    "id": 4,
-    "dataRichiesta": "2025-07-13T15:00:00Z",
-    "dataPianificata": "2025-07-14T09:00:00Z",
-    "scaduta": false,
-    "indirizzo": "Via Napoli 8, Genova",
-    "aziendaDestinazione": "Delta Spa",
-    "tipo": "consegna",
-    "status": "Fallita",
-    "pianificata": true,
-    "note": "Destinatario assente",
-    "fotoConferma": "",
-    "autista": {
-      "id": 2,
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
-    "richiedente": {
-      "id": 4,
-      "nome": "Luca Verdi",
-      "mail": "luca@verdi.it"
-    }
-  },
-  {
-    "aziendaDestinazione": "ALFA LOGISTICA SPA",
-    "indirizzo": "Via Roma, 10, 20100, MILANO",
-    "dataRichiesta": "2025-07-16T22:08",
-    "tipo": "consegna",
-    "id": 1752696428511
-  },
-  {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-07-31T22:09",
-    "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
-    "id": 1752696547973
-  },
-  {
-    "aziendaDestinazione": "ALFA LOGISTICA SPA",
-    "indirizzo": "Via Roma, 10, 20100, MILANO",
-    "dataRichiesta": "2025-07-09T22:10",
+    "aziendaDestinazione": "FRIULPACK S.R.L.",
+    "indirizzo": "Via Trieste, 8, 33085 Maniago PN",
+    "dataRichiesta": "2025-07-07T16:00",
     "tipo": "consegna",
     "status": "In attesa",
     "daPianificare": true,
     "richiedente": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it",
-      "role": "admin"
+      "nome": "Lorena Stolfo",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
     },
-    "id": 1752696663177
-  },
-  {
-    "aziendaDestinazione": "ALFA LOGISTICA SPA",
-    "indirizzo": "Via Roma, 10, 20100, MILANO",
-    "dataRichiesta": "2025-07-12T22:12",
-    "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
-    "richiedente": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it",
-      "role": "admin"
-    },
-    "note": "prova note\n",
-    "id": 1752696785342
-  },
-  {
-    "aziendaDestinazione": "ALFA LOGISTICA SPA",
-    "indirizzo": "Via Roma, 10, 20100, MILANO",
-    "dataRichiesta": "2025-07-19T22:29",
-    "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": true,
-    "richiedente": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it",
-      "role": "admin"
-    },
-    "note": "nsijdvis isdivcbsd",
-    "id": 1752697785732
-  },
-  {
-    "aziendaDestinazione": "ALFA LOGISTICA SPA",
-    "indirizzo": "Via Roma, 10, 20100, MILANO",
-    "dataRichiesta": "2025-07-24T22:31",
-    "tipo": "ritiro",
-    "status": "In attesa",
-    "daPianificare": true,
-    "richiedente": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it",
-      "role": "admin"
-    },
-    "note": "dsvsadv",
-    "id": 1752697871218
+    "note": "",
+    "id": 1752734807583
   }
 ]

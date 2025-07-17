@@ -13,6 +13,7 @@ import GestioneUtenti from "./pages/GestioneUtenti";
 import SpedizioneDettaglio from "./pages/SpedizioneDettaglio";
 import { useAuth } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
+import { SidebarProvider } from "./context/LayoutContext.jsx";
 
 function ProtectedRoute({ allowedRoles, children }) {
   const { user } = useAuth();
@@ -22,63 +23,66 @@ function ProtectedRoute({ allowedRoles, children }) {
 }
 
 function App() {
+  // ...existing code...
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={
-            <ProtectedRoute allowedRoles={["admin"]}>
-              <Admin />
-            </ProtectedRoute>
-          } />
-          <Route path="/autista" element={
-            <ProtectedRoute allowedRoles={["admin", "autista"]}>
-              <Autista />
-            </ProtectedRoute>
-          } />
-          <Route path="/pianificazione" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
-              <Pianificazione />
-            </ProtectedRoute>
-          } />
-          <Route path="/richieste" element={
-            <ProtectedRoute allowedRoles={["admin", "richiedente"]}>
-              <Richieste />
-            </ProtectedRoute>
-          } />
-          <Route path="/stato-consegne" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente"]}>
-              <StatoConsegne />
-            </ProtectedRoute>
-          } />
-          <Route path="/posizioni" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
-              <Posizioni />
-            </ProtectedRoute>
-          } />
-          <Route path="/chat" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
-              <Chat />
-            </ProtectedRoute>
-          } />
-          <Route path="/gestione-utenti" element={
-            <ProtectedRoute allowedRoles={["admin"]}>
-              <GestioneUtenti />
-            </ProtectedRoute>
-          } />
-          <Route path="/spedizioni/:id" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
-              <SpedizioneDettaglio />
-            </ProtectedRoute>
-          } />
-          <Route path="/" element={
-            <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
-              <Home />
-            </ProtectedRoute>
-          } />
-        </Routes>
-      </Layout>
+      <SidebarProvider>
+        <Layout>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Admin />
+              </ProtectedRoute>
+            } />
+            <Route path="/autista" element={
+              <ProtectedRoute allowedRoles={["admin", "autista"]}>
+                <Autista />
+              </ProtectedRoute>
+            } />
+            <Route path="/pianificazione" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
+                <Pianificazione />
+              </ProtectedRoute>
+            } />
+            <Route path="/richieste" element={
+              <ProtectedRoute allowedRoles={["admin", "richiedente"]}>
+                <Richieste />
+              </ProtectedRoute>
+            } />
+            <Route path="/stato-consegne" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente"]}>
+                <StatoConsegne />
+              </ProtectedRoute>
+            } />
+            <Route path="/posizioni" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+                <Posizioni />
+              </ProtectedRoute>
+            } />
+            <Route path="/chat" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+                <Chat />
+              </ProtectedRoute>
+            } />
+            <Route path="/gestione-utenti" element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <GestioneUtenti />
+              </ProtectedRoute>
+            } />
+            <Route path="/spedizioni/:id" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+                <SpedizioneDettaglio />
+              </ProtectedRoute>
+            } />
+            <Route path="/" element={
+              <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
+                <Home />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </Layout>
+      </SidebarProvider>
     </Router>
   );
 }

@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 
-const MAX_LOGO_SIZE = 1024 * 1024; // 1MB
-const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-
 export default function Posizioni() {
+  const MAX_LOGO_SIZE = 1024 * 1024; // 1MB
+  const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
   const [posizioni, setPosizioni] = useState([]);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const PAGE_SIZE = 10;
   const [loading, setLoading] = useState(true);
   const [showAdd, setShowAdd] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -22,10 +24,12 @@ export default function Posizioni() {
     fetch("http://localhost:3001/api/posizioni")
       .then(res => res.json())
       .then(data => {
+        // Ordina alfabeticamente per azienda
+        data.sort((a, b) => a.azienda.localeCompare(b.azienda));
         setPosizioni(data);
         setLoading(false);
       });
-  }, [showAdd, showEdit, saving, success]); // aggiunto success per forzare reload
+  }, [showAdd, showEdit, saving, success]);
 
   const resetForm = () => {
     setForm({ azienda: "", indirizzo: "", referente: "", telefono: "", email: "", logo: "" });
@@ -138,19 +142,37 @@ export default function Posizioni() {
     }
   };
 
+  // Filtra e paginazione
+  const filtered = posizioni.filter(p =>
+    p.azienda.toLowerCase().includes(search.toLowerCase()) ||
+    p.indirizzo.toLowerCase().includes(search.toLowerCase()) ||
+    p.referente.toLowerCase().includes(search.toLowerCase())
+  );
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Posizioni</h1>
         <button onClick={() => { setShowAdd(true); setError(""); setSuccess(""); resetForm(); }} className="bg-blue-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-blue-700">+ Aggiungi</button>
       </div>
+      <div className="mb-4 flex items-center gap-2">
+        <input
+          type="text"
+          className="border p-2 rounded w-full max-w-md"
+          placeholder="Cerca per azienda, indirizzo o referente..."
+          value={search}
+          onChange={e => { setSearch(e.target.value); setPage(1); }}
+        />
+      </div>
       {success && <div className="text-green-600 mb-2">{success}</div>}
       {loading ? (
         <div>Caricamento...</div>
       ) : (
         <div className="bg-white rounded shadow divide-y">
-          {posizioni.map((p, i) => (
-            <div key={i} className="flex items-center gap-4 py-4 px-2 hover:bg-gray-50">
+          {paginated.map((p, i) => (
+            <div key={p.id || i} className="flex items-center gap-4 py-4 px-2 hover:bg-gray-50">
               <div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center text-gray-400 text-2xl font-bold overflow-hidden">
                 {p.logo && typeof p.logo === 'string' && p.logo !== '' ? (
                   <img src={`http://localhost:3001/uploads/${p.logo}`} alt="logo" className="object-contain w-full h-full" onError={e => { e.target.onerror=null; e.target.src='https://placehold.co/64x64?text=Logo'; }} />
@@ -165,7 +187,7 @@ export default function Posizioni() {
                 <div className="text-gray-500 text-xs mt-1">Tel: {p.telefono} | Email: {p.email}</div>
               </div>
               <div className="flex items-center gap-2">
-                <button className="text-gray-400 hover:text-gray-700 p-2 rounded-full" onClick={() => handleEdit(i)} aria-label="Modifica">
+                <button className="text-gray-400 hover:text-gray-700 p-2 rounded-full" onClick={() => handleEdit(posizioni.findIndex(pp => pp.id === p.id))} aria-label="Modifica">
                   <span className="material-icons">more_horiz</span>
                 </button>
               </div>
@@ -173,6 +195,24 @@ export default function Posizioni() {
           ))}
         </div>
       )}
+      {/* Paginazione */}
+      <div className="flex justify-center items-center gap-2 mt-4">
+        <button
+          className="px-3 py-1 rounded bg-gray-200 text-gray-700 disabled:opacity-50"
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+        >
+          &lt;
+        </button>
+        <span className="px-2">Pagina {page} di {totalPages}</span>
+        <button
+          className="px-3 py-1 rounded bg-gray-200 text-gray-700 disabled:opacity-50"
+          onClick={() => setPage(page + 1)}
+          disabled={page === totalPages || totalPages === 0}
+        >
+          &gt;
+        </button>
+      </div>
       {showAdd && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded shadow p-6 w-full max-w-md relative" role="dialog" aria-modal="true">
