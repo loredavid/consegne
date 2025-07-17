@@ -24,10 +24,14 @@ export default function Sidebar() {
   // Definisci le pagine accessibili per ruolo
   const canAccess = (item) => {
     if (!user) return false;
+    // Sidebar per autista: solo Autista, Chat, Posizioni
+    if (user.role === "autista") {
+      return ["/autista", "/chat", "/posizioni"].includes(item.to);
+    }
+    // Admin: tutte tranne gestione utenti se non admin
     if (item.to === "/admin" && user.role !== "admin") return false;
     if (item.to === "/gestione-utenti" && user.role !== "admin") return false;
-    if (item.to === "/autista" && user.role !== "autista") return false;
-    // Tutti possono accedere alle altre pagine
+    if (item.to === "/autista" && !(user.role === "autista" || user.role === "admin")) return false;
     return true;
   };
 
