@@ -2,13 +2,21 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { FaRegClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
 import { useContext } from "react";
 import { SidebarContext } from "../context/LayoutContext.jsx";
+import SpedizioniCalendar from "../components/SpedizioniCalendar";
+import { useNotification } from "../context/NotificationContext";
+
+function isMobile() {
+  if (typeof window === "undefined") return false;
+  return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(window.navigator.userAgent);
+}
 
 export default function Richieste() {
   const { user } = useAuth();
   const { sidebarOpen } = useContext(SidebarContext);
+  const { setNotification } = useNotification();
+  const [mobile, setMobile] = useState(false);
   const [form, setForm] = useState({ destinazione: "", dataRichiesta: "", tipo: "consegna", status: "In attesa", note: "" });
   const [saving, setSaving] = useState(false);
   const [success, setSuccess] = useState("");
@@ -27,6 +35,35 @@ export default function Richieste() {
     fetch("http://localhost:3001/api/spedizioni")
       .then(res => res.json())
       .then(data => setSpedizioni(data));
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
+
+  useEffect(() => {
+    setMobile(isMobile());
   }, []);
 
   const handleChange = e => {
@@ -52,6 +89,7 @@ export default function Richieste() {
         aziendaDestinazione: dest?.azienda || "",
         indirizzo: dest?.indirizzo || "",
         dataRichiesta: form.dataRichiesta,
+        dataPianificata: form.dataRichiesta, // Assegna la data pianificata uguale a quella richiesta
         tipo: form.tipo,
         status: form.status,
         daPianificare: true,
@@ -76,11 +114,11 @@ export default function Richieste() {
   };
 
   // Raggruppa richieste per utente e pianificazione
-  const isCompletata = s => s.status && s.status.toLowerCase().includes("completata");
-  const mie = spedizioni.filter(s => s.richiedente && user && s.richiedente.mail === user.mail && !isCompletata(s));
-  const altre = spedizioni.filter(s => (!s.richiedente || (user && s.richiedente.mail !== user.mail)) && !isCompletata(s));
-  const daPianificare = lista => lista.filter(s => !(s.pianificata));
-  const pianificate = lista => lista.filter(s => s.pianificata);
+  // Nuova logica: da pianificare e pianificate secondo flag daPianificare
+  const mie = spedizioni.filter(s => s.richiedente && user && s.richiedente.mail === user.mail);
+  const altre = spedizioni.filter(s => (!s.richiedente || (user && s.richiedente.mail !== user.mail)));
+  const daPianificare = lista => lista.filter(s => s.daPianificare === true);
+  const pianificate = lista => lista.filter(s => s.daPianificare === false);
 
   // Funzione filtro
   const filtra = lista => {
@@ -117,9 +155,8 @@ export default function Richieste() {
   };
 
   return (
-    <div className={`p-8 w-full transition-all duration-300 ${sidebarOpen ? "max-w-[1800px]" : "max-w-full"}`}> 
-      <h1 className="text-2xl font-bold mb-4">Richieste di Spedizione</h1>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded mb-4" onClick={() => setShowModal(true)}>Nuova richiesta</button>
+    <div className={mobile ? "w-full flex flex-col items-center" : `p-8 w-full transition-all duration-300 ${sidebarOpen ? "max-w-[1800px]" : "max-w-full"}`}>
+      <h1 className={mobile ? "text-xl font-bold mb-4" : "text-2xl font-bold mb-4"}>Richieste di Spedizione</h1>
       {success && <div className="text-green-600 mb-2">{success}</div>}
       {/* Visualizzazione tabellare divisa */}
       <div className="mb-8">
@@ -142,7 +179,7 @@ export default function Richieste() {
           <button className="bg-blue-600 text-white px-4 py-2 rounded" onClick={() => setShowModal(true)}>+ Nuova</button>
         </div>
         <h3 className="text-xl font-bold mb-4">Da pianificare</h3>
-        <div className="w-full">
+        <div className="w-full mb-8">
           <table className="w-full border-separate border-spacing-y-2 table-fixed text-base">
             <thead>
               <tr className="text-xs text-gray-500">
@@ -158,10 +195,17 @@ export default function Richieste() {
             <tbody>
               {filtra(daPianificare(mie)).map(s => {
                 const dt = s.dataRichiesta ? new Date(s.dataRichiesta) : null;
+                const now = new Date();
+                // La data è rossa solo se la data richiesta è passata rispetto ad oggi
+                const isLate = dt && dt < now;
                 return (
                   <tr key={s.id} className="bg-white hover:bg-blue-50 rounded shadow-lg text-base cursor-pointer group" onClick={() => navigate(`/spedizioni/${s.id}`)}>
                     <td className="px-2 py-3"><FaRegClock className="inline text-gray-400" /></td>
-                    <td className="px-2 py-3"><span className="bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold">{dt ? dt.toLocaleDateString() : "-"}</span></td>
+                    <td className="px-2 py-3">
+                      <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
+                        {dt ? dt.toLocaleDateString() : "-"}
+                      </span>
+                    </td>
                     <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
@@ -170,6 +214,46 @@ export default function Richieste() {
                     <td className="px-2 py-3 text-right">
                       <button className="text-red-500 hover:text-red-700 px-2 py-1 border rounded" onClick={e => { e.stopPropagation(); eliminaSpedizione(s.id); }}>Elimina</button>
                     </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <h3 className="text-xl font-bold mb-4">Pianificate</h3>
+        <div className="w-full">
+          <table className="w-full border-separate border-spacing-y-2 table-fixed text-base">
+            <thead>
+              <tr className="text-xs text-gray-500">
+                <th className="text-left w-[5%]"> </th>
+                <th className="text-left w-[13%]">DATA</th>
+                <th className="text-left w-[10%]">ORA</th>
+                <th className="text-left w-[22%]">DESTINAZIONE</th>
+                <th className="text-left w-[13%]">STATO</th>
+                <th className="text-left w-[13%]">TIPO</th>
+                <th className="text-left w-[12%]">AUTISTA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtra(pianificate(mie)).map(s => {
+                const dt = s.dataPianificata ? new Date(s.dataPianificata) : null;
+                const now = new Date();
+                // Considera completata se status contiene "completata" o "consegnata"
+                const isCompletata = s.status && (s.status.toLowerCase().includes("completata") || s.status.toLowerCase().includes("consegnata"));
+                const isLate = dt && dt < now && !isCompletata;
+                return (
+                  <tr key={s.id} className="bg-white hover:bg-green-50 rounded shadow-lg text-base cursor-pointer group" onClick={() => navigate(`/spedizioni/${s.id}`)}>
+                    <td className="px-2 py-3"><span className="inline text-green-400">&#10003;</span></td>
+                    <td className="px-2 py-3">
+                      <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
+                        {dt ? dt.toLocaleDateString() : "-"}
+                      </span>
+                    </td>
+                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
+                    <td className="px-2 py-3">{s.status || "-"}</td>
+                    <td className="px-2 py-3">{s.tipo}</td>
+                    <td className="px-2 py-3 truncate">{s.autista?.nome || "-"}</td>
                   </tr>
                 );
               })}
@@ -196,7 +280,7 @@ export default function Richieste() {
           <button className="border rounded p-2 text-gray-500" onClick={() => { setFiltroDestinazione(""); setFiltroData(""); }}>Reset</button>
         </div>
         <h3 className="text-xl font-bold mb-4">Da pianificare</h3>
-        <div className="w-full">
+        <div className="w-full mb-8">
           <table className="w-full border-separate border-spacing-y-2 table-fixed text-base">
             <thead>
               <tr className="text-xs text-gray-500">
@@ -213,10 +297,57 @@ export default function Richieste() {
             <tbody>
               {filtra(daPianificare(altre)).map(s => {
                 const dt = s.dataRichiesta ? new Date(s.dataRichiesta) : null;
+                const now = new Date();
+                const isLate = dt && dt < now;
                 return (
                   <tr key={s.id} className="bg-white hover:bg-gray-50 rounded shadow-lg text-base cursor-pointer" onClick={() => navigate(`/spedizioni/${s.id}`)}>
                     <td className="px-2 py-3"><FaRegClock className="inline text-gray-400" /></td>
-                    <td className="px-2 py-3"><span className="bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold">{dt ? dt.toLocaleDateString() : "-"}</span></td>
+                    <td className="px-2 py-3">
+                      <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
+                        {dt ? dt.toLocaleDateString() : "-"}
+                      </span>
+                    </td>
+                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
+                    <td className="px-2 py-3">{s.status || "-"}</td>
+                    <td className="px-2 py-3">{s.tipo}</td>
+                    <td className="px-2 py-3 truncate">{s.autista?.nome || "-"}</td>
+                    <td className="px-2 py-3 truncate">{s.richiedente?.nome || "-"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <h3 className="text-xl font-bold mb-4">Pianificate</h3>
+        <div className="w-full">
+          <table className="w-full border-separate border-spacing-y-2 table-fixed text-base">
+            <thead>
+              <tr className="text-xs text-gray-500">
+                <th className="text-left w-[5%]"> </th>
+                <th className="text-left w-[13%]">DATA</th>
+                <th className="text-left w-[10%]">ORA</th>
+                <th className="text-left w-[22%]">DESTINAZIONE</th>
+                <th className="text-left w-[13%]">STATO</th>
+                <th className="text-left w-[13%]">TIPO</th>
+                <th className="text-left w-[12%]">AUTISTA</th>
+                <th className="text-left w-[10%]">RICHIESTA DA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtra(pianificate(altre)).map(s => {
+                const dt = s.dataPianificata ? new Date(s.dataPianificata) : null;
+                const now = new Date();
+                const isCompletata = s.status && (s.status.toLowerCase().includes("completata") || s.status.toLowerCase().includes("consegnata"));
+                const isLate = dt && dt < now && !isCompletata;
+                return (
+                  <tr key={s.id} className="bg-white hover:bg-green-50 rounded shadow-lg text-base cursor-pointer" onClick={() => navigate(`/spedizioni/${s.id}`)}>
+                    <td className="px-2 py-3"><span className="inline text-green-400">&#10003;</span></td>
+                    <td className="px-2 py-3">
+                      <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
+                        {dt ? dt.toLocaleDateString() : "-"}
+                      </span>
+                    </td>
                     <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
@@ -269,6 +400,8 @@ export default function Richieste() {
           </div>
         </div>
       )}
+      {/* Visualizzazione calendario settimanale */}
+      <SpedizioniCalendar spedizioni={spedizioni.filter(s => s.status === "In attesa" || s.status === "In consegna")}/>
     </div>
   );
 }

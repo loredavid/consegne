@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useAuth } from "../context/AuthContext";
+import { useNotification } from "../context/NotificationContext";
 
 function MapCenter({ coords }) {
   const map = useMap();
@@ -27,6 +28,7 @@ export default function SpedizioneDettaglio() {
   const [distanza, setDistanza] = useState(null);
   const [posizioni, setPosizioni] = useState([]);
   const navigate = useNavigate();
+  const { setNotification } = useNotification();
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/spedizioni`)
@@ -108,11 +110,36 @@ export default function SpedizioneDettaglio() {
     }
   };
 
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
+
   if (loading) return <div className="p-8">Caricamento...</div>;
   if (!spedizione) return <div className="p-8 text-red-600">Spedizione non trovata</div>;
 
-  // Permessi: può modificare solo se admin o richiedente della spedizione
-  const canEdit = user && (user.role === "admin" || (spedizione?.richiedente && spedizione.richiedente.mail === user.mail));
+  // Permessi: può modificare solo se admin, richiedente della spedizione, o pianificatore
+  const canEdit = user && (user.role === "admin" || user.role === "pianificatore" || (spedizione?.richiedente && spedizione.richiedente.mail === user.mail));
 
   return (
     <div className="p-6">
@@ -158,6 +185,14 @@ export default function SpedizioneDettaglio() {
                 {stato}
               </button>
             ))}
+          </div>
+          {/* Stato flag da pianificare */}
+          <div className="mt-2 flex items-center gap-2">
+            <span className="material-icons text-yellow-400 align-middle">event_note</span>
+            <span className="font-semibold">Da pianificare:</span>
+            <span className={spedizione.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
+              {spedizione.daPianificare ? "Sì" : "No"}
+            </span>
           </div>
           <div className="mt-4 text-lg font-semibold">Richiesta da<br /><span className="text-white font-normal">{spedizione.richiedente?.nome}</span></div>
         </div>
@@ -216,6 +251,15 @@ export default function SpedizioneDettaglio() {
                   <option value="Fallita">Fallita</option>
                 </select>
               </label>
+              {/* Stato flag da pianificare in modale, solo per admin */}
+              {user?.role === "admin" && (
+                <label className="font-semibold flex items-center gap-2">Da pianificare
+                  <input name="daPianificare" type="checkbox" checked={form.daPianificare} onChange={e => setForm(f => ({ ...f, daPianificare: e.target.checked }))} />
+                  <span className={form.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
+                    {form.daPianificare ? "Sì" : "No"}
+                  </span>
+                </label>
+              )}
               <label className="font-semibold">Data richiesta
                 <input name="dataRichiesta" type="datetime-local" value={form.dataRichiesta ? form.dataRichiesta.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
               </label>

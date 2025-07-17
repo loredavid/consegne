@@ -1,13 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useNotification } from "../context/NotificationContext";
 
 export default function Login() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { login, users } = useAuth();
+  const { setNotification } = useNotification();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
 
   const handleSubmit = async e => {
     e.preventDefault();

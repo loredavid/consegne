@@ -1,14 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { User } from "lucide-react";
+import { useNotification } from "../context/NotificationContext";
 
 export default function GestioneUtenti() {
   const { user, users, addUser, updateUser, deleteUser, loading, error } = useAuth();
+  const { setNotification } = useNotification();
   const [form, setForm] = useState({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
   const [editId, setEditId] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [actionUserId, setActionUserId] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
 
   if (!user || user.role !== "admin") return <div className="p-8 text-center text-red-600">Accesso negato</div>;
 

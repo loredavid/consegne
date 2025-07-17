@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useNotification } from "../context/NotificationContext";
 
 export default function StatoConsegne() {
   const [spedizioni, setSpedizioni] = useState([]);
@@ -9,6 +10,32 @@ export default function StatoConsegne() {
   const [filtroStato, setFiltroStato] = useState("");
   const [filtroTipo, setFiltroTipo] = useState("");
   const navigate = useNavigate();
+  const { setNotification } = useNotification();
+
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
 
   useEffect(() => {
     fetch("http://localhost:3001/api/spedizioni")

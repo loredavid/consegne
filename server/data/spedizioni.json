@@ -3,6 +3,7 @@
     "aziendaDestinazione": "ELTEK S.R.L",
     "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
     "dataRichiesta": "2025-07-03T08:46",
+    "dataPianificata": "2025-07-03T08:46",
     "tipo": "consegna",
     "status": "In attesa",
     "daPianificare": true,
@@ -11,16 +12,20 @@
       "mail": "lorena.stolfo@elteksrl.it",
       "role": "richiedente"
     },
-    "note": "Urgente",
-    "id": 1752734807579
+    "note": "Urgente\n3 ",
+    "id": 1752734807579,
+    "autista": {
+      "nome": "Anna Neri"
+    }
   },
   {
-    "aziendaDestinazione": "SISTEL S.P.A.",
-    "indirizzo": "Via Roma, 10, 33080 Fiume Veneto PN",
+    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
+    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
     "dataRichiesta": "2025-07-04T09:30",
+    "dataPianificata": "2025-07-04T09:30",
     "tipo": "ritiro",
-    "status": "In attesa",
-    "daPianificare": true,
+    "status": "In consegna",
+    "daPianificare": false,
     "richiedente": {
       "nome": "Cristina Zaccarin",
       "mail": "cristina.zaccarin@elteksrl.it",
@@ -33,8 +38,9 @@
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
     "indirizzo": "Via Udine, 5, 33082 Azzano Decimo PN",
     "dataRichiesta": "2025-07-05T11:00",
+    "dataPianificata": "2025-07-05T11:00",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "Fallita",
     "daPianificare": true,
     "richiedente": {
       "nome": "Lorena Stolfo",
@@ -48,6 +54,7 @@
     "aziendaDestinazione": "EVOKA GROUP S.P.A.",
     "indirizzo": "Via Venezia, 12, 33077 Sacile PN",
     "dataRichiesta": "2025-07-06T14:15",
+    "dataPianificata": "2025-07-06T14:15",
     "tipo": "ritiro",
     "status": "In attesa",
     "daPianificare": true,
@@ -63,6 +70,23 @@
     "aziendaDestinazione": "FRIULPACK S.R.L.",
     "indirizzo": "Via Trieste, 8, 33085 Maniago PN",
     "dataRichiesta": "2025-07-07T16:00",
+    "dataPianificata": "2025-07-07T16:00",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorena Stolfo",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1752734807583
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-07-18T13:08",
+    "dataPianificata": "2025-07-18T13:08",
     "tipo": "consegna",
     "status": "In attesa",
     "daPianificare": true,
@@ -72,6 +96,6 @@
       "role": "richiedente"
     },
     "note": "",
-    "id": 1752734807583
+    "id": 1752750543903
   }
 ]

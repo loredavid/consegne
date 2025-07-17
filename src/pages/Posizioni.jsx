@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useNotification } from "../context/NotificationContext";
 
 export default function Posizioni() {
   const MAX_LOGO_SIZE = 1024 * 1024; // 1MB
@@ -18,6 +20,8 @@ export default function Posizioni() {
   const [logoPreview, setLogoPreview] = useState(null);
   const [logoFile, setLogoFile] = useState(null);
   const fileInputRef = useRef();
+  const navigate = useNavigate();
+  const { setNotification } = useNotification();
 
   useEffect(() => {
     setLoading(true);
@@ -30,6 +34,31 @@ export default function Posizioni() {
         setLoading(false);
       });
   }, [showAdd, showEdit, saving, success]);
+
+  useEffect(() => {
+    let isMounted = true;
+    let lastCount = 0;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          if (lastCount > 0 && data.length > lastCount) {
+            const newMsgs = data.slice(lastCount);
+            newMsgs.forEach(msg => {
+              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+            });
+          }
+          lastCount = data.length;
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [setNotification]);
 
   const resetForm = () => {
     setForm({ azienda: "", indirizzo: "", referente: "", telefono: "", email: "", logo: "" });
@@ -142,6 +171,10 @@ export default function Posizioni() {
     }
   };
 
+  const handleRowClick = id => {
+    navigate(`/posizioni/${id}`);
+  };
+
   // Filtra e paginazione
   const filtered = posizioni.filter(p =>
     p.azienda.toLowerCase().includes(search.toLowerCase()) ||
@@ -172,7 +205,7 @@ export default function Posizioni() {
       ) : (
         <div className="bg-white rounded shadow divide-y">
           {paginated.map((p, i) => (
-            <div key={p.id || i} className="flex items-center gap-4 py-4 px-2 hover:bg-gray-50">
+            <div key={p.id || i} className="flex items-center gap-4 py-4 px-2 hover:bg-gray-50" onClick={() => handleRowClick(p.id)} style={{ cursor: 'pointer' }}>
               <div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center text-gray-400 text-2xl font-bold overflow-hidden">
                 {p.logo && typeof p.logo === 'string' && p.logo !== '' ? (
                   <img src={`http://localhost:3001/uploads/${p.logo}`} alt="logo" className="object-contain w-full h-full" onError={e => { e.target.onerror=null; e.target.src='https://placehold.co/64x64?text=Logo'; }} />

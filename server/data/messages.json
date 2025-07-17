@@ -1,179 +1,5 @@
 [
   {
-    "sender": "admin",
-    "text": "Prova ",
-    "id": 1752687989812,
-    "timestamp": "2025-07-16T17:46:29.812Z"
-  },
-  {
-    "sender": "autista",
-    "text": "Prova",
-    "id": 1752688010051,
-    "timestamp": "2025-07-16T17:46:50.051Z"
-  },
-  {
-    "sender": "autista",
-    "text": "viz",
-    "id": 1752688015903,
-    "timestamp": "2025-07-16T17:46:55.903Z"
-  },
-  {
-    "sender": "admin",
-    "text": "Messaggio",
-    "id": 1752689423176,
-    "timestamp": "2025-07-16T18:10:23.176Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689467968,
-    "timestamp": "2025-07-16T18:11:07.968Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689468328,
-    "timestamp": "2025-07-16T18:11:08.328Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689468544,
-    "timestamp": "2025-07-16T18:11:08.544Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689468764,
-    "timestamp": "2025-07-16T18:11:08.764Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689469009,
-    "timestamp": "2025-07-16T18:11:09.009Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689469295,
-    "timestamp": "2025-07-16T18:11:09.295Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689469553,
-    "timestamp": "2025-07-16T18:11:09.553Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689469793,
-    "timestamp": "2025-07-16T18:11:09.793Z"
-  },
-  {
-    "sender": "admin",
-    "text": "v",
-    "id": 1752689470062,
-    "timestamp": "2025-07-16T18:11:10.062Z"
-  },
-  {
-    "sender": "admin",
-    "text": "jd",
-    "id": 1752689587000,
-    "timestamp": "2025-07-16T18:13:07.000Z"
-  },
-  {
-    "sender": {
-      "nome": "admin",
-      "mail": "mario@rossi.it"
-    },
-    "text": "lenb",
-    "id": 1752689650932,
-    "timestamp": "2025-07-16T18:14:10.932Z"
-  },
-  {
-    "sender": {
-      "nome": "admin",
-      "mail": "mario@rossi.it"
-    },
-    "text": "Prova",
-    "id": 1752689652990,
-    "timestamp": "2025-07-16T18:14:12.990Z"
-  },
-  {
-    "sender": {
-      "nome": "admin",
-      "mail": "mario@rossi.it"
-    },
-    "text": "chat",
-    "id": 1752689746723,
-    "timestamp": "2025-07-16T18:15:46.723Z"
-  },
-  {
-    "sender": {
-      "nome": "Anonimo",
-      "mail": "mario@rossi.it"
-    },
-    "text": "oerg",
-    "id": 1752689845367,
-    "timestamp": "2025-07-16T18:17:25.367Z"
-  },
-  {
-    "sender": {
-      "nome": "Anonimo",
-      "mail": "mario@rossi.it"
-    },
-    "text": "df",
-    "id": 1752689847274,
-    "timestamp": "2025-07-16T18:17:27.274Z"
-  },
-  {
-    "sender": {
-      "nome": "Anonimo",
-      "mail": "mario@rossi.it"
-    },
-    "text": "fd",
-    "id": 1752689855784,
-    "timestamp": "2025-07-16T18:17:35.784Z"
-  },
-  {
-    "sender": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it"
-    },
-    "text": "kb",
-    "id": 1752689894579,
-    "timestamp": "2025-07-16T18:18:14.579Z"
-  },
-  {
-    "sender": {
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
-    "text": "slajrng",
-    "id": 1752689906925,
-    "timestamp": "2025-07-16T18:18:26.925Z"
-  },
-  {
-    "sender": {
-      "nome": "Anna Neri",
-      "mail": "anna@neri.it"
-    },
-    "text": "jnwrg",
-    "id": 1752689960480,
-    "timestamp": "2025-07-16T18:19:20.480Z"
-  },
-  {
-    "sender": {
-      "nome": "Mario Rossi",
-      "mail": "mario@rossi.it"
-    },
-    "text": "dsnv",
-    "id": 1752689969005,
-    "timestamp": "2025-07-16T18:19:29.005Z"
-  },
-  {
     "sender": {
       "nome": "Cristina Zaccarin",
       "mail": "cristina.zaccarin@elteksrl.it"
@@ -181,5 +7,104 @@
     "text": "Prova chat",
     "id": 1752735158743,
     "timestamp": "2025-07-17T06:52:38.743Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "oihadg",
+    "id": 1752745772127,
+    "timestamp": "2025-07-17T09:49:32.127Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "fg",
+    "id": 1752745990312,
+    "timestamp": "2025-07-17T09:53:10.312Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "Prova notifica",
+    "id": 1752746220304,
+    "timestamp": "2025-07-17T09:57:00.304Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Prova notifica",
+    "id": 1752746227402,
+    "timestamp": "2025-07-17T09:57:07.402Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1752746353770,
+    "timestamp": "2025-07-17T09:59:13.770Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "ijig",
+    "id": 1752746358980,
+    "timestamp": "2025-07-17T09:59:18.980Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "oirog",
+    "id": 1752746361286,
+    "timestamp": "2025-07-17T09:59:21.286Z"
+  },
+  {
+    "sender": {
+      "nome": "Cristina Zaccarin",
+      "mail": "cristina.zaccarin@elteksrl.it"
+    },
+    "text": "sdg",
+    "id": 1752746367495,
+    "timestamp": "2025-07-17T09:59:27.495Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "sdfsdg",
+    "id": 1752746372086,
+    "timestamp": "2025-07-17T09:59:32.086Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "fj",
+    "id": 1752746393364,
+    "timestamp": "2025-07-17T09:59:53.364Z"
+  },
+  {
+    "sender": {
+      "nome": "Fabiola Nganga",
+      "mail": "logistica2@elteksrl.it"
+    },
+    "text": "prOVA",
+    "id": 1752751278926,
+    "timestamp": "2025-07-17T11:21:18.926Z"
   }
 ]

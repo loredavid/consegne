@@ -1,27 +1,49 @@
 import { useState, useEffect, useRef } from "react";
 import { useAuth } from "../context/AuthContext";
+import { useNotification } from "../context/NotificationContext";
 
 export default function Chat() {
   const { user } = useAuth();
+  const { setNotification } = useNotification();
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const messagesEndRef = useRef(null);
+  const lastMessageIdRef = useRef(null);
 
-  // Fetch messages on mount
+  // Fetch messages on mount and poll every 2s
   useEffect(() => {
-    fetch("http://localhost:3001/api/messaggi")
-      .then(res => res.json())
-      .then(data => {
-        setMessages(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("Errore nel caricamento dei messaggi");
-        setLoading(false);
-      });
-  }, []);
+    let isMounted = true;
+    const fetchMessages = () => {
+      fetch("http://localhost:3001/api/messaggi")
+        .then(res => res.json())
+        .then(data => {
+          if (!isMounted) return;
+          // Notifica solo se c'è un nuovo messaggio da altri
+          if (messages.length > 0 && data.length > messages.length) {
+            const newMsgs = data.slice(messages.length);
+            newMsgs.forEach(msg => {
+              if (msg.sender?.mail !== user?.mail) {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              }
+            });
+          }
+          setMessages(data);
+          setLoading(false);
+        })
+        .catch(() => {
+          setError("Errore nel caricamento dei messaggi");
+          setLoading(false);
+        });
+    };
+    fetchMessages();
+    const interval = setInterval(fetchMessages, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [user, messages.length, setNotification]);
 
   // Scroll to bottom on new message
   useEffect(() => {
