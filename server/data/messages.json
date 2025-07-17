@@ -106,5 +106,68 @@
     "text": "prOVA",
     "id": 1752751278926,
     "timestamp": "2025-07-17T11:21:18.926Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\n- Destinazione: AB PLAST\n- Indirizzo: VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO\n- Data: domenica 6 luglio 2025 alle ore 14:15\n- Autista: Ernesto/Andrea\n- Tipo: ritiro\n- Richiedente: Cristina Zaccarin",
+    "spedizioneId": 1752734807582,
+    "id": 1752762227444,
+    "timestamp": "2025-07-17T14:23:47.444Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\n- Destinazione: ELTEK S.R.L\n- Indirizzo: Via Chiavornicco, 26, 33084 Cordenons PN\n- Data: giovedì 3 luglio 2025 alle ore 08:46\n- Autista: ALL TRANSPORT\n- Tipo: consegna\n- Richiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807579,
+    "id": 1752762323015,
+    "timestamp": "2025-07-17T14:25:23.015Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\n- Destinazione: ALMACAB di Domeneghetti Marzia\n- Indirizzo: Vial di Romans, 71, 33084 Cordenons PN\n- Data: venerdì 4 luglio 2025 alle ore 09:30\n- Autista: -\n- Tipo: ritiro\n- Richiedente: Cristina Zaccarin",
+    "spedizioneId": 1752734807580,
+    "id": 1752762325015,
+    "timestamp": "2025-07-17T14:25:25.015Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\n- Destinazione: ALINA ZAVATE\n- Indirizzo: Via Comugne Di Mezzo, 1, 33082 Azzano Decimo\n- Data: sabato 5 luglio 2025 alle ore 11:00\n- Autista: Ernesto/Andrea\n- Tipo: consegna\n- Richiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807581,
+    "id": 1752762327783,
+    "timestamp": "2025-07-17T14:25:27.783Z"
+  },
+  {
+    "sender": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it"
+    },
+    "text": "nxvlb",
+    "id": 1752762411050,
+    "timestamp": "2025-07-17T14:26:51.050Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "🚚 **Nuova spedizione pianificata!**\n\n📦 *Destinazione*: ELTEK S.R.L\n📍 *Indirizzo*: Via Chiavornicco, 26, 33084 Cordenons PN\n🗓️ *Data*: giovedì 3 luglio 2025 alle ore 08:46\n🚗 *Autista*: ALL TRANSPORT\n🔖 *Tipo*: consegna\n👤 *Richiedente*: Lorena Stolfo",
+    "spedizioneId": 1752734807579,
+    "id": 1752762834507,
+    "timestamp": "2025-07-17T14:33:54.507Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ELTEK S.R.L\nIndirizzo: Via Chiavornicco, 26, 33084 Cordenons PN\nData: giovedì 3 luglio 2025 alle ore 08:46\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807579,
+    "id": 1752762914468,
+    "timestamp": "2025-07-17T14:35:14.468Z"
   }
 ]

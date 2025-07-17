@@ -21,6 +21,16 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const { unreadCount, markAllRead } = useUnreadMessages();
 
+  // Definisci le pagine accessibili per ruolo
+  const canAccess = (item) => {
+    if (!user) return false;
+    if (item.to === "/admin" && user.role !== "admin") return false;
+    if (item.to === "/gestione-utenti" && user.role !== "admin") return false;
+    if (item.to === "/autista" && user.role !== "autista") return false;
+    // Tutti possono accedere alle altre pagine
+    return true;
+  };
+
   return (
     <aside className={`fixed inset-y-0 left-0 bg-white shadow p-4 flex flex-col justify-between transition-all duration-300 ${collapsed ? "min-w-[60px] w-[60px]" : "min-w-[220px] w-[220px]"}`}>
       <div>
@@ -46,7 +56,7 @@ export default function Sidebar() {
       </div>
       <nav className="flex flex-col gap-4">
         <hr className="my-2" />
-        {menuItems.map(item => (
+        {menuItems.filter(canAccess).map(item => (
           <Link
             key={item.to}
             to={item.to}

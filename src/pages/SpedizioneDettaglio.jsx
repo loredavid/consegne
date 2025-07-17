@@ -27,6 +27,8 @@ export default function SpedizioneDettaglio() {
   const [userCoords, setUserCoords] = useState(null);
   const [distanza, setDistanza] = useState(null);
   const [posizioni, setPosizioni] = useState([]);
+  const [showAutistaModal, setShowAutistaModal] = useState(false);
+  const [spedizioniAutista, setSpedizioniAutista] = useState([]);
   const navigate = useNavigate();
   const { setNotification } = useNotification();
 
@@ -141,207 +143,266 @@ export default function SpedizioneDettaglio() {
   // Permessi: può modificare solo se admin, richiedente della spedizione, o pianificatore
   const canEdit = user && (user.role === "admin" || user.role === "pianificatore" || (spedizione?.richiedente && spedizione.richiedente.mail === user.mail));
 
-  return (
-    <div className="p-6">
-      <button onClick={() => navigate(-1)} className="mb-4 text-blue-600">&larr; Indietro</button>
-      <div className="flex justify-between items-center bg-blue-700 text-white rounded-t-lg p-6 mb-6">
-        <div>
-          <div className="text-xs uppercase font-bold mb-2">{spedizione.tipo?.split(",").map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(", ")}</div>
-          <h1 className="text-3xl font-bold mb-1">{spedizione.aziendaDestinazione}</h1>
-          <div className="text-lg mb-2">{spedizione.aziendaDestinazione}</div>
-          <div className="mb-2 flex gap-2 items-center">
-            {['In attesa','In consegna','Fallita','Consegnata','Completata'].map(stato => (
-              <button
-                key={stato}
-                type="button"
-                className={`px-3 py-1 rounded-full text-xs font-semibold border focus:outline-none transition-all duration-100 ${
-                  (spedizione.status === stato || (stato==='Completata' && spedizione.status==='Consegnata'))
-                    ? (stato==='Fallita' ? 'bg-red-100 text-red-700 border-red-300' : stato==='In consegna' ? 'bg-orange-100 text-orange-700 border-orange-300' : stato==='Consegnata'||stato==='Completata' ? 'bg-green-100 text-green-700 border-green-300' : 'bg-blue-100 text-blue-700 border-blue-300')
-                    : 'bg-white text-gray-400 border-gray-200 hover:bg-gray-100 hover:text-gray-700'}
-                `}
-                onClick={async () => {
-                  if (editMode) {
-                    setForm(f => ({ ...f, status: stato }));
-                  } else {
-                    setSaving(true);
-                    setError("");
-                    try {
-                      const updated = { ...spedizione, status: stato };
-                      await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
-                        method: "PUT",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(updated)
-                      });
-                      setSpedizione(updated);
-                    } catch {
-                      setError("Errore nel salvataggio stato");
-                    } finally {
-                      setSaving(false);
-                    }
-                  }
+  // Modale spedizioni autista (fuori dal return principale)
+  const AutistaModal = showAutistaModal ? (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-40">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg relative border border-blue-100">
+        <button className="absolute top-2 right-2 text-gray-400 hover:text-blue-700 text-2xl font-bold px-2 py-1 rounded transition" onClick={() => setShowAutistaModal(false)} aria-label="Chiudi">&times;</button>
+        <h2 className="text-xl font-bold text-blue-700 mb-4">Spedizioni attive di {spedizione?.autista?.nome}</h2>
+        {spedizioniAutista.length === 0 ? (
+          <div className="text-gray-500">Nessuna spedizione attiva assegnata</div>
+        ) : (
+          <ul className="divide-y divide-blue-100">
+            {spedizioniAutista.map(s => (
+              <li
+                key={s.id}
+                className="py-3 flex flex-col gap-1 cursor-pointer hover:bg-blue-50 rounded transition"
+                onClick={() => {
+                  setShowAutistaModal(false);
+                  navigate(`/spedizioni/${s.id}`);
                 }}
-                disabled={saving}
               >
-                {stato}
-              </button>
+                <span className="font-semibold text-blue-700">{s.aziendaDestinazione}</span>
+                <span className="text-sm text-gray-600">{s.indirizzo}</span>
+                <span className="text-xs text-gray-500">Status: {s.status}</span>
+                <span className="text-xs text-gray-500">Data pianificata: {s.dataPianificata ? new Date(s.dataPianificata).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '-'}</span>
+              </li>
             ))}
-          </div>
-          {/* Stato flag da pianificare */}
-          <div className="mt-2 flex items-center gap-2">
-            <span className="material-icons text-yellow-400 align-middle">event_note</span>
-            <span className="font-semibold">Da pianificare:</span>
-            <span className={spedizione.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
-              {spedizione.daPianificare ? "Sì" : "No"}
-            </span>
-          </div>
-          <div className="mt-4 text-lg font-semibold">Richiesta da<br /><span className="text-white font-normal">{spedizione.richiedente?.nome}</span></div>
-        </div>
-        {canEdit && (
-          <button onClick={() => setEditMode(true)} className="bg-white text-blue-700 px-4 py-2 rounded font-semibold shadow hover:bg-blue-50">Modifica</button>
+          </ul>
         )}
       </div>
-      {/* Modal for edit form */}
-      {editMode && canEdit && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
-          <div className="bg-white rounded shadow p-6 mb-6 flex flex-col gap-4 max-w-2xl w-full relative">
-            <button
-              type="button"
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
-              onClick={() => setEditMode(false)}
-              disabled={saving}
-              aria-label="Chiudi"
-            >
-              &times;
-            </button>
-            <form onSubmit={handleSave}>
-              {error && <div className="text-red-600">{error}</div>}
-              <label className="font-semibold">Destinazione
-                <select
-                  name="indirizzo"
-                  value={form.indirizzo || ""}
-                  onChange={e => {
-                    const selected = posizioni.find(p => p.indirizzo === e.target.value);
-                    setForm(f => ({
-                      ...f,
-                      indirizzo: selected ? selected.indirizzo : e.target.value,
-                      aziendaDestinazione: selected ? selected.azienda : f.aziendaDestinazione
-                    }));
-                  }}
-                  className="border p-2 rounded w-full mt-1"
-                  required
-                >
-                  <option value="">Seleziona destinazione...</option>
-                  {posizioni.map((p, i) => (
-                    <option key={i} value={p.indirizzo}>{p.azienda} - {p.indirizzo}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="font-semibold">Tipo
-                <select name="tipo" value={form.tipo || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1">
-                  <option value="consegna">Consegna</option>
-                  <option value="ritiro">Ritiro</option>
-                  <option value="entrambi">Entrambi</option>
-                </select>
-              </label>
-              <label className="font-semibold">Status
-                <select name="status" value={form.status || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1">
-                  <option value="In attesa">In attesa</option>
-                  <option value="In consegna">In consegna</option>
-                  <option value="Consegnata">Consegnata</option>
-                  <option value="Fallita">Fallita</option>
-                </select>
-              </label>
-              {/* Stato flag da pianificare in modale, solo per admin */}
-              {user?.role === "admin" && (
-                <label className="font-semibold flex items-center gap-2">Da pianificare
-                  <input name="daPianificare" type="checkbox" checked={form.daPianificare} onChange={e => setForm(f => ({ ...f, daPianificare: e.target.checked }))} />
-                  <span className={form.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
-                    {form.daPianificare ? "Sì" : "No"}
-                  </span>
-                </label>
-              )}
-              <label className="font-semibold">Data richiesta
-                <input name="dataRichiesta" type="datetime-local" value={form.dataRichiesta ? form.dataRichiesta.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
-              </label>
-              <label className="font-semibold">Data pianificata
-                <input name="dataPianificata" type="datetime-local" value={form.dataPianificata ? form.dataPianificata.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
-              </label>
-              <label className="font-semibold">Note
-                <input name="note" value={form.note || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
-              </label>
-              <div className="flex gap-2 mt-4">
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={saving}>Salva</button>
-                <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => setEditMode(false)} disabled={saving}>Annulla</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-      {!editMode && (
-        <>
-          <div className="bg-white rounded shadow p-6 mb-6 flex flex-col md:flex-row gap-6">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-2">{spedizione.aziendaDestinazione}</h2>
-              <div className="mb-2 text-sm text-gray-700 font-semibold flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">location_on</span>
-                <span><b>Indirizzo</b><br /><span className="text-gray-600 font-normal">{spedizione.indirizzo}</span></span>
-              </div>
-              <div className="mb-2 flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">category</span>
-                <span>Tipo: <b>{spedizione.tipo}</b></span>
-              </div>
-              <div className="mb-2 flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">straighten</span>
-                <span>Distanza: <span className="text-gray-500">{distanza !== null ? distanza.toFixed(2) + ' km' : '...'}</span></span>
-              </div>
-              <div className="mb-2 flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">event</span>
-                <span>Data assegnata: {spedizione.dataPianificata ? new Date(spedizione.dataPianificata).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}</span>
-              </div>
-              <div className="mb-2 flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">event_available</span>
-                <span>Data richiesta: {spedizione.dataRichiesta ? new Date(spedizione.dataRichiesta).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}</span>
-              </div>
-              <div className="mt-4 bg-gray-50 rounded p-3 flex items-center gap-2">
-                <span className="material-icons text-gray-400 align-middle">chat_bubble_outline</span>
-                <span>{spedizione.note || "Nessuna nota"}</span>
-              </div>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
-              {/* Mappa con react-leaflet */}
-              <div className="w-full h-56 bg-gray-100 rounded flex items-center justify-center">
-                <MapContainer center={coords} zoom={13} style={{ height: "220px", width: "100%", borderRadius: "0.5rem" }} scrollWheelZoom={false}>
-                  <MapCenter coords={coords} />
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  <Marker position={coords} icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png', shadowSize: [41, 41] })}>
-                    <Popup>
-                      {spedizione.aziendaDestinazione}<br />{spedizione.indirizzo}
-                    </Popup>
-                  </Marker>
-                </MapContainer>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded shadow p-6 mb-6">
-            <h3 className="font-bold text-lg mb-2">Informazioni Veicolo</h3>
-            <div>Note<br />{spedizione.note || "-"}</div>
-          </div>
-          <div className="bg-white rounded shadow p-6 mb-6">
-            <h3 className="font-bold text-lg mb-2">Conferma Consegna</h3>
-            <div className="mb-2">Foto<br />
-              {spedizione.fotoConferma ? (
-                <img src={spedizione.fotoConferma} alt="Foto conferma" className="max-w-xs rounded" />
-              ) : (
-                <img src="https://placehold.co/100x100?text=Foto" alt="Placeholder" className="max-w-xs rounded border" />
-              )}
-            </div>
-            <div className="mb-2">Firma<br /><input type="text" disabled className="border p-2 rounded w-full" /></div>
-          </div>
-        </>
-      )}
     </div>
+  ) : null;
+
+  return (
+    <>
+      {AutistaModal}
+      <div className="p-6">
+        <button onClick={() => navigate(-1)} className="mb-4 text-blue-600">&larr; Indietro</button>
+        <div className="flex justify-between items-center bg-blue-700 text-white rounded-t-lg p-6 mb-6">
+          <div>
+            <div className="text-xs uppercase font-bold mb-2">{spedizione.tipo?.split(",").map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(", ")}</div>
+            <h1 className="text-3xl font-bold mb-1">{spedizione.aziendaDestinazione}</h1>
+            <div className="text-lg mb-2">{spedizione.aziendaDestinazione}</div>
+            <div className="mb-2 flex gap-2 items-center">
+              {['In attesa','In consegna','Fallita','Consegnata','Completata'].map(stato => (
+                <button
+                  key={stato}
+                  type="button"
+                  className={`px-3 py-1 rounded-full text-xs font-semibold border focus:outline-none transition-all duration-100 ${
+                    (spedizione.status === stato || (stato==='Completata' && spedizione.status==='Consegnata'))
+                      ? (stato==='Fallita' ? 'bg-red-100 text-red-700 border-red-300' : stato==='In consegna' ? 'bg-orange-100 text-orange-700 border-orange-300' : stato==='Consegnata'||stato==='Completata' ? 'bg-green-100 text-green-700 border-green-300' : 'bg-blue-100 text-blue-700 border-blue-300')
+                      : 'bg-white text-gray-400 border-gray-200 hover:bg-gray-100 hover:text-gray-700'}
+                  `}
+                  onClick={async () => {
+                    if (editMode) {
+                      setForm(f => ({ ...f, status: stato }));
+                    } else {
+                      setSaving(true);
+                      setError("");
+                      try {
+                        const updated = { ...spedizione, status: stato };
+                        await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
+                          method: "PUT",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(updated)
+                        });
+                        setSpedizione(updated);
+                      } catch {
+                        setError("Errore nel salvataggio stato");
+                      } finally {
+                        setSaving(false);
+                      }
+                    }
+                  }}
+                  disabled={saving}
+                >
+                  {stato}
+                </button>
+              ))}
+            </div>
+            {/* Stato flag da pianificare */}
+            <div className="mt-2 flex items-center gap-2">
+              <span className="material-icons text-yellow-400 align-middle">event_note</span>
+              <span className="font-semibold">Da pianificare:</span>
+              <span className={spedizione.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
+                {spedizione.daPianificare ? "Sì" : "No"}
+              </span>
+            </div>
+            <div className="mt-4 text-lg font-semibold">Richiesta da<br /><span className="text-white font-normal">{spedizione.richiedente?.nome}</span></div>
+          </div>
+          {canEdit && (
+            <button onClick={() => setEditMode(true)} className="bg-white text-blue-700 px-4 py-2 rounded font-semibold shadow hover:bg-blue-50">Modifica</button>
+          )}
+        </div>
+        {/* Modal for edit form */}
+        {editMode && canEdit && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+            <div className="bg-white rounded shadow p-6 mb-6 flex flex-col gap-4 max-w-2xl w-full relative">
+              <button
+                type="button"
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
+                onClick={() => setEditMode(false)}
+                disabled={saving}
+                aria-label="Chiudi"
+              >
+                &times;
+              </button>
+              <form onSubmit={handleSave}>
+                {error && <div className="text-red-600">{error}</div>}
+                <label className="font-semibold">Destinazione
+                  <select
+                    name="indirizzo"
+                    value={form.indirizzo || ""}
+                    onChange={e => {
+                      const selected = posizioni.find(p => p.indirizzo === e.target.value);
+                      setForm(f => ({
+                        ...f,
+                        indirizzo: selected ? selected.indirizzo : e.target.value,
+                        aziendaDestinazione: selected ? selected.azienda : f.aziendaDestinazione
+                      }));
+                    }}
+                    className="border p-2 rounded w-full mt-1"
+                    required
+                  >
+                    <option value="">Seleziona destinazione...</option>
+                    {posizioni.map((p, i) => (
+                      <option key={i} value={p.indirizzo}>{p.azienda} - {p.indirizzo}</option>
+                    ))}
+                  </select>
+                </label>
+                <label className="font-semibold">Tipo
+                  <select name="tipo" value={form.tipo || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1">
+                    <option value="consegna">Consegna</option>
+                    <option value="ritiro">Ritiro</option>
+                    <option value="entrambi">Entrambi</option>
+                  </select>
+                </label>
+                <label className="font-semibold">Status
+                  <select name="status" value={form.status || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1">
+                    <option value="In attesa">In attesa</option>
+                    <option value="In consegna">In consegna</option>
+                    <option value="Consegnata">Consegnata</option>
+                    <option value="Fallita">Fallita</option>
+                  </select>
+                </label>
+                {/* Stato flag da pianificare in modale, solo per admin */}
+                {user?.role === "admin" && (
+                  <label className="font-semibold flex items-center gap-2">Da pianificare
+                    <input name="daPianificare" type="checkbox" checked={form.daPianificare} onChange={e => setForm(f => ({ ...f, daPianificare: e.target.checked }))} />
+                    <span className={form.daPianificare ? "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-bold" : "bg-gray-100 text-gray-500 px-2 py-1 rounded-full text-xs font-bold"}>
+                      {form.daPianificare ? "Sì" : "No"}
+                    </span>
+                  </label>
+                )}
+                <label className="font-semibold">Data richiesta
+                  <input name="dataRichiesta" type="datetime-local" value={form.dataRichiesta ? form.dataRichiesta.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
+                </label>
+                <label className="font-semibold">Data pianificata
+                  <input name="dataPianificata" type="datetime-local" value={form.dataPianificata ? form.dataPianificata.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
+                </label>
+                <label className="font-semibold">Note
+                  <input name="note" value={form.note || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
+                </label>
+                <div className="flex gap-2 mt-4">
+                  <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={saving}>Salva</button>
+                  <button type="button" className="bg-gray-400 text-white px-4 py-2 rounded" onClick={() => setEditMode(false)} disabled={saving}>Annulla</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+        {!editMode && (
+          <>
+            <div className="bg-white rounded shadow p-6 mb-6 flex flex-col md:flex-row gap-6">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2">{spedizione.aziendaDestinazione}</h2>
+                <div className="mb-2 text-sm text-gray-700 font-semibold flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">location_on</span>
+                  <span><b>Indirizzo</b><br /><span className="text-gray-600 font-normal">{spedizione.indirizzo}</span></span>
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">category</span>
+                  <span>Tipo: <b>{spedizione.tipo}</b></span>
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">straighten</span>
+                  <span>Distanza: <span className="text-gray-500">{distanza !== null ? distanza.toFixed(2) + ' km' : '...'}</span></span>
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">event</span>
+                  <span>Data assegnata: {spedizione.dataPianificata ? new Date(spedizione.dataPianificata).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}</span>
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">event_available</span>
+                  <span>Data richiesta: {spedizione.dataRichiesta ? new Date(spedizione.dataRichiesta).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}</span>
+                </div>
+                <div className="mt-4 bg-gray-50 rounded p-3 flex items-center gap-2">
+                  <span className="material-icons text-gray-400 align-middle">chat_bubble_outline</span>
+                  <span>{spedizione.note || "Nessuna nota"}</span>
+                </div>
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                {/* Mappa con react-leaflet */}
+                <div className="w-full h-56 bg-gray-100 rounded flex items-center justify-center">
+                  <MapContainer center={coords} zoom={13} style={{ height: "220px", width: "100%", borderRadius: "0.5rem" }} scrollWheelZoom={false}>
+                    <MapCenter coords={coords} />
+                    <TileLayer
+                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={coords} icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png', shadowSize: [41, 41] })}>
+                      <Popup>
+                        {spedizione.aziendaDestinazione}<br />{spedizione.indirizzo}
+                      </Popup>
+                    </Marker>
+                  </MapContainer>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded shadow p-6 mb-6">
+              <div className="flex flex-col md:flex-row items-stretch gap-6">
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg mb-2">Informazioni Veicolo</h3>
+                  <div className="text-gray-500 text-sm font-semibold mb-1">Note</div>
+                  <div className="mb-2 text-base text-black">{spedizione.note || "-"}</div>
+                </div>
+                <div className="flex-1 flex flex-col items-center justify-center">
+                  <div className="text-xs font-bold text-blue-700 mb-1">AUTISTA</div>
+                  <div className="text-2xl font-bold mb-2 text-black text-center">{spedizione.autista && spedizione.autista.nome ? spedizione.autista.nome : <span className="text-gray-400 text-base">Nessun autista assegnato</span>}</div>
+                  <button
+                    className="bg-blue-50 hover:bg-blue-100 text-blue-700 px-8 py-3 rounded-lg font-semibold shadow flex flex-col items-center gap-1 transition-all duration-150 mt-2"
+                    style={{ minWidth: '180px' }}
+                    onClick={async () => {
+                      if (!spedizione.autista || !spedizione.autista.id) return;
+                      const res = await fetch('http://localhost:3001/api/spedizioni');
+                      const all = await res.json();
+                      const attive = all.filter(s => s.autista && s.autista.id === spedizione.autista.id && ["In attesa","In consegna"].includes(s.status));
+                      setSpedizioniAutista(attive);
+                      setShowAutistaModal(true);
+                    }}
+                    disabled={!spedizione.autista || !spedizione.autista.id}
+                  >
+                    <span className="material-icons text-blue-700 text-2xl">person</span>
+                    <span className="text-xs font-medium">Info Autista</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded shadow p-6 mb-6">
+              <h3 className="font-bold text-lg mb-2">Conferma Consegna</h3>
+              <div className="mb-2">Foto<br />
+                {spedizione.fotoConferma ? (
+                  <img src={spedizione.fotoConferma} alt="Foto conferma" className="max-w-xs rounded" />
+                ) : (
+                  <img src="https://placehold.co/100x100?text=Foto" alt="Placeholder" className="max-w-xs rounded border" />
+                )}
+              </div>
+              <div className="mb-2">Firma<br /><input type="text" disabled className="border p-2 rounded w-full" /></div>
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }

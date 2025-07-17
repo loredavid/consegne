@@ -6,7 +6,7 @@
     "dataPianificata": "2025-07-03T08:46",
     "tipo": "consegna",
     "status": "In attesa",
-    "daPianificare": true,
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
       "mail": "lorena.stolfo@elteksrl.it",
@@ -15,7 +15,8 @@
     "note": "Urgente\n3 ",
     "id": 1752734807579,
     "autista": {
-      "nome": "Anna Neri"
+      "id": 2,
+      "nome": "ALL TRANSPORT"
     }
   },
   {
@@ -35,40 +36,48 @@
     "id": 1752734807580
   },
   {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Udine, 5, 33082 Azzano Decimo PN",
+    "aziendaDestinazione": "ALINA ZAVATE",
+    "indirizzo": "Via Comugne Di Mezzo, 1, 33082 Azzano Decimo",
     "dataRichiesta": "2025-07-05T11:00",
     "dataPianificata": "2025-07-05T11:00",
     "tipo": "consegna",
-    "status": "Fallita",
-    "daPianificare": true,
+    "status": "In attesa",
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
       "mail": "lorena.stolfo@elteksrl.it",
       "role": "richiedente"
     },
     "note": "Fragile",
-    "id": 1752734807581
+    "id": 1752734807581,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
+    }
   },
   {
-    "aziendaDestinazione": "EVOKA GROUP S.P.A.",
-    "indirizzo": "Via Venezia, 12, 33077 Sacile PN",
+    "aziendaDestinazione": "AB PLAST",
+    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
     "dataRichiesta": "2025-07-06T14:15",
     "dataPianificata": "2025-07-06T14:15",
     "tipo": "ritiro",
     "status": "In attesa",
-    "daPianificare": true,
+    "daPianificare": false,
     "richiedente": {
       "nome": "Cristina Zaccarin",
       "mail": "cristina.zaccarin@elteksrl.it",
       "role": "richiedente"
     },
     "note": "",
-    "id": 1752734807582
+    "id": 1752734807582,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
+    }
   },
   {
-    "aziendaDestinazione": "FRIULPACK S.R.L.",
-    "indirizzo": "Via Trieste, 8, 33085 Maniago PN",
+    "aziendaDestinazione": "ANTICA CORDERIA CORAI SNC",
+    "indirizzo": "Via A. Gabelli, 2, 33084 Cordenons PN",
     "dataRichiesta": "2025-07-07T16:00",
     "dataPianificata": "2025-07-07T16:00",
     "tipo": "consegna",
@@ -97,5 +106,25 @@
     },
     "note": "",
     "id": 1752750543903
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-07-17T15:35",
+    "dataPianificata": "2025-07-17T15:35",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1752759067738,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   }
 ]

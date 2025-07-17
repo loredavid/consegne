@@ -77,17 +77,38 @@ export default function Chat() {
         ) : error ? (
           <div className="text-red-600">{error}</div>
         ) : (
-          messages.map(msg => (
-            <div key={msg.id} className={`mb-2 flex ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "justify-end" : "justify-start"}`}>
-              <div className="flex flex-col items-start max-w-xl">
-                <span className={`font-bold mb-1 text-sm ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "text-blue-700" : "text-gray-700"}`}>{msg.sender?.nome}</span>
-                <div className={`px-4 py-3 rounded-lg break-words ${msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase() ? "bg-blue-100 text-blue-900" : "bg-gray-100 text-gray-800"}`}>
-                  <span>{msg.text}</span>
-                  <span className="ml-2 text-xs text-gray-400">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+          messages.map(msg => {
+            // Messaggi di sistema
+            if (msg.sender?.nome === "Sistema") {
+              return (
+                <div key={msg.id} className="mb-4 flex justify-center">
+                  <div className="flex flex-col items-center w-full">
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="material-icons text-gray-400 text-xl">info</span>
+                      <span className="font-semibold text-gray-500 text-base">Messaggio di sistema</span>
+                    </div>
+                    <div className="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg mt-2 text-center max-w-2xl shadow" style={{ whiteSpace: 'pre-line' }}>
+                      {msg.text}
+                      <span className="ml-2 text-xs text-gray-400">{msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString() : ""}</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+            // Messaggi utente
+            const isMine = msg.sender?.nome?.trim().toLowerCase() === user?.nome?.trim().toLowerCase();
+            return (
+              <div key={msg.id} className={`mb-2 flex ${isMine ? "justify-end" : "justify-start"}`}>
+                <div className="flex flex-col items-start max-w-xl">
+                  <span className={`font-bold mb-1 text-sm ${isMine ? "text-blue-700" : "text-gray-700"}`}>{msg.sender?.nome}</span>
+                  <div className={`px-4 py-3 rounded-lg break-words ${isMine ? "bg-blue-100 text-blue-900" : "bg-gray-100 text-gray-800"}`}>
+                    <span>{msg.text}</span>
+                    <span className="ml-2 text-xs text-gray-400">{msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString() : ""}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
+            );
+          })
         )}
         <div ref={messagesEndRef} />
       </div>

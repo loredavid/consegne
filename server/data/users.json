@@ -20,7 +20,7 @@
     "username": "Fabiola",
     "password": "pianificatore",
     "role": "pianificatore",
-    "nome": "Fabiola Nganga",
+    "nome": "Fabiola",
     "mail": "logistica2@elteksrl.it"
   },
   {
@@ -28,15 +28,23 @@
     "username": "Lorena",
     "password": "richiedente",
     "role": "richiedente",
-    "nome": "Lorena Stolfo",
+    "nome": "Lorena",
     "mail": "lorena.stolfo@elteksrl.it"
   },
   {
     "username": "Cristina",
     "password": "richiedente",
-    "nome": "Cristina Zaccarin",
+    "nome": "Cristina",
     "mail": "cristina.zaccarin@elteksrl.it",
     "role": "richiedente",
     "id": 1752734734308
+  },
+  {
+    "username": "E/A",
+    "password": "autista",
+    "nome": "Ernesto/Andrea",
+    "mail": "autista2.eltek@gmail.com",
+    "role": "autista",
+    "id": 1752761316202
   }
 ]

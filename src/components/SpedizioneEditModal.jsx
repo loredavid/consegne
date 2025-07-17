@@ -1,15 +1,24 @@
 import { useState, useEffect } from "react";
-import { initialUsers } from "../data/users";
 
 export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
-  const [form, setForm] = useState({ ...spedizione });
+  // Inizializza form con la destinazione salvata
+  const [form, setForm] = useState(() => {
+    // Se la spedizione ha indirizzo e aziendaDestinazione, mantieni questi valori
+    return {
+      ...spedizione,
+      indirizzo: spedizione.indirizzo || "",
+      aziendaDestinazione: spedizione.aziendaDestinazione || ""
+    };
+  });
   const [posizioni, setPosizioni] = useState([]);
   const [autisti, setAutisti] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3001/api/posizioni")
       .then(res => res.json())
       .then(data => setPosizioni(data));
-    setAutisti(initialUsers.filter(u => u.role === "autista"));
+    fetch("http://localhost:3001/api/utenti")
+      .then(res => res.json())
+      .then(data => setAutisti(data.filter(u => u.role === "autista")));
   }, []);
 
   const handleChange = e => {
@@ -55,14 +64,16 @@ export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
             <label className="font-semibold">Autista assegnato
               <select
                 name="autista"
-                value={form.autista?.nome || ""}
-                onChange={e => setForm(f => ({ ...f, autista: { ...f.autista, nome: e.target.value } }))}
+                value={form.autista?.id || ""}
+                onChange={e => {
+                  const selected = autisti.find(a => String(a.id) === e.target.value);
+                  setForm(f => ({ ...f, autista: selected ? { id: selected.id, nome: selected.nome } : null }));
+                }}
                 className="border border-blue-200 p-3 rounded-lg w-full mt-2 bg-gray-50 focus:ring-2 focus:ring-blue-300"
-                required
               >
-                <option value="">Seleziona autista...</option>
+                <option value="">Nessun autista assegnato</option>
                 {autisti.map(a => (
-                  <option key={a.id} value={a.nome}>{a.nome}</option>
+                  <option key={a.id} value={a.id}>{a.nome}</option>
                 ))}
               </select>
             </label>

@@ -88,6 +88,27 @@ export default function Pianificazione() {
       fetch("http://localhost:3001/api/spedizioni")
         .then(res => res.json())
         .then(data => setSpedizioni(data));
+
+      // Invia messaggio in chat se la spedizione è stata pianificata (daPianificare diventa false)
+      if (form.daPianificare === false) {
+        const msg = {
+          sender: { nome: "Sistema" },
+          text:
+            `Spedizione pianificata:\n` +
+            `Destinazione: ${form.aziendaDestinazione || "-"}\n` +
+            `Indirizzo: ${form.indirizzo || "-"}\n` +
+            `Data: ${form.dataPianificata ? new Date(form.dataPianificata).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}\n` +
+            `Autista: ${form.autista?.nome || "-"}\n` +
+            `Tipo: ${form.tipo || "-"}\n` +
+            `Richiedente: ${form.richiedente?.nome || form.richiedente || "-"}`,
+          spedizioneId: form.id
+        };
+        await fetch("http://localhost:3001/api/messaggi", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(msg)
+        });
+      }
     } catch {
       setError("Errore nell'aggiornamento della spedizione");
     }
@@ -161,6 +182,7 @@ export default function Pianificazione() {
                   <th className="w-[140px]">STATO</th>
                   <th className="w-[100px]">TIPO</th>
                   <th className="w-[180px]">AUTISTA</th>
+                  <th className="w-[180px]">RICHIEDENTE</th>
                   <th className="w-[60px]">PIANIFICA</th>
                 </tr>
               </thead>
@@ -181,6 +203,7 @@ export default function Pianificazione() {
                       <td className="px-2 py-3">{s.status || "-"}</td>
                       <td className="px-2 py-3">{s.tipo}</td>
                       <td className="px-2 py-3 truncate">{s.autista?.nome || "-"}</td>
+                      <td className="px-2 py-3 truncate">{s.richiedente?.nome || s.richiedente || "-"}</td>
                       <td className="px-2 py-3 text-right">
                         <button className="text-blue-600 hover:text-blue-800 px-2 py-1 border rounded" onClick={e => { e.stopPropagation(); handleEdit(s); }}>Pianifica</button>
                       </td>
@@ -253,6 +276,7 @@ export default function Pianificazione() {
                   <th className="w-[140px]">STATO</th>
                   <th className="w-[100px]">TIPO</th>
                   <th className="w-[180px]">AUTISTA</th>
+                  <th className="w-[180px]">RICHIEDENTE</th>
                   <th className="w-[60px]">PIANIFICA</th>
                 </tr>
               </thead>
@@ -273,6 +297,7 @@ export default function Pianificazione() {
                       <td className="px-2 py-3">{s.status || "-"}</td>
                       <td className="px-2 py-3">{s.tipo}</td>
                       <td className="px-2 py-3 truncate">{s.autista?.nome || "-"}</td>
+                      <td className="px-2 py-3 truncate">{s.richiedente?.nome || s.richiedente || "-"}</td>
                       <td className="px-2 py-3 text-right">
                         <button className="text-blue-600 hover:text-blue-800 px-2 py-1 border rounded" onClick={e => { e.stopPropagation(); handleEdit(s); }}>Pianifica</button>
                       </td>
