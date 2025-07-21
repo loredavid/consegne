@@ -615,5 +615,141 @@
     "tipo": "richiesta",
     "id": 1753091117422,
     "timestamp": "2025-07-21T09:45:17.422Z"
+  },
+  {
+    "sender": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it"
+    },
+    "text": "Prova Messaggio ",
+    "id": 1753096223533,
+    "timestamp": "2025-07-21T11:10:23.533Z"
+  },
+  {
+    "sender": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it"
+    },
+    "text": "sdb",
+    "id": 1753096249989,
+    "timestamp": "2025-07-21T11:10:49.989Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Risposta al messaggio",
+    "replyTo": 1753096223533,
+    "id": 1753096273197,
+    "timestamp": "2025-07-21T11:11:13.197Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: PALAZZETTI LELIO S.P.A. (2025-07-27T16:11)",
+    "tipo": "richiesta",
+    "id": 1753096332112,
+    "timestamp": "2025-07-21T11:12:12.112Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: giovedì 31 luglio 2025 alle ore 16:11\nAutista: -\nTipo: entrambi\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753096332021,
+    "id": 1753096358264,
+    "timestamp": "2025-07-21T11:12:38.264Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: sabato 19 luglio 2025 alle ore 11:44\nAutista: -\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753091054824,
+    "id": 1753096408908,
+    "timestamp": "2025-07-21T11:13:28.908Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: CRISTINA APREOTESE\nIndirizzo: Via Olimpia, 7, 33082 Azzano Decimo PN\nData: lunedì 21 luglio 2025 alle ore 11:45\nAutista: -\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753091117331,
+    "id": 1753096422591,
+    "timestamp": "2025-07-21T11:13:42.591Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: FUTURA ELETTROTECNICA (2025-07-25T13:16)",
+    "tipo": "richiesta",
+    "id": 1753096586128,
+    "timestamp": "2025-07-21T11:16:26.128Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA\nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: lunedì 21 luglio 2025 alle ore 11:40\nAutista: -\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753090841270,
+    "id": 1753096691739,
+    "timestamp": "2025-07-21T11:18:11.739Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: giovedì 17 luglio 2025 alle ore 15:35\nAutista: ALL TRANSPORT\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1752759067738,
+    "id": 1753096698525,
+    "timestamp": "2025-07-21T11:18:18.525Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA\nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: lunedì 21 luglio 2025 alle ore 11:40\nAutista: -\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753090841270,
+    "id": 1753096971855,
+    "timestamp": "2025-07-21T11:22:51.855Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "sfbasfb",
+    "id": 1753099311649,
+    "timestamp": "2025-07-21T12:01:51.649Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "fyjnsfgm",
+    "id": 1753099375542,
+    "timestamp": "2025-07-21T12:02:55.542Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: venerdì 4 luglio 2025 alle ore 09:30\nAutista: ALL TRANSPORT\nTipo: ritiro\nRichiedente: Cristina Zaccarin",
+    "spedizioneId": 1752734807580,
+    "id": 1753100521094,
+    "timestamp": "2025-07-21T12:22:01.094Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: AB PLAST\nIndirizzo: VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO\nData: domenica 6 luglio 2025 alle ore 14:15\nAutista: ALL TRANSPORT\nTipo: ritiro\nRichiedente: Cristina Zaccarin",
+    "spedizioneId": 1752734807582,
+    "id": 1753101179215,
+    "timestamp": "2025-07-21T12:32:59.215Z"
   }
 ]

@@ -12,7 +12,9 @@ import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import GestioneUtenti from "./pages/GestioneUtenti";
 import SpedizioneDettaglio from "./pages/SpedizioneDettaglio";
+import SpedizioneDettaglioMobile from "./pages/SpedizioneDettaglioMobile";
 import PosizioneDettaglio from "./pages/PosizioneDettaglio";
+import ChatMobile from "./pages/ChatMobile";
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
@@ -63,6 +65,16 @@ function App() {
                     <StatoConsegne />
                   </ProtectedRoute>
                 } />
+                <Route path="/chat-mobile" element={
+                  <ProtectedRoute allowedRoles={["admin", "autista"]}>
+                    <ChatMobile />
+                  </ProtectedRoute>
+                } />
+                <Route path="/spedizioni-mobile/:id" element={
+                  <ProtectedRoute allowedRoles={["autista"]}>
+                    <SpedizioneDettaglioMobile />
+                  </ProtectedRoute>
+                } />
                 <Route path="/posizioni" element={
                   <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
                     <Posizioni />
@@ -93,7 +105,12 @@ function App() {
                     <Home />
                   </ProtectedRoute>
                 } />
-              </Routes>
+              <Route path="/chat-mobile" element={
+                <ProtectedRoute allowedRoles={["admin", "autista"]}>
+                  <ChatMobile />
+                </ProtectedRoute>
+              } />
+            </Routes>
             </Layout>
           </SidebarProvider>
         </UnreadMessagesProvider>

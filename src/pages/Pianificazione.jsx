@@ -28,13 +28,18 @@ export default function Pianificazione() {
     if (user && token) {
       // Se c'è una notifica di nuova richiesta, rimuovila entrando in questa pagina
       if (notification?.type === "spedizione") setNotification(null);
-      fetch(`${BASE_URL}/api/spedizioni`, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-        .then(res => res.json())
-        .then(data => setSpedizioni(data));
+      const fetchSpedizioni = () => {
+        fetch(`${BASE_URL}/api/spedizioni`, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => setSpedizioni(data));
+      };
+      fetchSpedizioni();
+      const interval = setInterval(fetchSpedizioni, 2000);
+      return () => clearInterval(interval);
     }
-  }, []);
+  }, [user, token, notification, setNotification]);
 
   useEffect(() => {
     if (user && token) {
@@ -73,6 +78,7 @@ export default function Pianificazione() {
   // Da pianificare: flag daPianificare true
   const daPianificare = spedizioni.filter(s =>
     s.daPianificare === true &&
+    s.status !== "Consegnata" &&
     (search === "" || (s.aziendaDestinazione?.toLowerCase().includes(search.toLowerCase()) || s.status?.toLowerCase().includes(search.toLowerCase()))) &&
     (tipo === "" || s.tipo === tipo) &&
     (autista === "" || (s.autista?.nome === autista))
@@ -80,6 +86,7 @@ export default function Pianificazione() {
   // Pianificate: flag daPianificare false
   const pianificate = spedizioni.filter(s =>
     s.daPianificare === false &&
+    s.status !== "Consegnata" &&
     (search === "" || (s.aziendaDestinazione?.toLowerCase().includes(search.toLowerCase()) || s.status?.toLowerCase().includes(search.toLowerCase()))) &&
     (tipo === "" || s.tipo === tipo) &&
     (autista === "" || (s.autista?.nome === autista))

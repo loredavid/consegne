@@ -36,20 +36,25 @@ export default function Richieste() {
       })
         .then(res => res.json())
         .then(data => setDestinazioni(data));
-      fetch(`${BASE_URL}/api/spedizioni`, {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-        .then(res => res.json())
-        .then(data => setSpedizioni(data));
+      const fetchSpedizioni = () => {
+        fetch(`${BASE_URL}/api/spedizioni`, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => setSpedizioni(data));
+      };
+      fetchSpedizioni();
+      const interval = setInterval(fetchSpedizioni, 2000);
+      return () => clearInterval(interval);
     }
-  }, []);
+  }, [user, token]);
 
   useEffect(() => {
     if (user && token) {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())
@@ -142,8 +147,8 @@ export default function Richieste() {
 
   // Raggruppa richieste per utente e pianificazione
   // Nuova logica: da pianificare e pianificate secondo flag daPianificare
-  const mie = spedizioni.filter(s => s.richiedente && user && s.richiedente.mail === user.mail);
-  const altre = spedizioni.filter(s => (!s.richiedente || (user && s.richiedente.mail !== user.mail)));
+  const mie = spedizioni.filter(s => s.richiedente && user && s.richiedente.mail === user.mail && s.status !== "Consegnata");
+  const altre = spedizioni.filter(s => (!s.richiedente || (user && s.richiedente.mail !== user.mail)) && s.status !== "Consegnata");
   const daPianificare = lista => lista.filter(s => s.daPianificare === true);
   const pianificate = lista => lista.filter(s => s.daPianificare === false);
 
@@ -431,7 +436,7 @@ export default function Richieste() {
         </div>
       )}
       {/* Visualizzazione calendario settimanale */}
-      <SpedizioniCalendar spedizioni={spedizioni.filter(s => s.status === "In attesa" || s.status === "In consegna")}/>
+      <SpedizioniCalendar spedizioni={spedizioni.filter(s => (s.status === "In attesa" || s.status === "In consegna") && s.status !== "Consegnata")}/>
     </div>
   );
 }

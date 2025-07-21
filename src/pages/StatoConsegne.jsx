@@ -78,6 +78,21 @@ export default function StatoConsegne() {
     "Fallita": spedizioniFiltrate.filter(s => s.status === "Fallita"),
   };
 
+  // Funzione per eliminare una spedizione
+  const eliminaSpedizione = async id => {
+    if (!window.confirm("Sei sicuro di voler eliminare questa spedizione?")) return;
+    try {
+      const res = await fetch(`${BASE_URL}/api/spedizioni/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (!res.ok) throw new Error();
+      setSpedizioni(prev => prev.filter(s => s.id !== id));
+    } catch {
+      setError("Errore nell'eliminazione della spedizione");
+    }
+  };
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Stato Consegne</h1>
@@ -122,16 +137,22 @@ export default function StatoConsegne() {
                     <th className="text-left px-2">Tipo</th>
                     <th className="text-left px-2">Autista</th>
                     <th className="text-left px-2">Richiedente</th>
+                    {stato === "Fallita" && <th className="text-left px-2">Azioni</th>}
                   </tr>
                 </thead>
                 <tbody>
                   {lista.map(s => (
-                    <tr key={s.id} className="bg-white hover:bg-gray-50 rounded shadow-sm cursor-pointer" onClick={() => navigate(`/spedizioni/${s.id}`)}>
-                      <td className="px-2 py-2 text-sm">{s.dataRichiesta ? new Date(s.dataRichiesta).toLocaleString() : ""}</td>
-                      <td className="px-2 py-2 text-sm">{s.aziendaDestinazione || s.indirizzo}</td>
-                      <td className="px-2 py-2 text-sm">{s.tipo}</td>
-                      <td className="px-2 py-2 text-sm">{s.autista?.nome || "-"}</td>
-                      <td className="px-2 py-2 text-sm">{s.richiedente?.nome || "-"}</td>
+                    <tr key={s.id} className="bg-white hover:bg-gray-50 rounded shadow-sm cursor-pointer">
+                      <td className="px-2 py-2 text-sm" onClick={() => navigate(`/spedizioni/${s.id}`)}>{s.dataRichiesta ? new Date(s.dataRichiesta).toLocaleString() : ""}</td>
+                      <td className="px-2 py-2 text-sm" onClick={() => navigate(`/spedizioni/${s.id}`)}>{s.aziendaDestinazione || s.indirizzo}</td>
+                      <td className="px-2 py-2 text-sm" onClick={() => navigate(`/spedizioni/${s.id}`)}>{s.tipo}</td>
+                      <td className="px-2 py-2 text-sm" onClick={() => navigate(`/spedizioni/${s.id}`)}>{s.autista?.nome || "-"}</td>
+                      <td className="px-2 py-2 text-sm" onClick={() => navigate(`/spedizioni/${s.id}`)}>{s.richiedente?.nome || "-"}</td>
+                      {stato === "Fallita" && (
+                        <td className="px-2 py-2 text-sm">
+                          <button className="bg-red-600 text-white px-3 py-1 rounded" onClick={e => { e.stopPropagation(); eliminaSpedizione(s.id); }}>Elimina</button>
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>

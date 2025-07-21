@@ -11,7 +11,7 @@ const menuItems = [
   { to: "/richieste", label: "Richieste", icon: <Mail size={20} /> },
   { to: "/stato-consegne", label: "Stato Consegne", icon: <Clock size={20} /> },
   { to: "/posizioni", label: "Posizioni", icon: <MapPin size={20} /> },
-  { to: "/autista", label: "Autista", icon: <Truck size={20} /> },
+  // { to: "/autista", label: "Autista", icon: <Truck size={20} /> }, // nascosta
   { to: "/chat", label: "Chat", icon: <MessageCircle size={20} /> },
   { to: "/admin", label: "Amministratore", icon: <Database size={20} /> },
 ];
@@ -26,9 +26,9 @@ export default function Sidebar() {
   // Definisci le pagine accessibili per ruolo
   const canAccess = (item) => {
     if (!user) return false;
-    // Sidebar per autista: solo Autista, Chat, Posizioni
+    // Sidebar per autista: solo Chat, Posizioni
     if (user.role === "autista") {
-      return ["/autista", "/chat", "/posizioni"].includes(item.to);
+      return ["/chat", "/posizioni"].includes(item.to);
     }
     // Admin: tutte tranne gestione utenti se non admin
     if (item.to === "/admin" && user.role !== "admin") return false;
