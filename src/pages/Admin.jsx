@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
+  
   // Funzione export CSV
   function exportCSV(data, columns, filename) {
     const header = columns.join(';');
@@ -26,8 +30,7 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
-import { useEffect, useState } from "react";
-import { useNotification } from "../context/NotificationContext";
+
 
 function isMobile() {
   if (typeof window === "undefined") return false;
@@ -36,6 +39,7 @@ function isMobile() {
 
 export default function Admin() {
   const { setNotification } = useNotification();
+  const { user, token } = useAuth();
   const [mobile, setMobile] = useState(false);
   const [utenti, setUtenti] = useState([]);
   const [spedizioni, setSpedizioni] = useState([]);
@@ -47,19 +51,50 @@ export default function Admin() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/utenti")
-      .then(res => res.json())
-      .then(data => setUtenti(data));
-    fetch("http://localhost:3001/api/spedizioni")
-      .then(res => res.json())
-      .then(data => setSpedizioni(data));
-    fetch("http://localhost:3001/api/posizioni")
-      .then(res => res.json())
-      .then(data => setPosizioni(data));
-    fetch("http://localhost:3001/api/messaggi")
-      .then(res => res.json())
-      .then(data => setMessaggi(data));
-  }, []);
+    console.log('Admin effect', user, token);
+    if (!user || typeof token !== 'string' || token.trim() === '') {
+      console.log('Early return: user or token missing', user, token);
+      return;
+    }
+    const fetchAll = async () => {
+      try {
+        console.log('FETCH utenti header:', { Authorization: `Bearer ${token}` });
+        const utentiRes = await fetch("http://localhost:3001/api/utenti", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!utentiRes.ok) throw new Error('Utenti fetch failed: ' + utentiRes.status);
+        const utentiData = await utentiRes.json();
+        setUtenti(utentiData);
+
+        console.log('FETCH spedizioni header:', { Authorization: `Bearer ${token}` });
+        const spedizioniRes = await fetch("http://localhost:3001/api/spedizioni", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!spedizioniRes.ok) throw new Error('Spedizioni fetch failed: ' + spedizioniRes.status);
+        const spedizioniData = await spedizioniRes.json();
+        setSpedizioni(spedizioniData);
+
+        console.log('FETCH posizioni header:', { Authorization: `Bearer ${token}` });
+        const posizioniRes = await fetch("http://localhost:3001/api/posizioni", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!posizioniRes.ok) throw new Error('Posizioni fetch failed: ' + posizioniRes.status);
+        const posizioniData = await posizioniRes.json();
+        setPosizioni(posizioniData);
+
+        console.log('FETCH messaggi header:', { Authorization: `Bearer ${token}` });
+        const messaggiRes = await fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!messaggiRes.ok) throw new Error('Messaggi fetch failed: ' + messaggiRes.status);
+        const messaggiData = await messaggiRes.json();
+        setMessaggi(messaggiData);
+      } catch (err) {
+        setNotification({ text: 'Errore: ' + err.message });
+      }
+    };
+    fetchAll();
+  }, [user, token]);
 
   return (
     <div className={mobile ? "p-0 max-w-full mx-auto w-full flex flex-col items-center" : "px-0 max-w-6xl mx-auto w-full"}>
@@ -74,7 +109,7 @@ export default function Admin() {
           <table className="min-w-[1000px] w-full table-auto border text-base">
             <thead className="bg-gray-100 sticky top-0 z-10">
               <tr>
-                {utenti.length > 0 && Object.keys(utenti[0]).map(key => (
+                {utenti.length > 0 && Object.keys(utenti[0]).filter(key => key !== 'password').map(key => (
                   <th key={key} className="px-4 py-2 font-semibold text-gray-700 border-b">{key}</th>
                 ))}
               </tr>
@@ -82,7 +117,7 @@ export default function Admin() {
             <tbody>
               {utenti.map((u, idx) => (
                 <tr key={u.id || u.mail || u.nome} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  {Object.keys(utenti[0] || {}).map(key => (
+                  {Object.keys(utenti[0] || {}).filter(key => key !== 'password').map(key => (
                     <td key={key} className="px-6 py-3 border-b align-top max-w-[400px] break-words">
                       {typeof u[key] === 'object' && u[key] !== null ? (
                         <table className="bg-gray-100 rounded text-xs mt-1">

@@ -17,7 +17,7 @@ function MapCenter({ coords }) {
 export default function SpedizioneDettaglio() {
   const { id } = useParams();
   const [spedizione, setSpedizione] = useState(null);
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const [form, setForm] = useState(null);
@@ -33,30 +33,38 @@ export default function SpedizioneDettaglio() {
   const { setNotification } = useNotification();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/spedizioni`)
-      .then(res => res.json())
-      .then(data => {
-        const found = data.find(s => String(s.id) === String(id));
-        setSpedizione(found);
-        setForm(found);
-        setLoading(false);
-        // Geocoding indirizzo destinazione
-        if (found?.indirizzo) {
-          fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(found.indirizzo)}`)
-            .then(res => res.json())
-            .then(geo => {
-              if (geo && geo.length > 0) {
-                setCoords([parseFloat(geo[0].lat), parseFloat(geo[0].lon)]);
-              }
-            });
-        }
-      });
+    if (user && token) {
+      fetch(`http://localhost:3001/api/spedizioni`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => {
+          const found = data.find(s => String(s.id) === String(id));
+          setSpedizione(found);
+          setForm(found);
+          setLoading(false);
+          // Geocoding indirizzo destinazione
+          if (found?.indirizzo) {
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(found.indirizzo)}`)
+              .then(res => res.json())
+              .then(geo => {
+                if (geo && geo.length > 0) {
+                  setCoords([parseFloat(geo[0].lat), parseFloat(geo[0].lon)]);
+                }
+              });
+          }
+        });
+    }
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/posizioni")
-      .then(res => res.json())
-      .then(data => setPosizioni(data));
+    if (user && token) {
+      fetch("http://localhost:3001/api/posizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => setPosizioni(data));
+    }
   }, []);
 
   // Calcolo distanza haversine
@@ -98,9 +106,10 @@ export default function SpedizioneDettaglio() {
     setSaving(true);
     setError("");
     try {
+      if (!user || !token) throw new Error("Non autenticato");
       await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(form)
       });
       setSpedizione(form);
@@ -113,29 +122,33 @@ export default function SpedizioneDettaglio() {
   };
 
   useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
-        .then(res => res.json())
-        .then(data => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach(msg => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
-        });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach((msg) => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   if (loading) return <div className="p-8">Caricamento...</div>;
   if (!spedizione) return <div className="p-8 text-red-600">Spedizione non trovata</div>;
@@ -201,10 +214,11 @@ export default function SpedizioneDettaglio() {
                       setSaving(true);
                       setError("");
                       try {
+                        if (!user || !token) throw new Error("Non autenticato");
                         const updated = { ...spedizione, status: stato };
                         await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
                           method: "PUT",
-                          headers: { "Content-Type": "application/json" },
+                          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                           body: JSON.stringify(updated)
                         });
                         setSpedizione(updated);
@@ -374,8 +388,10 @@ export default function SpedizioneDettaglio() {
                     className="bg-blue-50 hover:bg-blue-100 text-blue-700 px-8 py-3 rounded-lg font-semibold shadow flex flex-col items-center gap-1 transition-all duration-150 mt-2"
                     style={{ minWidth: '180px' }}
                     onClick={async () => {
-                      if (!spedizione.autista || !spedizione.autista.id) return;
-                      const res = await fetch('http://localhost:3001/api/spedizioni');
+                      if (!spedizione.autista || !spedizione.autista.id || !user || !token) return;
+                      const res = await fetch('http://localhost:3001/api/spedizioni', {
+                        headers: { Authorization: `Bearer ${token}` }
+                      });
                       const all = await res.json();
                       const attive = all.filter(s => s.autista && s.autista.id === spedizione.autista.id && ["In attesa","In consegna"].includes(s.status));
                       setSpedizioniAutista(attive);

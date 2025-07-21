@@ -82,7 +82,7 @@
     "dataPianificata": "2025-07-07T16:00",
     "tipo": "consegna",
     "status": "In consegna",
-    "daPianificare": true,
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
       "mail": "lorena.stolfo@elteksrl.it",
@@ -98,7 +98,7 @@
     "dataPianificata": "2025-07-18T13:08",
     "tipo": "consegna",
     "status": "In attesa",
-    "daPianificare": true,
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
       "mail": "lorena.stolfo@elteksrl.it",
@@ -126,5 +126,53 @@
       "id": 2,
       "nome": "ALL TRANSPORT"
     }
+  },
+  {
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
+    "dataRichiesta": "2025-07-21T11:40",
+    "dataPianificata": "2025-07-21T11:40",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1753090841270
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-07-19T11:44",
+    "dataPianificata": "2025-07-19T11:44",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1753091054824
+  },
+  {
+    "aziendaDestinazione": "CRISTINA APREOTESE",
+    "indirizzo": "Via Olimpia, 7, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-07-21T11:45",
+    "dataPianificata": "2025-07-21T11:45",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1753091117331
   }
 ]

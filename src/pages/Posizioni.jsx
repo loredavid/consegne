@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Posizioni() {
   const MAX_LOGO_SIZE = 1024 * 1024; // 1MB
@@ -22,43 +23,52 @@ export default function Posizioni() {
   const fileInputRef = useRef();
   const navigate = useNavigate();
   const { setNotification } = useNotification();
+  const { user, token } = useAuth();
 
   useEffect(() => {
-    setLoading(true);
-    fetch("http://localhost:3001/api/posizioni")
-      .then(res => res.json())
-      .then(data => {
-        // Ordina alfabeticamente per azienda
-        data.sort((a, b) => a.azienda.localeCompare(b.azienda));
-        setPosizioni(data);
-        setLoading(false);
-      });
-  }, [showAdd, showEdit, saving, success]);
-
-  useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
+    if (user && token) {
+      setLoading(true);
+      fetch("http://localhost:3001/api/posizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
         .then(res => res.json())
         .then(data => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach(msg => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
+          // Ordina alfabeticamente per azienda
+          data.sort((a, b) => a.azienda.localeCompare(b.azienda));
+          setPosizioni(data);
+          setLoading(false);
         });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    }
+  }, [user, token, showAdd, showEdit, saving, success]);
+
+  useEffect(() => {
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach(msg => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   const resetForm = () => {
     setForm({ azienda: "", indirizzo: "", referente: "", telefono: "", email: "", logo: "" });
@@ -87,11 +97,13 @@ export default function Posizioni() {
     setSuccess("");
     if (!validateLogo(logoFile)) { setSaving(false); return; }
     try {
+      if (!user || !token) throw new Error("Non autenticato");
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => { if (k !== "logo") data.append(k, v); });
       if (logoFile) data.append("logo", logoFile);
       const res = await fetch("http://localhost:3001/api/posizioni", {
         method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
         body: data
       });
       if (!res.ok) throw new Error();
@@ -124,11 +136,13 @@ export default function Posizioni() {
     setSuccess("");
     if (!validateLogo(logoFile)) { setSaving(false); return; }
     try {
+      if (!user || !token) throw new Error("Non autenticato");
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => { if (k !== "logo") data.append(k, v); });
       if (logoFile) data.append("logo", logoFile);
       const res = await fetch(`http://localhost:3001/api/posizioni/${editIndex}`, {
         method: "PUT",
+        headers: { Authorization: `Bearer ${token}` },
         body: data
       });
       if (!res.ok) throw new Error();
@@ -147,8 +161,10 @@ export default function Posizioni() {
     setError("");
     setSuccess("");
     try {
+      if (!user || !token) throw new Error("Non autenticato");
       const res = await fetch(`http://localhost:3001/api/posizioni/${editIndex}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
       });
       if (!res.ok) throw new Error();
       setShowEdit(false);

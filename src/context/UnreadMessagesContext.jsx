@@ -9,12 +9,17 @@ export function UnreadMessagesProvider({ children, user }) {
   useEffect(() => {
     let isMounted = true;
     const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
+      if (!user?.token) return;
+      fetch("http://localhost:3001/api/messaggi", {
+        headers: { Authorization: `Bearer ${user.token}` }
+      })
         .then(res => res.json())
         .then(data => {
           if (!isMounted) return;
           // Conta solo i messaggi successivi all'ultimo visto e non inviati dall'utente
-          const newMsgs = data.filter(msg => msg.sender?.mail !== user?.mail && new Date(msg.timestamp).getTime() > lastSeen);
+          const newMsgs = Array.isArray(data)
+            ? data.filter(msg => msg.sender?.mail !== user?.mail && new Date(msg.timestamp).getTime() > lastSeen)
+            : [];
           setUnreadCount(newMsgs.length);
         });
     };

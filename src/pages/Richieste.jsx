@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { useAuth } from "../context/AuthContext";
 import { FaRegClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { SidebarContext } from "../context/LayoutContext.jsx";
 import SpedizioniCalendar from "../components/SpedizioniCalendar";
 import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
 
 function isMobile() {
   if (typeof window === "undefined") return false;
@@ -13,7 +13,7 @@ function isMobile() {
 }
 
 export default function Richieste() {
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const { sidebarOpen } = useContext(SidebarContext);
   const { setNotification } = useNotification();
   const [mobile, setMobile] = useState(false);
@@ -29,38 +29,48 @@ export default function Richieste() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/posizioni")
-      .then(res => res.json())
-      .then(data => setDestinazioni(data));
-    fetch("http://localhost:3001/api/spedizioni")
-      .then(res => res.json())
-      .then(data => setSpedizioni(data));
+    if (user && token) {
+      fetch("http://localhost:3001/api/posizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => setDestinazioni(data));
+      fetch("http://localhost:3001/api/spedizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => setSpedizioni(data));
+    }
   }, []);
 
   useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
-        .then(res => res.json())
-        .then(data => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach(msg => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
-        });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach(msg => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   useEffect(() => {
     setMobile(isMobile());
@@ -72,9 +82,13 @@ export default function Richieste() {
   };
 
   const refreshSpedizioni = () => {
-    fetch("http://localhost:3001/api/spedizioni")
-      .then(res => res.json())
-      .then(data => setSpedizioni(data));
+    if (user && token) {
+      fetch("http://localhost:3001/api/spedizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => setSpedizioni(data));
+    }
   };
 
   const handleSubmit = async e => {
@@ -98,11 +112,23 @@ export default function Richieste() {
       };
       const res = await fetch("http://localhost:3001/api/spedizioni", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(payload)
       });
       if (!res.ok) throw new Error();
       setSuccess("Richiesta di spedizione inviata!");
+      // Invia un messaggio di sistema per aggiornare la pagina Pianificazione
+      try {
+        await fetch("http://localhost:3001/api/messaggi", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({
+            sender: { nome: "Sistema" },
+            text: `Nuova richiesta di spedizione: ${payload.aziendaDestinazione} (${payload.dataRichiesta})`,
+            tipo: "richiesta"
+          })
+        });
+      } catch {}
       setForm({ destinazione: "", dataRichiesta: "", tipo: "consegna", status: "In attesa", note: "" });
       setShowModal(false);
       refreshSpedizioni();
@@ -145,7 +171,10 @@ export default function Richieste() {
   const eliminaSpedizione = async id => {
     if (!window.confirm("Sei sicuro di voler eliminare questa richiesta di spedizione?")) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/spedizioni/${id}`, { method: "DELETE" });
+      const res = await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
       if (!res.ok) throw new Error();
       setSuccess("Richiesta eliminata");
       refreshSpedizioni();

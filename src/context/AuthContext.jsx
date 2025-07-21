@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import bcrypt from "bcryptjs";
 
 const AuthContext = createContext();
 
@@ -20,9 +21,12 @@ export function AuthProvider({ children }) {
     }
   }, [user]);
 
-  // Fetch users from backend on mount
   useEffect(() => {
-    fetch("http://localhost:3001/api/utenti")
+    const token = user?.token;
+    if (!token) return;
+    fetch("http://localhost:3001/api/utenti", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(res => res.json())
       .then(data => {
         setUsers(data);
@@ -32,20 +36,25 @@ export function AuthProvider({ children }) {
         setError("Errore nel caricamento utenti");
         setLoading(false);
       });
-  }, []);
+  }, [user]);
 
   const login = async (mail, password) => {
     try {
-      const res = await fetch("http://localhost:3001/api/utenti");
-      const utenti = await res.json();
-      const found = utenti.find(u => u.mail === mail && u.password === password);
-      if (found) {
-        setUser({ nome: found.nome, role: found.role, mail: found.mail });
-        return true;
-      } else {
+      const res = await fetch("http://localhost:3001/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mail, password })
+      });
+      if (!res.ok) {
         setUser(null);
+        setError("Credenziali non valide");
         return false;
       }
+      const userData = await res.json();
+      // Store all backend fields and token
+      setUser({ ...userData });
+      setError(null);
+      return true;
     } catch {
       setError("Errore di autenticazione");
       return false;
@@ -61,7 +70,10 @@ export function AuthProvider({ children }) {
     try {
       const res = await fetch("http://localhost:3001/api/utenti", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user && user.token ? user.token : localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).token : ''}`
+        },
         body: JSON.stringify(newUser)
       });
       const added = await res.json();
@@ -76,7 +88,10 @@ export function AuthProvider({ children }) {
     try {
       await fetch(`http://localhost:3001/api/utenti/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user && user.token ? user.token : localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).token : ''}`
+        },
         body: JSON.stringify(updated)
       });
       setUsers(prev => prev.map(u => u.id === id ? { ...u, ...updated } : u));
@@ -88,7 +103,12 @@ export function AuthProvider({ children }) {
 
   const deleteUser = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/utenti/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:3001/api/utenti/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user && user.token ? user.token : localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).token : ''}`
+        }
+      });
       setUsers(prev => prev.filter(u => u.id !== id));
       setError(null);
     } catch {
@@ -97,7 +117,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, users, addUser, updateUser, deleteUser, loading, error }}>
+    <AuthContext.Provider value={{ user, token: user?.token, login, logout, users, addUser, updateUser, deleteUser, loading, error }}>
       {children}
     </AuthContext.Provider>
   );

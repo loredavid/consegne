@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import SpedizioneEditModal from "../components/SpedizioneEditModal";
 
@@ -9,7 +10,8 @@ function isMobile() {
 }
 
 export default function Pianificazione() {
-  const { setNotification } = useNotification();
+  const { notification, setNotification } = useNotification();
+  const { user, token } = useAuth();
   const [mobile, setMobile] = useState(false);
   const [spedizioni, setSpedizioni] = useState([]);
   const [editSpedizione, setEditSpedizione] = useState(null);
@@ -22,35 +24,45 @@ export default function Pianificazione() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/spedizioni")
-      .then(res => res.json())
-      .then(data => setSpedizioni(data));
+    if (user && token) {
+      // Se c'è una notifica di nuova richiesta, rimuovila entrando in questa pagina
+      if (notification?.type === "spedizione") setNotification(null);
+      fetch("http://localhost:3001/api/spedizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => setSpedizioni(data));
+    }
   }, []);
 
   useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
-        .then((res) => res.json())
-        .then((data) => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach((msg) => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
-        });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach((msg) => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   // Filtri
   const [search, setSearch] = useState("");
@@ -76,21 +88,24 @@ export default function Pianificazione() {
   const handleCloseModal = () => setEditSpedizione(null);
   const handleSave = async (form) => {
     try {
+      if (!user || !token) throw new Error("Non autenticato");
       const res = await fetch(`http://localhost:3001/api/spedizioni/${form.id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(form)
       });
       if (!res.ok) throw new Error();
       setSuccess("Spedizione aggiornata!");
       setEditSpedizione(null);
       // Aggiorna lista
-      fetch("http://localhost:3001/api/spedizioni")
+      fetch("http://localhost:3001/api/spedizioni", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
         .then(res => res.json())
         .then(data => setSpedizioni(data));
 
       // Invia messaggio in chat se la spedizione è stata pianificata (daPianificare diventa false)
-      if (form.daPianificare === false) {
+      if (form.daPianificare === false && user && token) {
         const msg = {
           sender: { nome: "Sistema" },
           text:
@@ -105,7 +120,7 @@ export default function Pianificazione() {
         };
         await fetch("http://localhost:3001/api/messaggi", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(msg)
         });
       }

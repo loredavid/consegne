@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight } from "lucide-react";
 import homeImage from '../assets/Image 30 giu 2025, 08_12_36.png';
+import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
 import { useUnreadMessages } from "../context/UnreadMessagesContext";
 
@@ -20,6 +21,7 @@ export default function Sidebar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const { unreadCount, markAllRead } = useUnreadMessages();
+  const { notification, setNotification } = useNotification();
 
   // Definisci le pagine accessibili per ruolo
   const canAccess = (item) => {
@@ -65,12 +67,21 @@ export default function Sidebar() {
             key={item.to}
             to={item.to}
             className={`flex items-center gap-2 p-2 rounded hover:bg-gray-100 transition-all duration-200 ${collapsed ? "justify-center" : ""}`}
-            onClick={() => { if (item.to === "/chat") markAllRead(); }}
+            onClick={() => {
+              if (item.to === "/chat") markAllRead();
+              if (item.to === "/pianificazione" && notification?.type === "spedizione") setNotification(null);
+            }}
           >
             {item.icon}
             {item.to === "/chat" && unreadCount > 0 && (
               <span className="ml-1 bg-red-600 text-white rounded-full px-2 py-0.5 text-xs font-bold animate-bounce">
                 {unreadCount}
+              </span>
+            )}
+            {/* Notifica nuova richiesta di spedizione */}
+            {item.to === "/pianificazione" && notification?.type === "spedizione" && (
+              <span className="ml-1 bg-green-600 text-white rounded-full px-2 py-0.5 text-xs font-bold animate-bounce">
+                !
               </span>
             )}
             {!collapsed && <span>{item.label}</span>}

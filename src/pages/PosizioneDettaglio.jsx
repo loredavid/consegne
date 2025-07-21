@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
 
 function MapCenter({ coords }) {
   const map = useMap();
@@ -20,58 +21,71 @@ export default function PosizioneDettaglio() {
   const [coords, setCoords] = useState([45.4642, 9.19]); // default Milano
   const navigate = useNavigate();
   const { setNotification } = useNotification();
+  const { user, token } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/posizioni`)
-      .then(res => res.json())
-      .then(data => {
-        const found = data.find(p => String(p.id) === String(id));
-        setPosizione(found);
-        if (found?.indirizzo) {
-          fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(found.indirizzo)}`)
-            .then(res => res.json())
-            .then(geo => {
-              if (geo && geo.length > 0) {
-                setCoords([parseFloat(geo[0].lat), parseFloat(geo[0].lon)]);
-              }
-            });
-        }
-      });
+    if (user && token) {
+      fetch(`http://localhost:3001/api/posizioni`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => {
+          const found = data.find(p => String(p.id) === String(id));
+          setPosizione(found);
+          if (found?.indirizzo) {
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(found.indirizzo)}`)
+              .then(res => res.json())
+              .then(geo => {
+                if (geo && geo.length > 0) {
+                  setCoords([parseFloat(geo[0].lat), parseFloat(geo[0].lon)]);
+                }
+              });
+          }
+        });
+    }
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/spedizioni`)
-      .then(res => res.json())
-      .then(data => {
-        // Associa spedizioni a questa posizione tramite indirizzo
-        setSpedizioni(data.filter(s => s.indirizzo === posizione?.indirizzo));
-      });
+    if (user && token) {
+      fetch(`http://localhost:3001/api/spedizioni`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => {
+          // Associa spedizioni a questa posizione tramite indirizzo
+          setSpedizioni(data.filter(s => s.indirizzo === posizione?.indirizzo));
+        });
+    }
   }, [posizione]);
 
   useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
-        .then(res => res.json())
-        .then(data => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach(msg => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
-        });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach(msg => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   if (!posizione) return <div className="p-8">Caricamento posizione...</div>;
 

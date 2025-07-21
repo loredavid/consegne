@@ -2,7 +2,7 @@
   {
     "id": 1,
     "username": "lorenzodavid",
-    "password": "admin",
+    "password": "$2b$10$EUgl5GrxnBhpfpDL.EML4uRna0.SpckJaGVolQH0pDmt470wXvW2q",
     "role": "admin",
     "nome": "Lorenzo David",
     "mail": "lorenzo.david@elteksrl.it"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "username": "alltransport",
-    "password": "autista",
+    "password": "$2b$10$zIcWp0qqkbVkHFVa4x0dnuhd1K/ATEe7BCva8cXsbh6bQhoh8Snwm",
     "role": "autista",
     "nome": "ALL TRANSPORT",
     "mail": "autista1.eltek@gmail.com"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "username": "Fabiola",
-    "password": "pianificatore",
+    "password": "$2b$10$p4YyCsrrxWrFfthExbHjIOxqd1BVTQk.AdGI4E6h3Dki3QtmMiHHi",
     "role": "pianificatore",
     "nome": "Fabiola",
     "mail": "logistica2@elteksrl.it"
@@ -26,14 +26,14 @@
   {
     "id": 4,
     "username": "Lorena",
-    "password": "richiedente",
+    "password": "$2b$10$Uj0.1.Tai0TSyYIW25sYHO6Fzk./GcpXRopAaQJLkEDIJvaQ/aeWS",
     "role": "richiedente",
     "nome": "Lorena",
     "mail": "lorena.stolfo@elteksrl.it"
   },
   {
     "username": "Cristina",
-    "password": "richiedente",
+    "password": "$2b$10$YEzzuNzGtf274oGrC5djIO2AWqL4nXlOXjYunJOYaWIA7bKxF5YhO",
     "nome": "Cristina",
     "mail": "cristina.zaccarin@elteksrl.it",
     "role": "richiedente",
@@ -41,7 +41,7 @@
   },
   {
     "username": "E/A",
-    "password": "autista",
+    "password": "$2b$10$QESwe2kbegTZTUhJ5ad3DeEquj.kuPo7GLx5VrNuh.hU51/DB1Otu",
     "nome": "Ernesto/Andrea",
     "mail": "autista2.eltek@gmail.com",
     "role": "autista",

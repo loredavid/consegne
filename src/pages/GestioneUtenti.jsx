@@ -1,41 +1,46 @@
 import { useState, useEffect } from "react";
-import { useAuth } from "../context/AuthContext";
 import { User } from "lucide-react";
 import { useNotification } from "../context/NotificationContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function GestioneUtenti() {
-  const { user, users, addUser, updateUser, deleteUser, loading, error } = useAuth();
+  const { user, token, users, addUser, updateUser, deleteUser, loading, error } = useAuth();
   const { setNotification } = useNotification();
   const [form, setForm] = useState({ username: "", password: "", nome: "", mail: "", ruolo: "admin" });
   const [editId, setEditId] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [actionUserId, setActionUserId] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
-    let lastCount = 0;
-    const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
-        .then(res => res.json())
-        .then(data => {
-          if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
-            const newMsgs = data.slice(lastCount);
-            newMsgs.forEach(msg => {
-              setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-            });
-          }
-          lastCount = data.length;
-        });
-    };
-    fetchMessages();
-    const interval = setInterval(fetchMessages, 2000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, [setNotification]);
+    if (user && token) {
+      let isMounted = true;
+      let lastCount = 0;
+      const fetchMessages = () => {
+        fetch("http://localhost:3001/api/messaggi", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (!isMounted) return;
+            if (lastCount > 0 && data.length > lastCount) {
+              const newMsgs = data.slice(lastCount);
+              newMsgs.forEach(msg => {
+                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+              });
+            }
+            lastCount = data.length;
+          });
+      };
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 2000);
+      return () => {
+        isMounted = false;
+        clearInterval(interval);
+      };
+    }
+  }, [setNotification, user, token]);
 
   if (!user || user.role !== "admin") return <div className="p-8 text-center text-red-600">Accesso negato</div>;
 
@@ -152,7 +157,26 @@ export default function GestioneUtenti() {
                 <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Password
-                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required disabled={loading} />
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    value={form.password}
+                    onChange={handleChange}
+                    placeholder="Password"
+                    className="border p-2 rounded w-full mt-1 pr-10"
+                    required
+                    disabled={loading}
+                  />
+                  <button
+                    type="button"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-gray-500"
+                    onClick={() => setShowPassword(v => !v)}
+                    tabIndex={-1}
+                  >
+                    {showPassword ? "Nascondi" : "Mostra"}
+                  </button>
+                </div>
               </label>
               <label className="text-sm font-semibold">Nome
                 <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required disabled={loading} />
@@ -186,7 +210,26 @@ export default function GestioneUtenti() {
                 <input name="username" value={form.username} onChange={handleChange} placeholder="Username" className="border p-2 rounded w-full mt-1" required disabled={loading} />
               </label>
               <label className="text-sm font-semibold">Password
-                <input name="password" value={form.password} onChange={handleChange} placeholder="Password" className="border p-2 rounded w-full mt-1" required disabled={loading} />
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    value={form.password}
+                    onChange={handleChange}
+                    placeholder="Password"
+                    className="border p-2 rounded w-full mt-1 pr-10"
+                    required
+                    disabled={loading}
+                  />
+                  <button
+                    type="button"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-gray-500"
+                    onClick={() => setShowPassword(v => !v)}
+                    tabIndex={-1}
+                  >
+                    {showPassword ? "Nascondi" : "Mostra"}
+                  </button>
+                </div>
               </label>
               <label className="text-sm font-semibold">Nome
                 <input name="nome" value={form.nome} onChange={handleChange} placeholder="Nome" className="border p-2 rounded w-full mt-1" required disabled={loading} />

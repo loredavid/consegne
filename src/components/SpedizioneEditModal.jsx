@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
+  const { token } = useAuth();
   // Inizializza form con la destinazione salvata
   const [form, setForm] = useState(() => {
     // Se la spedizione ha indirizzo e aziendaDestinazione, mantieni questi valori
@@ -13,10 +15,14 @@ export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
   const [posizioni, setPosizioni] = useState([]);
   const [autisti, setAutisti] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/api/posizioni")
+    fetch("http://localhost:3001/api/posizioni", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(res => res.json())
       .then(data => setPosizioni(data));
-    fetch("http://localhost:3001/api/utenti")
+    fetch("http://localhost:3001/api/utenti", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(res => res.json())
       .then(data => setAutisti(data.filter(u => u.role === "autista")));
   }, []);

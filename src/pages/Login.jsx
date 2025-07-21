@@ -15,19 +15,25 @@ export default function Login() {
     let isMounted = true;
     let lastCount = 0;
     const fetchMessages = () => {
-      fetch("http://localhost:3001/api/messaggi")
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user?.token) return;
+      fetch("http://localhost:3001/api/messaggi", {
+        headers: { Authorization: `Bearer ${user.token}` }
+      })
         .then(res => res.json())
         .then(data => {
           if (!isMounted) return;
-          if (lastCount > 0 && data.length > lastCount) {
+          if (Array.isArray(data) && lastCount > 0 && data.length > lastCount) {
             const newMsgs = data.slice(lastCount);
             newMsgs.forEach(msg => {
               setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
             });
           }
-          lastCount = data.length;
+          lastCount = Array.isArray(data) ? data.length : 0;
         });
     };
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.token) return;
     fetchMessages();
     const interval = setInterval(fetchMessages, 2000);
     return () => {
@@ -41,16 +47,13 @@ export default function Login() {
     const success = await login(mail, password);
     if (success) {
       setError("");
-      const found = users.find(u => u.mail === mail && u.password === password);
-      if (found) {
-        if (found.role === "admin") navigate("/");
-        else if (found.role === "autista") navigate("/autista");
-        else if (found.role === "pianificatore") navigate("/pianificazione");
-        else if (found.role === "richiedente") navigate("/richieste");
-        else navigate("/");
-      } else {
-        navigate("/");
-      }
+      // Prendi il ruolo dall'user autenticato
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user?.role === "admin") navigate("/");
+      else if (user?.role === "autista") navigate("/autista");
+      else if (user?.role === "pianificatore") navigate("/pianificazione");
+      else if (user?.role === "richiedente") navigate("/richieste");
+      else navigate("/");
     } else {
       setError("Email o password non corretti.");
     }

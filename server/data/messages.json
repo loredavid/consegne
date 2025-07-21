@@ -169,5 +169,451 @@
     "spedizioneId": 1752734807579,
     "id": 1752762914468,
     "timestamp": "2025-07-17T14:35:14.468Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Prova messaggio",
+    "id": 1753085814581,
+    "timestamp": "2025-07-21T08:16:54.581Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "Risposta.",
+    "id": 1753085836550,
+    "timestamp": "2025-07-21T08:17:16.550Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Prova risposta",
+    "replyTo": 1753085814581,
+    "id": 1753085982578,
+    "timestamp": "2025-07-21T08:19:42.578Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "xfhmk",
+    "replyTo": 1752746372086,
+    "id": 1753086217751,
+    "timestamp": "2025-07-21T08:23:37.751Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089861671,
+    "timestamp": "2025-07-21T09:24:21.671Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089863867,
+    "timestamp": "2025-07-21T09:24:23.867Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089864483,
+    "timestamp": "2025-07-21T09:24:24.483Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089864667,
+    "timestamp": "2025-07-21T09:24:24.667Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089864875,
+    "timestamp": "2025-07-21T09:24:24.875Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089865059,
+    "timestamp": "2025-07-21T09:24:25.059Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089865251,
+    "timestamp": "2025-07-21T09:24:25.251Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089865437,
+    "timestamp": "2025-07-21T09:24:25.437Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089865619,
+    "timestamp": "2025-07-21T09:24:25.619Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089866887,
+    "timestamp": "2025-07-21T09:24:26.887Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089868516,
+    "timestamp": "2025-07-21T09:24:28.516Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089868675,
+    "timestamp": "2025-07-21T09:24:28.675Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089872291,
+    "timestamp": "2025-07-21T09:24:32.291Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089874588,
+    "timestamp": "2025-07-21T09:24:34.588Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089875500,
+    "timestamp": "2025-07-21T09:24:35.500Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089875742,
+    "timestamp": "2025-07-21T09:24:35.742Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089875946,
+    "timestamp": "2025-07-21T09:24:35.946Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089876192,
+    "timestamp": "2025-07-21T09:24:36.192Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089876430,
+    "timestamp": "2025-07-21T09:24:36.430Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089876656,
+    "timestamp": "2025-07-21T09:24:36.656Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089876868,
+    "timestamp": "2025-07-21T09:24:36.868Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089877092,
+    "timestamp": "2025-07-21T09:24:37.092Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089877290,
+    "timestamp": "2025-07-21T09:24:37.290Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089877555,
+    "timestamp": "2025-07-21T09:24:37.555Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089877717,
+    "timestamp": "2025-07-21T09:24:37.717Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089877934,
+    "timestamp": "2025-07-21T09:24:37.934Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089878123,
+    "timestamp": "2025-07-21T09:24:38.123Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089878311,
+    "timestamp": "2025-07-21T09:24:38.311Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089888888,
+    "timestamp": "2025-07-21T09:24:48.888Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1753089896202,
+    "timestamp": "2025-07-21T09:24:56.202Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Provaasdfa",
+    "id": 1753090048618,
+    "timestamp": "2025-07-21T09:27:28.618Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "adgadsgsdg",
+    "replyTo": 1753089896202,
+    "id": 1753090053351,
+    "timestamp": "2025-07-21T09:27:33.351Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "sdgsdgsfgdfhdf",
+    "id": 1753090059594,
+    "timestamp": "2025-07-21T09:27:39.594Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "sdgsfdgfd",
+    "replyTo": 1753090048618,
+    "id": 1753090066644,
+    "timestamp": "2025-07-21T09:27:46.644Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "vz",
+    "id": 1753090240487,
+    "timestamp": "2025-07-21T09:30:40.487Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "xc<b<xcb",
+    "id": 1753090251506,
+    "timestamp": "2025-07-21T09:30:51.506Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "sdgv",
+    "id": 1753090290190,
+    "timestamp": "2025-07-21T09:31:30.190Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "ad",
+    "id": 1753090332704,
+    "timestamp": "2025-07-21T09:32:12.704Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "asdasdas",
+    "replyTo": 1753090066644,
+    "id": 1753090339665,
+    "timestamp": "2025-07-21T09:32:19.665Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: FUTURA ELETTROTECNICA (2025-07-21T11:40)",
+    "tipo": "richiesta",
+    "id": 1753090841374,
+    "timestamp": "2025-07-21T09:40:41.374Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: -\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1753091016951,
+    "timestamp": "2025-07-21T09:43:36.951Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ANTICA CORDERIA CORAI SNC\nIndirizzo: Via A. Gabelli, 2, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: -\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1753091019133,
+    "timestamp": "2025-07-21T09:43:39.133Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ELTEK S.R.L\nIndirizzo: Via Chiavornicco, 26, 33084 Cordenons PN\nData: giovedì 3 luglio 2025 alle ore 08:46\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807579,
+    "id": 1753091024010,
+    "timestamp": "2025-07-21T09:43:44.010Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: TEKNO 31 S.R.L.S. (2025-07-19T11:44)",
+    "tipo": "richiesta",
+    "id": 1753091054914,
+    "timestamp": "2025-07-21T09:44:14.914Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: CRISTINA APREOTESE (2025-07-21T11:45)",
+    "tipo": "richiesta",
+    "id": 1753091117422,
+    "timestamp": "2025-07-21T09:45:17.422Z"
   }
 ]
