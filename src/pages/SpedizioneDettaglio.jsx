@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useAuth } from "../context/AuthContext";
 import { useNotification } from "../context/NotificationContext";
+import { BASE_URL } from "../App";
 
 function MapCenter({ coords }) {
   const map = useMap();
@@ -34,7 +35,7 @@ export default function SpedizioneDettaglio() {
 
   useEffect(() => {
     if (user && token) {
-      fetch(`http://localhost:3001/api/spedizioni`, {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -59,7 +60,7 @@ export default function SpedizioneDettaglio() {
 
   useEffect(() => {
     if (user && token) {
-      fetch("http://localhost:3001/api/posizioni", {
+      fetch(`${BASE_URL}/api/posizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -107,7 +108,7 @@ export default function SpedizioneDettaglio() {
     setError("");
     try {
       if (!user || !token) throw new Error("Non autenticato");
-      await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
+      await fetch(`${BASE_URL}/api/spedizioni/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(form)
@@ -126,7 +127,7 @@ export default function SpedizioneDettaglio() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())
@@ -216,7 +217,7 @@ export default function SpedizioneDettaglio() {
                       try {
                         if (!user || !token) throw new Error("Non autenticato");
                         const updated = { ...spedizione, status: stato };
-                        await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
+                        await fetch(`${BASE_URL}/api/spedizioni/${id}`, {
                           method: "PUT",
                           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                           body: JSON.stringify(updated)
@@ -389,7 +390,7 @@ export default function SpedizioneDettaglio() {
                     style={{ minWidth: '180px' }}
                     onClick={async () => {
                       if (!spedizione.autista || !spedizione.autista.id || !user || !token) return;
-                      const res = await fetch('http://localhost:3001/api/spedizioni', {
+                      const res = await fetch(`${BASE_URL}/api/spedizioni`, {
                         headers: { Authorization: `Bearer ${token}` }
                       });
                       const all = await res.json();

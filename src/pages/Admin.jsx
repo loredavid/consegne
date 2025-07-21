@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
+import { BASE_URL } from "../App";
   
   // Funzione export CSV
   function exportCSV(data, columns, filename) {
@@ -59,7 +60,7 @@ export default function Admin() {
     const fetchAll = async () => {
       try {
         console.log('FETCH utenti header:', { Authorization: `Bearer ${token}` });
-        const utentiRes = await fetch("http://localhost:3001/api/utenti", {
+        const utentiRes = await fetch(`${BASE_URL}/api/utenti`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!utentiRes.ok) throw new Error('Utenti fetch failed: ' + utentiRes.status);
@@ -67,7 +68,7 @@ export default function Admin() {
         setUtenti(utentiData);
 
         console.log('FETCH spedizioni header:', { Authorization: `Bearer ${token}` });
-        const spedizioniRes = await fetch("http://localhost:3001/api/spedizioni", {
+        const spedizioniRes = await fetch(`${BASE_URL}/api/spedizioni`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!spedizioniRes.ok) throw new Error('Spedizioni fetch failed: ' + spedizioniRes.status);
@@ -75,7 +76,7 @@ export default function Admin() {
         setSpedizioni(spedizioniData);
 
         console.log('FETCH posizioni header:', { Authorization: `Bearer ${token}` });
-        const posizioniRes = await fetch("http://localhost:3001/api/posizioni", {
+        const posizioniRes = await fetch(`${BASE_URL}/api/posizioni`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!posizioniRes.ok) throw new Error('Posizioni fetch failed: ' + posizioniRes.status);
@@ -83,7 +84,7 @@ export default function Admin() {
         setPosizioni(posizioniData);
 
         console.log('FETCH messaggi header:', { Authorization: `Bearer ${token}` });
-        const messaggiRes = await fetch("http://localhost:3001/api/messaggi", {
+        const messaggiRes = await fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!messaggiRes.ok) throw new Error('Messaggi fetch failed: ' + messaggiRes.status);

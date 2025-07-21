@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import bcrypt from "bcryptjs";
+import { BASE_URL } from "../App";
 
 const AuthContext = createContext();
 
@@ -24,7 +25,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const token = user?.token;
     if (!token) return;
-    fetch("http://localhost:3001/api/utenti", {
+    fetch(`${BASE_URL}/api/utenti`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -40,7 +41,7 @@ export function AuthProvider({ children }) {
 
   const login = async (mail, password) => {
     try {
-      const res = await fetch("http://localhost:3001/api/login", {
+      const res = await fetch(`${BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mail, password })
@@ -68,7 +69,7 @@ export function AuthProvider({ children }) {
 
   const addUser = async (newUser) => {
     try {
-      const res = await fetch("http://localhost:3001/api/utenti", {
+      const res = await fetch(`${BASE_URL}/api/utenti`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +87,7 @@ export function AuthProvider({ children }) {
 
   const updateUser = async (id, updated) => {
     try {
-      await fetch(`http://localhost:3001/api/utenti/${id}`, {
+      await fetch(`${BASE_URL}/api/utenti/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +104,7 @@ export function AuthProvider({ children }) {
 
   const deleteUser = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/utenti/${id}`, {
+      await fetch(`${BASE_URL}/api/utenti/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${user && user.token ? user.token : localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).token : ''}`

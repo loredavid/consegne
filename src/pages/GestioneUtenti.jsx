@@ -1,3 +1,4 @@
+import { BASE_URL } from "../App";
 import { useState, useEffect } from "react";
 import { User } from "lucide-react";
 import { useNotification } from "../context/NotificationContext";
@@ -18,7 +19,7 @@ export default function GestioneUtenti() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())

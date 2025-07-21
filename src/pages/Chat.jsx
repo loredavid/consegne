@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { BASE_URL } from "../App";
 import { useAuth } from "../context/AuthContext";
 import { useNotification } from "../context/NotificationContext";
 
@@ -22,7 +23,7 @@ export default function Chat() {
     if (user && token) {
       let isMounted = true;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())
@@ -65,7 +66,7 @@ export default function Chat() {
         text
       };
       if (replyTo) body.replyTo = replyTo;
-      const res = await fetch("http://localhost:3001/api/messaggi", {
+      const res = await fetch(`${BASE_URL}/api/messaggi`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(body)

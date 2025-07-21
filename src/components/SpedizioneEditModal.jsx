@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../App";
 import { useAuth } from "../context/AuthContext";
 
 export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
@@ -15,12 +16,12 @@ export default function SpedizioneEditModal({ spedizione, onClose, onSave }) {
   const [posizioni, setPosizioni] = useState([]);
   const [autisti, setAutisti] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/api/posizioni", {
+    fetch(`${BASE_URL}/api/posizioni`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
       .then(data => setPosizioni(data));
-    fetch("http://localhost:3001/api/utenti", {
+    fetch(`${BASE_URL}/api/utenti`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

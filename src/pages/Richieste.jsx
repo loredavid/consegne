@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../App";
 import { FaRegClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -30,12 +31,12 @@ export default function Richieste() {
 
   useEffect(() => {
     if (user && token) {
-      fetch("http://localhost:3001/api/posizioni", {
+      fetch(`${BASE_URL}/api/posizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
         .then(data => setDestinazioni(data));
-      fetch("http://localhost:3001/api/spedizioni", {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -83,7 +84,7 @@ export default function Richieste() {
 
   const refreshSpedizioni = () => {
     if (user && token) {
-      fetch("http://localhost:3001/api/spedizioni", {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -110,7 +111,7 @@ export default function Richieste() {
         richiedente: user ? { nome: user.nome, mail: user.mail, role: user.role } : null,
         note: form.note
       };
-      const res = await fetch("http://localhost:3001/api/spedizioni", {
+      const res = await fetch(`${BASE_URL}/api/spedizioni`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(payload)
@@ -119,7 +120,7 @@ export default function Richieste() {
       setSuccess("Richiesta di spedizione inviata!");
       // Invia un messaggio di sistema per aggiornare la pagina Pianificazione
       try {
-        await fetch("http://localhost:3001/api/messaggi", {
+        await fetch(`${BASE_URL}/api/messaggi`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify({
@@ -171,7 +172,7 @@ export default function Richieste() {
   const eliminaSpedizione = async id => {
     if (!window.confirm("Sei sicuro di voler eliminare questa richiesta di spedizione?")) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/spedizioni/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/spedizioni/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });

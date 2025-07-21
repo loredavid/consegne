@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { BASE_URL } from "../App";
 
 const UnreadMessagesContext = createContext();
 
@@ -10,7 +11,7 @@ export function UnreadMessagesProvider({ children, user }) {
     let isMounted = true;
     const fetchMessages = () => {
       if (!user?.token) return;
-      fetch("http://localhost:3001/api/messaggi", {
+      fetch(`${BASE_URL}/api/messaggi`, {
         headers: { Authorization: `Bearer ${user.token}` }
       })
         .then(res => res.json())

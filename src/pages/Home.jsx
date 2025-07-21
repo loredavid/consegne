@@ -1,3 +1,4 @@
+import { BASE_URL } from "../App";
 import { Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, User } from "lucide-react";
 import HomeCard from "../components/HomeCard";
 import { useAuth } from "../context/AuthContext";
@@ -12,7 +13,7 @@ export default function Home() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())

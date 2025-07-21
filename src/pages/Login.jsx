@@ -1,3 +1,4 @@
+import { BASE_URL } from "../App";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +18,7 @@ export default function Login() {
     const fetchMessages = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       if (!user?.token) return;
-      fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
         headers: { Authorization: `Bearer ${user.token}` }
       })
         .then(res => res.json())

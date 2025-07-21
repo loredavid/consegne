@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+export const BASE_URL = "http://localhost:3001";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Pianificazione from "./pages/Pianificazione";

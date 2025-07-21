@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
+import { BASE_URL } from "../App";
 
 export default function StatoConsegne() {
   const [spedizioni, setSpedizioni] = useState([]);
@@ -19,7 +20,7 @@ export default function StatoConsegne() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())
@@ -45,7 +46,7 @@ export default function StatoConsegne() {
 
   useEffect(() => {
     if (user && token) {
-      fetch("http://localhost:3001/api/spedizioni", {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())

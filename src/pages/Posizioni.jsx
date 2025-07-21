@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
+import { BASE_URL } from "../App";
 
 export default function Posizioni() {
   const MAX_LOGO_SIZE = 1024 * 1024; // 1MB
@@ -28,7 +29,7 @@ export default function Posizioni() {
   useEffect(() => {
     if (user && token) {
       setLoading(true);
-      fetch("http://localhost:3001/api/posizioni", {
+      fetch(`${BASE_URL}/api/posizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -46,7 +47,7 @@ export default function Posizioni() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => res.json())
@@ -101,7 +102,7 @@ export default function Posizioni() {
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => { if (k !== "logo") data.append(k, v); });
       if (logoFile) data.append("logo", logoFile);
-      const res = await fetch("http://localhost:3001/api/posizioni", {
+      const res = await fetch(`${BASE_URL}/api/posizioni`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: data
@@ -121,7 +122,7 @@ export default function Posizioni() {
     const pos = posizioni[index];
     setEditIndex(pos.id); // Usa l'id reale
     setForm({ ...pos });
-    setLogoPreview(pos.logo ? `http://localhost:3001/uploads/${pos.logo}` : null);
+    setLogoPreview(pos.logo ? `${BASE_URL}/uploads/${pos.logo}` : null);
     setLogoFile(null);
     setShowEdit(true);
     setError("");
@@ -140,7 +141,7 @@ export default function Posizioni() {
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => { if (k !== "logo") data.append(k, v); });
       if (logoFile) data.append("logo", logoFile);
-      const res = await fetch(`http://localhost:3001/api/posizioni/${editIndex}`, {
+      const res = await fetch(`${BASE_URL}/api/posizioni/${editIndex}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: data
@@ -162,7 +163,7 @@ export default function Posizioni() {
     setSuccess("");
     try {
       if (!user || !token) throw new Error("Non autenticato");
-      const res = await fetch(`http://localhost:3001/api/posizioni/${editIndex}`, {
+      const res = await fetch(`${BASE_URL}/api/posizioni/${editIndex}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -224,7 +225,7 @@ export default function Posizioni() {
             <div key={p.id || i} className="flex items-center gap-4 py-4 px-2 hover:bg-gray-50" onClick={() => handleRowClick(p.id)} style={{ cursor: 'pointer' }}>
               <div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center text-gray-400 text-2xl font-bold overflow-hidden">
                 {p.logo && typeof p.logo === 'string' && p.logo !== '' ? (
-                  <img src={`http://localhost:3001/uploads/${p.logo}`} alt="logo" className="object-contain w-full h-full" onError={e => { e.target.onerror=null; e.target.src='https://placehold.co/64x64?text=Logo'; }} />
+                  <img src={`${BASE_URL}/uploads/${p.logo}`} alt="logo" className="object-contain w-full h-full" onError={e => { e.target.onerror=null; e.target.src='https://placehold.co/64x64?text=Logo'; }} />
                 ) : (
                   <span className="material-icons">location_on</span>
                 )}

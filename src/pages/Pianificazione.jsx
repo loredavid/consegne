@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../App";
 import SpedizioneEditModal from "../components/SpedizioneEditModal";
 
 function isMobile() {
@@ -27,7 +28,7 @@ export default function Pianificazione() {
     if (user && token) {
       // Se c'è una notifica di nuova richiesta, rimuovila entrando in questa pagina
       if (notification?.type === "spedizione") setNotification(null);
-      fetch("http://localhost:3001/api/spedizioni", {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -40,7 +41,7 @@ export default function Pianificazione() {
       let isMounted = true;
       let lastCount = 0;
       const fetchMessages = () => {
-        fetch("http://localhost:3001/api/messaggi", {
+        fetch(`${BASE_URL}/api/messaggi`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then((res) => res.json())
@@ -89,7 +90,7 @@ export default function Pianificazione() {
   const handleSave = async (form) => {
     try {
       if (!user || !token) throw new Error("Non autenticato");
-      const res = await fetch(`http://localhost:3001/api/spedizioni/${form.id}`, {
+      const res = await fetch(`${BASE_URL}/api/spedizioni/${form.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(form)
@@ -98,7 +99,7 @@ export default function Pianificazione() {
       setSuccess("Spedizione aggiornata!");
       setEditSpedizione(null);
       // Aggiorna lista
-      fetch("http://localhost:3001/api/spedizioni", {
+      fetch(`${BASE_URL}/api/spedizioni`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -118,7 +119,7 @@ export default function Pianificazione() {
             `Richiedente: ${form.richiedente?.nome || form.richiedente || "-"}`,
           spedizioneId: form.id
         };
-        await fetch("http://localhost:3001/api/messaggi", {
+        await fetch(`${BASE_URL}/api/messaggi`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify(msg)
