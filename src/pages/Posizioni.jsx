@@ -237,7 +237,7 @@ export default function Posizioni() {
                 <div className="text-gray-500 text-xs mt-1">Tel: {p.telefono} | Email: {p.email}</div>
               </div>
               <div className="flex items-center gap-2">
-                <button className="text-gray-400 hover:text-gray-700 p-2 rounded-full" onClick={() => handleEdit(posizioni.findIndex(pp => pp.id === p.id))} aria-label="Modifica">
+                <button type="button" className="text-gray-400 hover:text-gray-700 p-2 rounded-full" onClick={(e) => { e.stopPropagation(); handleEdit(posizioni.findIndex(pp => pp.id === p.id)); }} aria-label="Modifica">
                   <span className="material-icons">more_horiz</span>
                 </button>
               </div>

@@ -501,7 +501,9 @@ export default function Autista() {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          updateStatus(spedizione.id, "Consegnata");
+                          if (window.confirm('Sei sicuro di voler segnare questa spedizione come consegnata?')) {
+                            updateStatus(spedizione.id, "Consegnata");
+                          }
                         }}
                         className="flex-1 bg-green-500 hover:bg-green-600 text-white text-xs py-2 px-3 rounded-md font-medium transition-colors flex items-center justify-center gap-1"
                       >

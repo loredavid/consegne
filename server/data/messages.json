@@ -1400,5 +1400,24 @@
     },
     "id": 1756210634867,
     "timestamp": "2025-08-26T12:17:14.867Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "Prova risposta",
+    "replyTo": 1756210634867,
+    "id": 1756214442745,
+    "timestamp": "2025-08-26T13:20:42.745Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA\nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: martedì 26 agosto 2025 alle ore 13:58\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756209497799,
+    "id": 1756214469391,
+    "timestamp": "2025-08-26T13:21:09.391Z"
   }
 ]

@@ -301,7 +301,7 @@
     "dataRichiesta": "2025-08-29T09:11",
     "dataPianificata": "2025-08-29T09:11",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -401,7 +401,7 @@
     "dataRichiesta": "2025-08-26T13:47",
     "dataPianificata": "2025-08-26T13:47",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -421,8 +421,8 @@
     "dataRichiesta": "2025-08-26T13:58",
     "dataPianificata": "2025-08-26T13:58",
     "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
+    "status": "In consegna",
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
       "mail": "lorenzo.david@elteksrl.it",

@@ -212,6 +212,10 @@ export default function SpedizioneDettaglio() {
                     if (editMode) {
                       setForm(f => ({ ...f, status: stato }));
                     } else {
+                      // If user clicked 'Consegnata' ask for confirmation first
+                      if (stato === 'Consegnata') {
+                        if (!window.confirm('Sei sicuro di voler segnare questa spedizione come consegnata?')) return;
+                      }
                       setSaving(true);
                       setError("");
                       try {
