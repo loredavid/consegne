@@ -317,7 +317,7 @@ export default function SpedizioneDettaglio() {
                   <input name="dataPianificata" type="datetime-local" value={form.dataPianificata ? form.dataPianificata.slice(0,16) : ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
                 </label>
                 <label className="font-semibold">Note
-                  <input name="note" value={form.note || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" />
+                  <textarea name="note" value={form.note || ""} onChange={handleChange} className="border p-2 rounded w-full mt-1" rows={3} placeholder="Inserisci eventuali note..." />
                 </label>
                 <div className="flex gap-2 mt-4">
                   <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded" disabled={saving}>Salva</button>
@@ -352,9 +352,9 @@ export default function SpedizioneDettaglio() {
                   <span className="material-icons text-gray-400 align-middle">event_available</span>
                   <span>Data richiesta: {spedizione.dataRichiesta ? new Date(spedizione.dataRichiesta).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : "-"}</span>
                 </div>
-                <div className="mt-4 bg-gray-50 rounded p-3 flex items-center gap-2">
+                <div className="mt-4 bg-gray-50 rounded p-3 flex items-start gap-2">
                   <span className="material-icons text-gray-400 align-middle">chat_bubble_outline</span>
-                  <span>{spedizione.note || "Nessuna nota"}</span>
+                  <div className="whitespace-pre-wrap break-words">{spedizione.note || "Nessuna nota"}</div>
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-center">
@@ -380,7 +380,7 @@ export default function SpedizioneDettaglio() {
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-2">Informazioni Veicolo</h3>
                   <div className="text-gray-500 text-sm font-semibold mb-1">Note</div>
-                  <div className="mb-2 text-base text-black">{spedizione.note || "-"}</div>
+                  <div className="mb-2 text-base text-black whitespace-pre-wrap break-words">{spedizione.note || "-"}</div>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-center">
                   <div className="text-xs font-bold text-blue-700 mb-1">AUTISTA</div>

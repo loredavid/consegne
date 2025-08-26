@@ -6,12 +6,30 @@ import { BASE_URL } from "../App";
 import { useNavigate } from "react-router-dom";
 
 export default function Autista() {
-  const { setNotification } = useNotification();
+  const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission } = useNotification();
   const { user, token } = useAuth();
   const { unreadCount } = useUnreadMessages();
   const [spedizioni, setSpedizioni] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showPermissionBanner, setShowPermissionBanner] = useState(false);
   const navigate = useNavigate();
+
+  // Controlla se mostrare il banner per i permessi delle notifiche
+  useEffect(() => {
+    if ("Notification" in window && Notification.permission === "default") {
+      setShowPermissionBanner(true);
+    }
+  }, []);
+
+  const handleRequestNotificationPermission = async () => {
+    const granted = await requestNotificationPermission();
+    if (granted) {
+      setShowPermissionBanner(false);
+      setNotification({ text: "Notifiche push abilitate!" });
+    } else {
+      setNotification({ text: "Permessi per le notifiche negati" });
+    }
+  };
 
   useEffect(() => {
     if (user && token) {
@@ -27,7 +45,21 @@ export default function Autista() {
             if (lastCount > 0 && data.length > lastCount) {
               const newMsgs = data.slice(lastCount);
               newMsgs.forEach((msg) => {
+                // Mostra notifica in-app
                 setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+                
+                // Invia notifica push nativa se abilitata
+                if (pushNotificationsEnabled) {
+                  sendPushNotification(
+                    `Nuovo messaggio da ${msg.sender?.nome}`,
+                    {
+                      body: msg.text,
+                      onClick: () => {
+                        navigate('/chat');
+                      }
+                    }
+                  );
+                }
               });
             }
             lastCount = data.length;
@@ -40,11 +72,14 @@ export default function Autista() {
         clearInterval(interval);
       };
     }
-  }, [setNotification, user, token]);
+  }, [setNotification, sendPushNotification, pushNotificationsEnabled, navigate, user, token]);
 
   useEffect(() => {
     if (user && token) {
       let isMounted = true;
+      // Traccia gli ID delle spedizioni precedenti per rilevare nuove assegnazioni
+      let previousSpedizioniIds = new Set();
+      
       const fetchSpedizioni = () => {
         fetch(`${BASE_URL}/api/spedizioni`, {
           headers: { Authorization: `Bearer ${token}` }
@@ -55,11 +90,70 @@ export default function Autista() {
           })
           .then(data => {
             if (!isMounted) return;
+            
+            // Filtra solo le spedizioni assegnate specificamente a questo autista
             const mieSpedizioni = data.filter(s => 
               s.autista && 
               s.autista.id === user.id && 
               s.status !== "Consegnata"
             );
+            
+            // Controlla se ci sono nuove spedizioni assegnate specificamente a questo autista
+            const currentSpedizioniIds = new Set(mieSpedizioni.map(s => s.id));
+            
+            // Solo dopo il primo caricamento, controlla per nuove assegnazioni
+            if (previousSpedizioniIds.size > 0) {
+              // Trova le spedizioni che sono state assegnate dall'ultimo controllo
+              const nuoveSpedizioniIds = [...currentSpedizioniIds].filter(id => 
+                !previousSpedizioniIds.has(id)
+              );
+              
+              // Invia notifiche SOLO per le spedizioni effettivamente assegnate a questo autista
+              if (nuoveSpedizioniIds.length > 0) {
+                const nuoveSpedizioni = mieSpedizioni.filter(s => 
+                  nuoveSpedizioniIds.includes(s.id)
+                );
+                
+                nuoveSpedizioni.forEach((spedizione) => {
+                  // Notifica in-app
+                  setNotification({ 
+                    text: `Nuova spedizione assegnata: ${spedizione.aziendaDestinazione}` 
+                  });
+                  
+                  // Notifica push nativa con tipo specifico
+                  if (pushNotificationsEnabled) {
+                    const tipoMessages = {
+                      'consegna': 'Nuova consegna assegnata!',
+                      'ritiro': 'Nuovo ritiro assegnato!',
+                      'entrambi': 'Nuova spedizione assegnata!'
+                    };
+
+                    const tipoIcons = {
+                      'consegna': '🚚',
+                      'ritiro': '📦', 
+                      'entrambi': '🔄'
+                    };
+
+                    const title = tipoMessages[spedizione.tipo] || 'Nuova spedizione assegnata!';
+                    const icon = tipoIcons[spedizione.tipo] || '🚛';
+
+                    sendPushNotification(title, {
+                      body: `${spedizione.aziendaDestinazione} - ${spedizione.indirizzo}`,
+                      icon: icon,
+                      tag: 'delivery-assignment',
+                      requireInteraction: true,
+                      onClick: () => {
+                        navigate(`/spedizioni-mobile/${spedizione.id}`);
+                      }
+                    });
+                  }
+                });
+              }
+            }
+            
+            // Aggiorna il set degli ID per il prossimo controllo
+            previousSpedizioniIds = currentSpedizioniIds;
+            
             const spedizioniOrdinate = mieSpedizioni.sort((a, b) => {
               const statusOrder = { "In consegna": 0, "In attesa": 1, "Fallita": 2 };
               if (statusOrder[a.status] !== statusOrder[b.status]) {
@@ -76,6 +170,7 @@ export default function Autista() {
             if (isMounted) setLoading(false);
           });
       };
+      
       fetchSpedizioni();
       const interval = setInterval(fetchSpedizioni, 5000);
       return () => {
@@ -85,7 +180,7 @@ export default function Autista() {
     } else {
       setLoading(false);
     }
-  }, [user, token, setNotification]);
+  }, [user, token, setNotification, sendPushNotification, pushNotificationsEnabled, navigate]);
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -130,6 +225,9 @@ export default function Autista() {
       
       if (!response.ok) throw new Error();
       
+      // Trova la spedizione per ottenere i dettagli
+      const spedizione = spedizioni.find(s => s.id === spedizioneId);
+      
       // Aggiorna la lista locale
       setSpedizioni(prev => 
         prev.map(s => 
@@ -137,9 +235,25 @@ export default function Autista() {
         ).filter(s => s.status !== "Consegnata") // Rimuovi consegnate dalla vista
       );
       
-      setNotification({ 
-        text: `Spedizione ${newStatus.toLowerCase()} con successo` 
-      });
+      const message = `Spedizione ${newStatus.toLowerCase()} con successo`;
+      setNotification({ text: message });
+      
+      // Invia notifica push per conferma dell'azione
+      if (pushNotificationsEnabled && spedizione) {
+        const statusMessages = {
+          "In consegna": "Consegna iniziata",
+          "Consegnata": "Consegna completata",
+          "Fallita": "Consegna fallita"
+        };
+        
+        sendPushNotification(
+          statusMessages[newStatus] || `Stato aggiornato`,
+          {
+            body: `${spedizione.aziendaDestinazione} - ${newStatus}`,
+            icon: newStatus === "Consegnata" ? '✅' : newStatus === "Fallita" ? '❌' : '🚚'
+          }
+        );
+      }
       
     } catch (error) {
       setNotification({ 
@@ -206,6 +320,34 @@ export default function Autista() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Banner per richiedere permessi notifiche */}
+      {showPermissionBanner && (
+        <div className="bg-blue-600 text-white p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <h3 className="font-semibold text-sm">Abilita le notifiche push</h3>
+              <p className="text-xs opacity-90 mt-1">
+                Ricevi notifiche per nuove spedizioni e messaggi anche quando l'app è in background
+              </p>
+            </div>
+            <div className="flex gap-2 ml-3">
+              <button
+                onClick={handleRequestNotificationPermission}
+                className="bg-white text-blue-600 text-xs px-3 py-1 rounded font-medium hover:bg-gray-100 transition-colors"
+              >
+                Abilita
+              </button>
+              <button
+                onClick={() => setShowPermissionBanner(false)}
+                className="text-white text-xs px-2 py-1 rounded hover:bg-blue-700 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Lista Spedizioni */}
       <div className="p-4">
         {spedizioni.length === 0 ? (
@@ -301,7 +443,7 @@ export default function Autista() {
                         <span className="material-icons text-gray-400 text-sm mr-1 mt-0.5">notes</span>
                         <div>
                           <span className="text-gray-600">Note: </span>
-                          <span className="text-gray-800">{spedizione.note}</span>
+                          <div className="text-gray-800 whitespace-pre-wrap break-words">{spedizione.note}</div>
                         </div>
                       </div>
                     )}
@@ -362,8 +504,28 @@ export default function Autista() {
         )}
       </div>
 
-      {/* Footer con pulsante Refresh */}
+      {/* Footer con pulsanti */}
       <div className="fixed bottom-4 right-4 flex flex-col gap-3">
+        {/* Pulsante Test Notifica (solo in development) */}
+        {process.env.NODE_ENV === 'development' && pushNotificationsEnabled && (
+          <button
+            onClick={() => {
+              sendPushNotification(
+                "Test Notifica Push",
+                {
+                  body: "Questa è una notifica di test dal centro notifiche!",
+                  requireInteraction: true,
+                  onClick: () => console.log("Notifica cliccata!")
+                }
+              );
+            }}
+            className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-colors"
+            aria-label="Test Notifica"
+          >
+            <span className="material-icons">notifications</span>
+          </button>
+        )}
+        
         {/* Pulsante Refresh */}
         <button
           onClick={() => window.location.reload()}

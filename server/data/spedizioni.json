@@ -5,8 +5,8 @@
     "dataRichiesta": "2025-07-03T08:46",
     "dataPianificata": "2025-07-03T08:46",
     "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": true,
+    "status": "Consegnata",
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
       "mail": "lorena.stolfo@elteksrl.it",
@@ -202,6 +202,106 @@
     "dataPianificata": "2025-07-25T13:16",
     "tipo": "consegna",
     "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1753096586040,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-08-29T08:50",
+    "dataPianificata": "2025-08-29T08:50",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756191040917,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
+    }
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-08-26T09:02",
+    "dataPianificata": "2025-08-26T09:02",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756191743615,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-08-26T09:09",
+    "dataPianificata": "2025-08-26T09:09",
+    "tipo": "entrambi",
+    "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756192176421,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "DAVE S.R.L",
+    "indirizzo": "Via Talponedo, 29/A, 33080 Porcia PN",
+    "dataRichiesta": "2025-08-26T14:11",
+    "dataPianificata": "2025-08-26T14:11",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "PROVA NOTE",
+    "id": 1756192283960,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
+    }
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-08-29T09:11",
+    "dataPianificata": "2025-08-29T09:11",
+    "tipo": "consegna",
+    "status": "In attesa",
     "daPianificare": true,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -209,6 +309,26 @@
       "role": "admin"
     },
     "note": "",
-    "id": 1753096586040
+    "id": 1756192323068
+  },
+  {
+    "aziendaDestinazione": "ALFA ELETTRONICA S.R.L",
+    "indirizzo": "Via Amman, 35, 33084 Cordenons PN",
+    "dataRichiesta": "2025-08-26T14:50",
+    "dataPianificata": "2025-08-26T14:50",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "Prova note\naijdgoieig\naongoweinonvsd\nosnosodiv",
+    "id": 1756194358546,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   }
 ]

@@ -15,6 +15,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Polyfill for Buffer and global objects
+      if (typeof global === 'undefined') {
+        window.global = window;
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -7,6 +7,7 @@ import { SidebarContext } from "../context/LayoutContext.jsx";
 import SpedizioniCalendar from "../components/SpedizioniCalendar";
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
+import useChatNotifications from "../hooks/useChatNotifications";
 
 function isMobile() {
   if (typeof window === "undefined") return false;
@@ -23,6 +24,12 @@ export default function Richieste() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [destinazioni, setDestinazioni] = useState([]);
+
+  // Abilita notifiche chat in background
+  useChatNotifications({
+    pollInterval: 6000,
+    enablePushNotifications: true
+  });
   const [showModal, setShowModal] = useState(false);
   const [spedizioni, setSpedizioni] = useState([]);
   const [filtroDestinazione, setFiltroDestinazione] = useState("");

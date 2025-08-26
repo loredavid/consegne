@@ -1,15 +1,28 @@
 import { BASE_URL } from "../App";
-import { Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, User } from "lucide-react";
+import { Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, User, Package } from "lucide-react";
 import HomeCard from "../components/HomeCard";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { useNotification } from "../context/NotificationContext";
 import { useNavigate } from "react-router-dom";
+import useChatNotifications from "../hooks/useChatNotifications";
+import NotificationPermissionBanner from "../components/NotificationPermissionBanner";
 
 export default function Home() {
   const { user, token } = useAuth();
   const { setNotification } = useNotification();
   const navigate = useNavigate();
+
+  // Abilita le notifiche chat in background per tutti gli utenti (eccetto autisti)
+  useChatNotifications({
+    pollInterval: 5000, // Controlla ogni 5 secondi
+    enableInAppNotifications: true,
+    enablePushNotifications: true,
+    onNewMessage: (message) => {
+      // Callback personalizzato per messaggi nella home
+      console.log('Nuovo messaggio ricevuto nella home:', message);
+    }
+  });
 
   // Reindirizza automaticamente gli autisti alla loro pagina
   useEffect(() => {
@@ -61,8 +74,12 @@ export default function Home() {
   }
   return (
     <main className="flex-1 p-6">
+      <NotificationPermissionBanner className="mb-6 rounded-lg" />
       <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <HomeCard title="Pianificazione" desc="Pagina di gestione delle richieste e delle consegne." to="/pianificazione" icon={<Wrench />} />
+        {(user?.role === "admin" || user?.role === "pianificatore") && (
+          <HomeCard title="Preparazione Magazzino" desc="Organizzazione spedizioni per la preparazione in magazzino" to="/preparazione-magazzino" icon={<Package />} />
+        )}
         <HomeCard title="Richieste" desc="Pagina di gestione delle richieste. Qui è possibile creare le richieste e controllarne lo stato." to="/richieste" icon={<Mail />} />
         <HomeCard title="Stato Consegne" desc="Pagina di visualizzazione dello stato delle consegne." to="/stato-consegne" icon={<Clock />} />
         <HomeCard title="Posizioni" desc="Pagina di gestione delle destinazioni" to="/posizioni" icon={<MapPin />} />

@@ -6,12 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function ChatMobile() {
   const { user, token } = useAuth();
-  const { setNotification } = useNotification();
+  const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission } = useNotification();
   const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showPermissionBanner, setShowPermissionBanner] = useState(false);
   const messagesEndRef = useRef(null);
 
   // Solo autisti e admin possono accedere
@@ -21,11 +22,30 @@ export default function ChatMobile() {
     }
   }, [user, navigate]);
 
+  // Controlla se mostrare il banner per i permessi delle notifiche
+  useEffect(() => {
+    if ("Notification" in window && Notification.permission === "default") {
+      setShowPermissionBanner(true);
+    }
+  }, []);
+
+  const handleRequestNotificationPermission = async () => {
+    const granted = await requestNotificationPermission();
+    if (granted) {
+      setShowPermissionBanner(false);
+      setNotification({ text: "Notifiche push abilitate!" });
+    } else {
+      setNotification({ text: "Permessi per le notifiche negati" });
+    }
+  };
+
   // Fetch messages on mount and poll every 3s, solo se la tab è attiva
   useEffect(() => {
     if (user && token) {
       let isMounted = true;
       let interval;
+      let lastMessageCount = 0;
+      
       const fetchMessages = () => {
         if (document.visibilityState === "visible") {
           fetch(`${BASE_URL}/api/messaggi`, {
@@ -34,6 +54,35 @@ export default function ChatMobile() {
             .then(res => res.json())
             .then(data => {
               if (!isMounted) return;
+              
+              // Controlla se ci sono nuovi messaggi da altri utenti
+              if (lastMessageCount > 0 && data.length > lastMessageCount) {
+                const newMessages = data.slice(lastMessageCount);
+                newMessages.forEach(msg => {
+                  if (msg.sender?.mail !== user?.mail) {
+                    // Notifica in-app
+                    setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+                    
+                    // Notifica push nativa se abilitata
+                    if (pushNotificationsEnabled) {
+                      sendPushNotification(
+                        `Nuovo messaggio da ${msg.sender?.nome}`,
+                        {
+                          body: msg.text,
+                          icon: '💬',
+                          tag: 'chat-message',
+                          requireInteraction: false,
+                          onClick: () => {
+                            window.focus();
+                          }
+                        }
+                      );
+                    }
+                  }
+                });
+              }
+              lastMessageCount = data.length;
+              
               // Carica solo gli ultimi 50 messaggi
               const lastMessages = data.length > 50 ? data.slice(-50) : data;
               setMessages(lastMessages);
@@ -54,7 +103,7 @@ export default function ChatMobile() {
         document.removeEventListener("visibilitychange", fetchMessages);
       };
     }
-  }, [user, token]);
+  }, [user, token, setNotification, sendPushNotification, pushNotificationsEnabled]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -98,6 +147,34 @@ export default function ChatMobile() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      {/* Banner per richiedere permessi notifiche */}
+      {showPermissionBanner && (
+        <div className="bg-blue-600 text-white p-3 mt-[64px]">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <h3 className="font-semibold text-sm">Abilita le notifiche push</h3>
+              <p className="text-xs opacity-90 mt-1">
+                Ricevi notifiche per nuovi messaggi anche in background
+              </p>
+            </div>
+            <div className="flex gap-2 ml-3">
+              <button
+                onClick={handleRequestNotificationPermission}
+                className="bg-white text-blue-600 text-xs px-3 py-1 rounded font-medium hover:bg-gray-100 transition-colors"
+              >
+                Abilita
+              </button>
+              <button
+                onClick={() => setShowPermissionBanner(false)}
+                className="text-white text-xs px-2 py-1 rounded hover:bg-blue-700 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Messaggi */}
       <div className="flex-1 overflow-y-auto p-3 mt-[64px]" style={{ maxHeight: "calc(100vh - 64px - 56px)" }}>
         {messages.length === 0 ? (

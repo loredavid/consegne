@@ -15,6 +15,7 @@ import SpedizioneDettaglio from "./pages/SpedizioneDettaglio";
 import SpedizioneDettaglioMobile from "./pages/SpedizioneDettaglioMobile";
 import PosizioneDettaglio from "./pages/PosizioneDettaglio";
 import ChatMobile from "./pages/ChatMobile";
+import PreparazioneMagazzino from "./pages/PreparazioneMagazzino";
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
@@ -53,6 +54,11 @@ function App() {
                 <Route path="/pianificazione" element={
                   <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
                     <Pianificazione />
+                  </ProtectedRoute>
+                } />
+                <Route path="/preparazione-magazzino" element={
+                  <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
+                    <PreparazioneMagazzino />
                   </ProtectedRoute>
                 } />
                 <Route path="/richieste" element={
@@ -105,12 +111,7 @@ function App() {
                     <Home />
                   </ProtectedRoute>
                 } />
-              <Route path="/chat-mobile" element={
-                <ProtectedRoute allowedRoles={["admin", "autista"]}>
-                  <ChatMobile />
-                </ProtectedRoute>
-              } />
-            </Routes>
+              </Routes>
             </Layout>
           </SidebarProvider>
         </UnreadMessagesProvider>

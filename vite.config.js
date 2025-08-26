@@ -6,4 +6,23 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  define: {
+    global: 'globalThis',
+    'process.env': {},
+  },
+  resolve: {
+    alias: {
+      buffer: 'buffer',
+      process: 'process/browser',
+      crypto: 'crypto-browserify',
+    }
+  },
+  optimizeDeps: {
+    include: ['buffer', 'process']
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
+  }
 });

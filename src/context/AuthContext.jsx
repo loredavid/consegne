@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import bcrypt from "bcryptjs";
 import { BASE_URL } from "../App";
 
 const AuthContext = createContext();

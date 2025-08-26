@@ -8,15 +8,33 @@ export default function Chat() {
   // Track if initial scroll has been done
   const initialScrollDone = useRef(false);
   const { user, token } = useAuth();
-  const { setNotification } = useNotification();
+  const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission } = useNotification();
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [replyTo, setReplyTo] = useState(null); // message id to reply to
+  const [showPermissionBanner, setShowPermissionBanner] = useState(false);
   const messagesEndRef = useRef(null);
   const lastMessageIdRef = useRef(null);
   const messageRefs = useRef({}); // refs for each message
+
+  // Controlla se mostrare il banner per i permessi delle notifiche
+  useEffect(() => {
+    if ("Notification" in window && Notification.permission === "default") {
+      setShowPermissionBanner(true);
+    }
+  }, []);
+
+  const handleRequestNotificationPermission = async () => {
+    const granted = await requestNotificationPermission();
+    if (granted) {
+      setShowPermissionBanner(false);
+      setNotification({ text: "Notifiche push abilitate!" });
+    } else {
+      setNotification({ text: "Permessi per le notifiche negati" });
+    }
+  };
 
   // Fetch messages on mount and poll every 2s
   useEffect(() => {
@@ -34,7 +52,28 @@ export default function Chat() {
               const newMsgs = data.slice(messages.length);
               newMsgs.forEach(msg => {
                 if (msg.sender?.mail !== user?.mail) {
+                  // Notifica in-app
                   setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
+                  
+                  // Notifica push nativa se abilitata
+                  if (pushNotificationsEnabled) {
+                    sendPushNotification(
+                      `Nuovo messaggio da ${msg.sender?.nome}`,
+                      {
+                        body: msg.text,
+                        icon: '💬',
+                        tag: 'chat-message',
+                        requireInteraction: false,
+                        onClick: () => {
+                          window.focus();
+                          // Scorri al messaggio se possibile
+                          setTimeout(() => {
+                            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+                          }, 100);
+                        }
+                      }
+                    );
+                  }
                 }
               });
             }
@@ -53,7 +92,7 @@ export default function Chat() {
         clearInterval(interval);
       };
     }
-  }, [user, token, messages.length, setNotification]);
+  }, [user, token, messages.length, setNotification, sendPushNotification, pushNotificationsEnabled]);
 
 
   const sendMessage = async e => {
@@ -123,6 +162,34 @@ export default function Chat() {
 
   return (
     <div className="p-8 max-w-5xl mx-auto">
+      {/* Banner per richiedere permessi notifiche */}
+      {showPermissionBanner && (
+        <div className="bg-blue-600 text-white p-4 mb-6 rounded-lg">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <h3 className="font-semibold text-sm">Abilita le notifiche push</h3>
+              <p className="text-xs opacity-90 mt-1">
+                Ricevi notifiche per nuovi messaggi anche quando l'app è in background
+              </p>
+            </div>
+            <div className="flex gap-2 ml-3">
+              <button
+                onClick={handleRequestNotificationPermission}
+                className="bg-white text-blue-600 text-xs px-3 py-1 rounded font-medium hover:bg-gray-100 transition-colors"
+              >
+                Abilita
+              </button>
+              <button
+                onClick={() => setShowPermissionBanner(false)}
+                className="text-white text-xs px-2 py-1 rounded hover:bg-blue-700 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <h1 className="text-3xl font-bold mb-6">Chat</h1>
       <div id="chat-scrollable" className="bg-white rounded shadow p-6 mb-6 h-[600px] overflow-y-auto flex flex-col relative">
         {/* Button to scroll to last message */}

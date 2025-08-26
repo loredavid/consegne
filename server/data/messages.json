@@ -751,5 +751,185 @@
     "spedizioneId": 1752734807582,
     "id": 1753101179215,
     "timestamp": "2025-07-21T12:32:59.215Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ELTEK S.R.L\nIndirizzo: Via Chiavornicco, 26, 33084 Cordenons PN\nData: giovedì 3 luglio 2025 alle ore 08:46\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807579,
+    "id": 1756190971088,
+    "timestamp": "2025-08-26T06:49:31.088Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: PALAZZETTI LELIO S.P.A. (2025-08-29T08:50)",
+    "tipo": "richiesta",
+    "id": 1756191041007,
+    "timestamp": "2025-08-26T06:50:41.007Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: TEKNO 31 S.R.L.S. (2025-08-26T09:02)",
+    "tipo": "richiesta",
+    "id": 1756191743705,
+    "timestamp": "2025-08-26T07:02:23.705Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: TEKNO 31 S.R.L.S. (2025-08-26T09:09)",
+    "tipo": "richiesta",
+    "id": 1756192176518,
+    "timestamp": "2025-08-26T07:09:36.518Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA\nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: venerdì 25 luglio 2025 alle ore 13:16\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753096586040,
+    "id": 1756192190865,
+    "timestamp": "2025-08-26T07:09:50.865Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 29 agosto 2025 alle ore 08:50\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756191040917,
+    "id": 1756192199315,
+    "timestamp": "2025-08-26T07:09:59.315Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: DAVE S.R.L (2025-08-26T14:11)",
+    "tipo": "richiesta",
+    "id": 1756192284046,
+    "timestamp": "2025-08-26T07:11:24.046Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: TEKNO 31 S.R.L.S. (2025-08-29T09:11)",
+    "tipo": "richiesta",
+    "id": 1756192323154,
+    "timestamp": "2025-08-26T07:12:03.154Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "Prova",
+    "id": 1756192562296,
+    "timestamp": "2025-08-26T07:16:02.296Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "gs",
+    "id": 1756192569398,
+    "timestamp": "2025-08-26T07:16:09.398Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "sdg",
+    "id": 1756192575653,
+    "timestamp": "2025-08-26T07:16:15.653Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "adf",
+    "id": 1756192611433,
+    "timestamp": "2025-08-26T07:16:51.433Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "Prova di messaggio, ho consegnato jkncionsobgowehgv",
+    "id": 1756192623673,
+    "timestamp": "2025-08-26T07:17:03.673Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "asfgarhaerneq",
+    "id": 1756192635852,
+    "timestamp": "2025-08-26T07:17:15.852Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "SRBR",
+    "id": 1756192700636,
+    "timestamp": "2025-08-26T07:18:20.636Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: martedì 26 agosto 2025 alle ore 09:02\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756191743615,
+    "id": 1756193149837,
+    "timestamp": "2025-08-26T07:25:49.837Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: martedì 26 agosto 2025 alle ore 09:09\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756192176421,
+    "id": 1756193154232,
+    "timestamp": "2025-08-26T07:25:54.232Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: DAVE S.R.L\nIndirizzo: Via Talponedo, 29/A, 33080 Porcia PN\nData: martedì 26 agosto 2025 alle ore 14:11\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756192283960,
+    "id": 1756193160702,
+    "timestamp": "2025-08-26T07:26:00.702Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: ALFA ELETTRONICA S.R.L (2025-08-26T14:50)",
+    "tipo": "richiesta",
+    "id": 1756194358642,
+    "timestamp": "2025-08-26T07:45:58.642Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALFA ELETTRONICA S.R.L\nIndirizzo: Via Amman, 35, 33084 Cordenons PN\nData: martedì 26 agosto 2025 alle ore 14:50\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756194358546,
+    "id": 1756194367477,
+    "timestamp": "2025-08-26T07:46:07.477Z"
   }
 ]

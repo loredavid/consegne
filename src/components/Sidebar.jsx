@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight } from "lucide-react";
+import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight, Package } from "lucide-react";
 import homeImage from '../assets/Image 30 giu 2025, 08_12_36.png';
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
@@ -8,6 +8,7 @@ import { useUnreadMessages } from "../context/UnreadMessagesContext";
 
 const menuItems = [
   { to: "/pianificazione", label: "Pianificazione", icon: <Wrench size={20} /> },
+  { to: "/preparazione-magazzino", label: "Preparazione Magazzino", icon: <Package size={20} /> },
   { to: "/richieste", label: "Richieste", icon: <Mail size={20} /> },
   { to: "/stato-consegne", label: "Stato Consegne", icon: <Clock size={20} /> },
   { to: "/posizioni", label: "Posizioni", icon: <MapPin size={20} /> },
@@ -34,6 +35,7 @@ export default function Sidebar() {
     if (item.to === "/admin" && user.role !== "admin") return false;
     if (item.to === "/gestione-utenti" && user.role !== "admin") return false;
     if (item.to === "/autista" && !(user.role === "autista" || user.role === "admin")) return false;
+    if (item.to === "/preparazione-magazzino" && !(user.role === "admin" || user.role === "pianificatore")) return false;
     return true;
   };
 

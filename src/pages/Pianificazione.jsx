@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../App";
 import SpedizioneEditModal from "../components/SpedizioneEditModal";
+import useChatNotifications from "../hooks/useChatNotifications";
 
 function isMobile() {
   if (typeof window === "undefined") return false;
@@ -14,6 +15,12 @@ export default function Pianificazione() {
   const { notification, setNotification } = useNotification();
   const { user, token } = useAuth();
   const [mobile, setMobile] = useState(false);
+
+  // Abilita notifiche chat in background
+  useChatNotifications({
+    pollInterval: 5000,
+    enablePushNotifications: true
+  });
   const [spedizioni, setSpedizioni] = useState([]);
   const [editSpedizione, setEditSpedizione] = useState(null);
   const [success, setSuccess] = useState("");
