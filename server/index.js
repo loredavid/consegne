@@ -18,7 +18,11 @@ app.use((req, res, next) => {
 const PORT = 3001;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+
+// Route per notifiche push (ESM import)
+import pushRouter, { sendPushToUser } from './push.js';
+app.use('/api/push', pushRouter);
 
 
 // --- LOGIN SICURO CON JWT ---
@@ -146,10 +150,38 @@ app.post('/api/spedizioni', requireAuth, (req, res) => {
   writeData('spedizioni.json', spedizioni);
   res.json(nuova);
 });
-app.put('/api/spedizioni/:id', requireAuth, (req, res) => {
+app.put('/api/spedizioni/:id', requireAuth, async (req, res) => {
   let spedizioni = readData('spedizioni.json');
-  spedizioni = spedizioni.map(s => s.id == req.params.id ? { ...s, ...req.body } : s);
+  const id = req.params.id;
+  // find old spedizione
+  const old = spedizioni.find(s => String(s.id) === String(id));
+  spedizioni = spedizioni.map(s => s.id == id ? { ...s, ...req.body } : s);
   writeData('spedizioni.json', spedizioni);
+
+  // if autista assigned and changed, notify the new autista
+  try {
+    const newSped = spedizioni.find(s => String(s.id) === String(id));
+    const newAutista = req.body.autista || newSped.autista;
+    const oldAutistaId = old && old.autista ? old.autista.id : null;
+    const newAutistaId = newAutista && newAutista.id ? newAutista.id : null;
+    if (newAutistaId && String(newAutistaId) !== String(oldAutistaId)) {
+      // Prepare payload
+      const payload = {
+        title: 'Nuova spedizione assegnata',
+        body: `Hai una nuova spedizione: #${newSped.id}`,
+        url: `/spedizioni-mobile/${newSped.id}`
+      };
+      try {
+        const results = await sendPushToUser(newAutistaId, payload);
+        console.log('[PUSH] notify assign results:', results);
+      } catch (e) {
+        console.warn('[PUSH] errore nell\'invio push assign:', e.message);
+      }
+    }
+  } catch (e) {
+    console.warn('Errore nel tentativo di notificare autista:', e.message);
+  }
+
   res.json({ success: true });
 });
 app.delete('/api/spedizioni/:id', requireAuth, (req, res) => {

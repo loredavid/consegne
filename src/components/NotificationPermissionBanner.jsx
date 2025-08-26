@@ -6,8 +6,9 @@ import { useNotification } from '../context/NotificationContext';
  * Si mostra automaticamente se i permessi non sono stati concessi
  */
 export default function NotificationPermissionBanner({ className = "" }) {
-  const { pushNotificationsEnabled, requestNotificationPermission } = useNotification();
+  const { pushNotificationsEnabled, requestNotificationPermission, subscribeForPush, setNotification } = useNotification();
   const [showBanner, setShowBanner] = useState(false);
+  const [isSubscribing, setIsSubscribing] = useState(false);
 
   useEffect(() => {
     // Mostra il banner solo se le notifiche sono supportate e non sono state abilitate
@@ -19,7 +20,26 @@ export default function NotificationPermissionBanner({ className = "" }) {
   const handleRequestPermission = async () => {
     const granted = await requestNotificationPermission();
     if (granted) {
-      setShowBanner(false);
+      try {
+        setIsSubscribing(true);
+        // Registra la subscription push con il backend
+        const sub = await subscribeForPush();
+        setShowBanner(false);
+        if (sub) {
+          setNotification({ text: 'Notifiche push abilitate e sottoscritte', type: 'success' });
+        } else {
+          const msg = 'Notifiche abilitate ma la sottoscrizione non è stata completata (Push API non disponibile o restrizioni del browser)';
+          setNotification({ text: msg, type: 'warning' });
+          // Invia diagnostica per capire perché il browser non ha restituito una subscription
+          try {
+            await fetch(`${process.env.REACT_APP_BASE_URL || ''}/api/push/log-subscribe`, {
+              method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ note: 'subscription-null-after-grant', message: msg, userAgent: navigator.userAgent })
+            });
+          } catch(e){}
+        }
+      } finally {
+        setIsSubscribing(false);
+      }
     }
   };
 
@@ -39,9 +59,10 @@ export default function NotificationPermissionBanner({ className = "" }) {
         <div className="flex gap-2 ml-3">
           <button
             onClick={handleRequestPermission}
-            className="bg-white text-blue-600 text-xs px-3 py-1 rounded font-medium hover:bg-gray-100 transition-colors"
+            className="bg-white text-blue-600 text-xs px-3 py-1 rounded font-medium hover:bg-gray-100 transition-colors disabled:opacity-60"
+            disabled={isSubscribing}
           >
-            Abilita
+            {isSubscribing ? 'Abilitazione...' : 'Abilita'}
           </button>
           <button
             onClick={() => setShowBanner(false)}

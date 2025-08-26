@@ -46,5 +46,13 @@
     "mail": "autista2.eltek@gmail.com",
     "role": "autista",
     "id": 1752761316202
+  },
+  {
+    "username": "riccardo.brenelli@elteksrl.it",
+    "password": "$2b$10$xL2YUeZazWE9Gkxvg4hgJOwt3UOLrjphE/YE81flToIgm3.B8ZJLS",
+    "nome": "Riccardo Brenelli",
+    "mail": "riccardo.brenelli@elteksrl.it",
+    "role": "admin",
+    "id": 1756210601282
   }
 ]

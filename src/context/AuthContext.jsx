@@ -38,6 +38,32 @@ export function AuthProvider({ children }) {
       });
   }, [user]);
 
+  // Quando un utente è presente (es. al refresh o al login), proviamo automaticamente
+  // ad associare qualsiasi PushSubscription esistente nel browser a questo userId.
+  useEffect(() => {
+    if (!user || !user.id) return;
+    (async () => {
+      try {
+        if (!('serviceWorker' in navigator)) return;
+        const registration = await navigator.serviceWorker.ready;
+        if (!registration || !registration.pushManager) return;
+        const existing = await registration.pushManager.getSubscription();
+        if (!existing) return;
+
+        const body = { ...existing, userId: user.id };
+        try {
+          await fetch(`${BASE_URL}/api/push/subscribe`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+          await fetch(`${BASE_URL}/api/push/associate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ endpoint: existing.endpoint, userId: user.id }) });
+          console.log('[PUSH] Auto-associated existing subscription to user', user.id);
+        } catch (e) {
+          console.warn('Auto-associate request failed:', e.message);
+        }
+      } catch (e) {
+        console.warn('Error checking push subscription for auto-associate:', e.message);
+      }
+    })();
+  }, [user]);
+
   const login = async (mail, password) => {
     try {
       const res = await fetch(`${BASE_URL}/api/login`, {
@@ -54,6 +80,30 @@ export function AuthProvider({ children }) {
       // Store all backend fields and token
       setUser({ ...userData });
       setError(null);
+
+      // After login, if a service worker subscription exists in the browser, associate it with this user
+      try {
+        if ('serviceWorker' in navigator) {
+          const registration = await navigator.serviceWorker.ready;
+          if (registration && registration.pushManager) {
+            const existing = await registration.pushManager.getSubscription();
+            if (existing) {
+              // send to backend with userId
+              try {
+                const endpoint = existing.endpoint;
+                const body = { ...existing, userId: userData.id };
+                await fetch(`${BASE_URL}/api/push/subscribe`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+                // also try associate endpoint in case server expects that
+                await fetch(`${BASE_URL}/api/push/associate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ endpoint, userId: userData.id }) });
+              } catch (e) {
+                console.warn('Could not associate push subscription with user after login:', e.message);
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Error checking push subscription after login:', e.message);
+      }
       return true;
     } catch {
       setError("Errore di autenticazione");

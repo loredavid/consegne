@@ -25,7 +25,7 @@
     "dataRichiesta": "2025-07-04T09:30",
     "dataPianificata": "2025-07-04T09:30",
     "tipo": "ritiro",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Cristina Zaccarin",
@@ -43,9 +43,9 @@
     "aziendaDestinazione": "ALINA ZAVATE",
     "indirizzo": "Via Comugne Di Mezzo, 1, 33082 Azzano Decimo",
     "dataRichiesta": "2025-07-05T11:00",
-    "dataPianificata": "2025-07-05T11:00",
+    "dataPianificata": "2025-08-26T11:00",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
@@ -55,8 +55,8 @@
     "note": "Fragile",
     "id": 1752734807581,
     "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
+      "id": 2,
+      "nome": "ALL TRANSPORT"
     }
   },
   {
@@ -65,7 +65,7 @@
     "dataRichiesta": "2025-07-06T14:15",
     "dataPianificata": "2025-07-06T14:15",
     "tipo": "ritiro",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Cristina Zaccarin",
@@ -201,7 +201,7 @@
     "dataRichiesta": "2025-07-25T13:16",
     "dataPianificata": "2025-07-25T13:16",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -239,9 +239,9 @@
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
     "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
     "dataRichiesta": "2025-08-26T09:02",
-    "dataPianificata": "2025-08-26T09:02",
+    "dataPianificata": "2025-08-26T09:00",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -259,9 +259,9 @@
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
     "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
     "dataRichiesta": "2025-08-26T09:09",
-    "dataPianificata": "2025-08-26T09:09",
+    "dataPianificata": "2025-08-26T09:00",
     "tipo": "entrambi",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -302,14 +302,18 @@
     "dataPianificata": "2025-08-29T09:11",
     "tipo": "consegna",
     "status": "In attesa",
-    "daPianificare": true,
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
       "mail": "lorenzo.david@elteksrl.it",
       "role": "admin"
     },
     "note": "",
-    "id": 1756192323068
+    "id": 1756192323068,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   },
   {
     "aziendaDestinazione": "ALFA ELETTRONICA S.R.L",
@@ -317,7 +321,7 @@
     "dataRichiesta": "2025-08-26T14:50",
     "dataPianificata": "2025-08-26T14:50",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -326,6 +330,126 @@
     },
     "note": "Prova note\naijdgoieig\naongoweinonvsd\nosnosodiv",
     "id": 1756194358546,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "ELTEK S.R.L",
+    "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
+    "dataRichiesta": "2025-08-26T09:00",
+    "dataPianificata": "2025-08-26T09:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorena",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1756197483102,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
+    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
+    "dataRichiesta": "2025-08-26T09:00",
+    "dataPianificata": "2025-08-26T09:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorena",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1756197497394,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
+    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
+    "dataRichiesta": "2025-08-26T15:16",
+    "dataPianificata": "2025-08-26T15:00",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756199823597,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "SISTEL",
+    "indirizzo": "VIA BASALGHELLE, 40, MANSUE",
+    "dataRichiesta": "2025-08-26T13:47",
+    "dataPianificata": "2025-08-26T13:47",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756208862296,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
+    "dataRichiesta": "2025-08-26T13:58",
+    "dataPianificata": "2025-08-26T13:58",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1756209497799,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "AB PLAST",
+    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
+    "dataRichiesta": "2025-08-26T14:15",
+    "dataPianificata": "2025-08-26T14:15",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "lJSNFBOER\nERJBNOIAERB\nADJBOADIB\nEDJBOAFB",
+    "id": 1756210510813,
     "autista": {
       "id": 2,
       "nome": "ALL TRANSPORT"

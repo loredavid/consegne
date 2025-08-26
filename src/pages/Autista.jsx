@@ -6,12 +6,13 @@ import { BASE_URL } from "../App";
 import { useNavigate } from "react-router-dom";
 
 export default function Autista() {
-  const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission } = useNotification();
+  const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission, subscribeForPush } = useNotification();
   const { user, token } = useAuth();
   const { unreadCount } = useUnreadMessages();
   const [spedizioni, setSpedizioni] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showPermissionBanner, setShowPermissionBanner] = useState(false);
+  
   const navigate = useNavigate();
 
   // Controlla se mostrare il banner per i permessi delle notifiche
@@ -24,12 +25,20 @@ export default function Autista() {
   const handleRequestNotificationPermission = async () => {
     const granted = await requestNotificationPermission();
     if (granted) {
-      setShowPermissionBanner(false);
-      setNotification({ text: "Notifiche push abilitate!" });
+      // Dopo che i permessi sono stati concessi, crea la subscription e inviala al backend
+      const sub = await subscribeForPush();
+      if (sub) {
+        setShowPermissionBanner(false);
+        setNotification({ text: "Notifiche push abilitate e sottoscritte", type: 'success' });
+      } else {
+        setNotification({ text: "Notifiche abilitate ma la sottoscrizione non è stata completata", type: 'warning' });
+      }
     } else {
       setNotification({ text: "Permessi per le notifiche negati" });
     }
   };
+
+  
 
   useEffect(() => {
     if (user && token) {
@@ -200,13 +209,13 @@ export default function Autista() {
   const getTipoIcon = (tipo) => {
     switch (tipo) {
       case "consegna":
-        return "🚚";
+        return "";
       case "ritiro":
-        return "📦";
+        return "";
       case "entrambi":
-        return "🔄";
+        return "";
       default:
-        return "📋";
+        return "";
     }
   };
 
@@ -237,6 +246,28 @@ export default function Autista() {
       
       const message = `Spedizione ${newStatus.toLowerCase()} con successo`;
       setNotification({ text: message });
+
+      // Se la spedizione è stata marcata come Consegnata, invia automaticamente
+      // un messaggio di chat che notifica la consegna.
+      if (newStatus === 'Consegnata') {
+        try {
+          const text = `Ho consegnato la spedizione #${spedizioneId}${spedizione && spedizione.aziendaDestinazione ? ' - ' + spedizione.aziendaDestinazione : ''}`;
+          const body = { text, spedizioneId };
+          // Includiamo i dati mittente dal client (nome, mail) per compatibilità col formato messages.json
+          if (user) {
+            body.sender = { nome: user.nome || user.name || (user.mail ? user.mail.split('@')[0] : 'Autista'), mail: user.mail };
+          }
+          await fetch(`${BASE_URL}/api/messaggi`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+            body: JSON.stringify(body)
+          });
+        } catch (err) {
+          // Non bloccare l'utente: loggare errore e mostrare notifica leggera
+          console.warn('Errore nell\'invio del messaggio di consegna:', err);
+          setNotification({ text: 'Consegna registrata ma impossibile inviare messaggio di notifica', type: 'warning' });
+        }
+      }
       
       // Invia notifica push per conferma dell'azione
       if (pushNotificationsEnabled && spedizione) {
@@ -263,8 +294,8 @@ export default function Autista() {
   };
 
   const openMapsApp = (indirizzo, azienda) => {
-    // Crea l'indirizzo completo per la ricerca
-    const destination = encodeURIComponent(`${azienda ? azienda + ', ' : ''}${indirizzo}`);
+    // Apri l'app di navigazione usando solo l'indirizzo di destinazione (senza il nome dell'azienda)
+    const destination = encodeURIComponent(`${indirizzo}`);
     
     // Rileva il dispositivo e apri l'app mappe appropriata
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -320,7 +351,7 @@ export default function Autista() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Banner per richiedere permessi notifiche */}
+  {/* Banner per richiedere permessi notifiche */}
       {showPermissionBanner && (
         <div className="bg-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
@@ -347,6 +378,8 @@ export default function Autista() {
           </div>
         </div>
       )}
+
+      
 
       {/* Lista Spedizioni */}
       <div className="p-4">
@@ -434,7 +467,7 @@ export default function Autista() {
                     {spedizione.richiedente && (
                       <div className="flex items-center">
                         <span className="material-icons text-gray-400 text-sm mr-1">person</span>
-                        <span className="text-gray-600">Richiedente: </span>
+                        <span className="text-gray-600">Richiesta da: </span>
                         <span className="font-medium text-gray-800">{spedizione.richiedente.nome}</span>
                       </div>
                     )}

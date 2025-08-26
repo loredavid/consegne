@@ -92,7 +92,7 @@ export default function SpedizioneDettaglioMobile() {
       <main className="pt-[48px] p-4">
         <div className="bg-white rounded-xl shadow-md p-4 mb-4">
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">{spedizione.tipo === "consegna" ? "🚚" : spedizione.tipo === "ritiro" ? "📦" : "🔄"}</span>
+            <span className="text-3xl">{spedizione.tipo === "consegna" ? "" : spedizione.tipo === "ritiro" ? "" : ""}</span>
             <div className="flex-1">
               <h1 className="text-xl font-bold text-gray-800 mb-1">{spedizione.aziendaDestinazione}</h1>
               <div className="text-xs text-gray-500 mb-1 font-semibold">

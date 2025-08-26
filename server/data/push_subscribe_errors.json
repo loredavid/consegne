@@ -1,0 +1,43 @@
+[
+  {
+    "note": "debug-existing-sub",
+    "sub": {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/fbufwGfAQFU:APA91bGx0vbUtPYgsWMN3m_EqHepHrAP18eHxyg3weFUdlnLRgZLc28PCM08RyQPJFygKCkiMm_Eph_TBJlKizLtJsRBuV_ByIn9RtZqrqWKMXxrgssGOdr2T9uMA0oEr3wpkj-n5fdH",
+      "expirationTime": null,
+      "keys": {
+        "p256dh": "BL0Ue48fQxYLAlq-sMwkHkMmxaIWd1jojURiAjw6M-2BnP5hGl9nlD9wynr5qY0oY3-NIe82XXE8YTlqo1NPRXI",
+        "auth": "xE2xKNNUe3Jm65x9xIPVWw"
+      }
+    },
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "timestamp": "2025-08-26T11:34:09.291Z"
+  },
+  {
+    "note": "debug-existing-sub",
+    "sub": {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/fbufwGfAQFU:APA91bGx0vbUtPYgsWMN3m_EqHepHrAP18eHxyg3weFUdlnLRgZLc28PCM08RyQPJFygKCkiMm_Eph_TBJlKizLtJsRBuV_ByIn9RtZqrqWKMXxrgssGOdr2T9uMA0oEr3wpkj-n5fdH",
+      "expirationTime": null,
+      "keys": {
+        "p256dh": "BL0Ue48fQxYLAlq-sMwkHkMmxaIWd1jojURiAjw6M-2BnP5hGl9nlD9wynr5qY0oY3-NIe82XXE8YTlqo1NPRXI",
+        "auth": "xE2xKNNUe3Jm65x9xIPVWw"
+      }
+    },
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "timestamp": "2025-08-26T11:35:04.128Z"
+  },
+  {
+    "error": "undefined is not an object (evaluating 'registration.pushManager.getSubscription')",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/604.1",
+    "timestamp": "2025-08-26T11:37:05.985Z"
+  },
+  {
+    "error": "undefined is not an object (evaluating 'registration.pushManager.getSubscription')",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/604.1",
+    "timestamp": "2025-08-26T11:37:15.359Z"
+  },
+  {
+    "error": "registration.pushManager is undefined in this browser (Push API not supported or restricted)",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/604.1",
+    "timestamp": "2025-08-26T11:39:52.952Z"
+  }
+]

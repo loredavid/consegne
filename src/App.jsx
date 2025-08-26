@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-export const BASE_URL = "http://localhost:3001";
+export const BASE_URL = "https://ideal-space-carnival-p4g9q6q659c7w7q-3001.app.github.dev";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Pianificazione from "./pages/Pianificazione";
@@ -16,6 +16,7 @@ import SpedizioneDettaglioMobile from "./pages/SpedizioneDettaglioMobile";
 import PosizioneDettaglio from "./pages/PosizioneDettaglio";
 import ChatMobile from "./pages/ChatMobile";
 import PreparazioneMagazzino from "./pages/PreparazioneMagazzino";
+import PushDebug from "./components/PushDebug";
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
@@ -101,6 +102,7 @@ function App() {
                     <GestioneUtenti />
                   </ProtectedRoute>
                 } />
+                <Route path="/push-debug" element={<PushDebug />} />
                 <Route path="/spedizioni/:id" element={
                   <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente", "autista"]}>
                     <SpedizioneDettaglio />

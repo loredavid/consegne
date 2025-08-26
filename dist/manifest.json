@@ -1,0 +1,21 @@
+{
+  "name": "Consegne",
+  "short_name": "Consegne",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "description": "Gestione consegne, spedizioni e messaggistica.",
+  "icons": [
+    {
+      "src": "/src/assets/Image 30 giu 2025, 08_12_36.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/Image 30 giu 2025, 08_12_36.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
