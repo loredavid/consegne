@@ -37,58 +37,22 @@ export default function Autista() {
       setNotification({ text: "Permessi per le notifiche negati" });
     }
   };
-
   
-
   useEffect(() => {
     if (user && token) {
       let isMounted = true;
-      let lastCount = 0;
-      const fetchMessages = () => {
-        fetch(`${BASE_URL}/api/messaggi`, {
-          headers: { Authorization: `Bearer ${token}` }
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (!isMounted) return;
-            if (lastCount > 0 && data.length > lastCount) {
-              const newMsgs = data.slice(lastCount);
-              newMsgs.forEach((msg) => {
-                // Mostra notifica in-app
-                setNotification({ text: `${msg.sender?.nome}: ${msg.text}` });
-                
-                // Invia notifica push nativa se abilitata
-                if (pushNotificationsEnabled) {
-                  sendPushNotification(
-                    `Nuovo messaggio da ${msg.sender?.nome}`,
-                    {
-                      body: msg.text,
-                      onClick: () => {
-                        navigate('/chat');
-                      }
-                    }
-                  );
-                }
-              });
-            }
-            lastCount = data.length;
-          });
-      };
-      fetchMessages();
-      const interval = setInterval(fetchMessages, 2000);
-      return () => {
-        isMounted = false;
-        clearInterval(interval);
-      };
-    }
-  }, [setNotification, sendPushNotification, pushNotificationsEnabled, navigate, user, token]);
-
-  useEffect(() => {
-    if (user && token) {
-      let isMounted = true;
-      // Traccia gli ID delle spedizioni precedenti per rilevare nuove assegnazioni
-      let previousSpedizioniIds = new Set();
+  // Traccia gli ID delle spedizioni precedenti per rilevare nuove assegnazioni
+  let previousSpedizioniIds = new Set();
+  // Traccia gli ultimi stati conosciuti delle spedizioni per evitare notifiche duplicate
+  let lastKnownStates = new Map();
       
+      const isToday = (dateString) => {
+        if (!dateString) return false;
+        const d = new Date(dateString);
+        const now = new Date();
+        return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate();
+      };
+
       const fetchSpedizioni = () => {
         fetch(`${BASE_URL}/api/spedizioni`, {
           headers: { Authorization: `Bearer ${token}` }
@@ -100,14 +64,15 @@ export default function Autista() {
           .then(data => {
             if (!isMounted) return;
             
-            // Filtra solo le spedizioni assegnate specificamente a questo autista
+            // Filtra solo le spedizioni assegnate a questo autista e programmate per oggi
             const mieSpedizioni = data.filter(s => 
               s.autista && 
               s.autista.id === user.id && 
-              s.status !== "Consegnata"
+              s.status !== "Consegnata" &&
+              isToday(s.dataPianificata)
             );
             
-            // Controlla se ci sono nuove spedizioni assegnate specificamente a questo autista
+            // Controlla se ci sono nuove spedizioni assegnate a questo autista
             const currentSpedizioniIds = new Set(mieSpedizioni.map(s => s.id));
             
             // Solo dopo il primo caricamento, controlla per nuove assegnazioni
@@ -155,9 +120,35 @@ export default function Autista() {
                         navigate(`/spedizioni-mobile/${spedizione.id}`);
                       }
                     });
+                    // Salva lo stato iniziale per evitare che un cambio immediato causi duplicati
+                    lastKnownStates.set(spedizione.id, spedizione.status);
                   }
                 });
               }
+              // Controlla anche per cambi di stato delle spedizioni già assegnate a questo autista
+              mieSpedizioni.forEach((s) => {
+                const prevState = lastKnownStates.get(s.id);
+                if (prevState && prevState !== s.status) {
+                  // Lo stato è cambiato rispetto all'ultimo noto: invia notifica
+                  setNotification({ text: `Aggiornamento spedizione #${s.id}: ${s.status}` });
+                  if (pushNotificationsEnabled) {
+                    const statusMessages = {
+                      "In consegna": "Consegna iniziata",
+                      "Consegnata": "Consegna completata",
+                      "Fallita": "Consegna fallita"
+                    };
+                    sendPushNotification(
+                      statusMessages[s.status] || `Stato aggiornato`,
+                      {
+                        body: `${s.aziendaDestinazione} - ${s.status}`,
+                        icon: s.status === "Consegnata" ? '✅' : s.status === "Fallita" ? '❌' : '🚚'
+                      }
+                    );
+                  }
+                }
+                // Aggiorna l'ultimo stato conosciuto
+                lastKnownStates.set(s.id, s.status);
+              });
             }
             
             // Aggiorna il set degli ID per il prossimo controllo

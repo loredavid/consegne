@@ -45,7 +45,7 @@
     "dataRichiesta": "2025-07-05T11:00",
     "dataPianificata": "2025-08-26T11:00",
     "tipo": "consegna",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
@@ -80,11 +80,31 @@
     }
   },
   {
-    "aziendaDestinazione": "ANTICA CORDERIA CORAI SNC",
-    "indirizzo": "Via A. Gabelli, 2, 33084 Cordenons PN",
+    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
+    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
     "dataRichiesta": "2025-07-07T16:00",
     "dataPianificata": "2025-07-07T16:00",
     "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorena Stolfo",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1752734807583,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-07-18T13:08",
+    "dataPianificata": "2025-09-09T18:08",
+    "tipo": "entrambi",
     "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
@@ -92,24 +112,12 @@
       "mail": "lorena.stolfo@elteksrl.it",
       "role": "richiedente"
     },
-    "note": "",
-    "id": 1752734807583
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-07-18T13:08",
-    "dataPianificata": "2025-07-18T13:08",
-    "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorena Stolfo",
-      "mail": "lorena.stolfo@elteksrl.it",
-      "role": "richiedente"
-    },
-    "note": "",
-    "id": 1752750543903
+    "note": "ihbyb\nmoif\nnuova nota",
+    "id": 1752750543903,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   },
   {
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
@@ -153,7 +161,7 @@
     "dataRichiesta": "2025-07-19T11:44",
     "dataPianificata": "2025-07-19T11:44",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -161,7 +169,11 @@
       "role": "admin"
     },
     "note": "",
-    "id": 1753091054824
+    "id": 1753091054824,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   },
   {
     "aziendaDestinazione": "CRISTINA APREOTESE",
@@ -221,7 +233,7 @@
     "dataRichiesta": "2025-08-29T08:50",
     "dataPianificata": "2025-08-29T08:50",
     "tipo": "ritiro",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -281,7 +293,7 @@
     "dataRichiesta": "2025-08-26T14:11",
     "dataPianificata": "2025-08-26T14:11",
     "tipo": "consegna",
-    "status": "In attesa",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -379,7 +391,7 @@
     "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
     "indirizzo": "Via Braglio, 74, 36015 Schio VI",
     "dataRichiesta": "2025-08-26T15:16",
-    "dataPianificata": "2025-08-26T15:00",
+    "dataPianificata": "2025-09-09T19:00",
     "tipo": "ritiro",
     "status": "In consegna",
     "daPianificare": false,
@@ -391,8 +403,8 @@
     "note": "",
     "id": 1756199823597,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
     }
   },
   {
@@ -401,7 +413,7 @@
     "dataRichiesta": "2025-08-26T13:47",
     "dataPianificata": "2025-08-26T13:47",
     "tipo": "consegna",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -411,8 +423,8 @@
     "note": "",
     "id": 1756208862296,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
     }
   },
   {
@@ -421,7 +433,7 @@
     "dataRichiesta": "2025-08-26T13:58",
     "dataPianificata": "2025-08-26T13:58",
     "tipo": "consegna",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -453,6 +465,46 @@
     "autista": {
       "id": 2,
       "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "DANIELA BOTEZATU",
+    "indirizzo": "Via Villanova, 27/5, 33076 Pravisdomini PN",
+    "dataRichiesta": "2025-09-09T14:37",
+    "dataPianificata": "2025-09-09T18:37",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "Prova note\nasmfo\najsnf",
+    "id": 1757421442168,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "EL.CO ELETTRONICA SRL",
+    "indirizzo": "Via Roveredo, 2/A, 33170 Pordenone PN",
+    "dataRichiesta": "2025-09-27T15:22",
+    "dataPianificata": "2025-09-09T20:22",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1757424173555,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
     }
   }
 ]

@@ -1419,5 +1419,378 @@
     "spedizioneId": 1756209497799,
     "id": 1756214469391,
     "timestamp": "2025-08-26T13:21:09.391Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1752734807581 - ALINA ZAVATE",
+    "spedizioneId": 1752734807581,
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1756217657719,
+    "timestamp": "2025-08-26T14:14:17.719Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "hhhh",
+    "id": 1756299027256,
+    "timestamp": "2025-08-27T12:50:27.256Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova",
+    "id": 1757421138822,
+    "timestamp": "2025-09-09T12:32:18.822Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "sajfnaiv",
+    "id": 1757421402400,
+    "timestamp": "2025-09-09T12:36:42.400Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: DANIELA BOTEZATU (2025-09-09T14:37)",
+    "tipo": "richiesta",
+    "id": 1757421442300,
+    "timestamp": "2025-09-09T12:37:22.300Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: DANIELA BOTEZATU\nIndirizzo: Via Villanova, 27/5, 33076 Pravisdomini PN\nData: martedì 9 settembre 2025 alle ore 14:37\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757421442168,
+    "id": 1757421460346,
+    "timestamp": "2025-09-09T12:37:40.346Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1757421965415,
+    "timestamp": "2025-09-09T12:46:05.415Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757421993646,
+    "timestamp": "2025-09-09T12:46:33.646Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757422023229,
+    "timestamp": "2025-09-09T12:47:03.229Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757422045262,
+    "timestamp": "2025-09-09T12:47:25.262Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757422052297,
+    "timestamp": "2025-09-09T12:47:32.297Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: -\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1757422062450,
+    "timestamp": "2025-09-09T12:47:42.450Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1757422068004,
+    "timestamp": "2025-09-09T12:47:48.004Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: -\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1757422078503,
+    "timestamp": "2025-09-09T12:47:58.503Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALMACAB di Domeneghetti Marzia\nIndirizzo: Vial di Romans, 71, 33084 Cordenons PN\nData: lunedì 7 luglio 2025 alle ore 16:00\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752734807583,
+    "id": 1757422081003,
+    "timestamp": "2025-09-09T12:48:01.003Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "d",
+    "id": 1757422231419,
+    "timestamp": "2025-09-09T12:50:31.419Z"
+  },
+  {
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "text": "d",
+    "id": 1757422251964,
+    "timestamp": "2025-09-09T12:50:51.964Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "f",
+    "id": 1757422300444,
+    "timestamp": "2025-09-09T12:51:40.444Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: sabato 19 luglio 2025 alle ore 11:44\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753091054824,
+    "id": 1757422313002,
+    "timestamp": "2025-09-09T12:51:53.002Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1752734807583 - ALMACAB di Domeneghetti Marzia",
+    "spedizioneId": 1752734807583,
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1757422341269,
+    "timestamp": "2025-09-09T12:52:21.269Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": ",,",
+    "id": 1757423310314,
+    "timestamp": "2025-09-09T13:08:30.314Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423322626,
+    "timestamp": "2025-09-09T13:08:42.626Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423331231,
+    "timestamp": "2025-09-09T13:08:51.231Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423341450,
+    "timestamp": "2025-09-09T13:09:01.450Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423357969,
+    "timestamp": "2025-09-09T13:09:17.969Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: venerdì 18 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423381729,
+    "timestamp": "2025-09-09T13:09:41.729Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: domenica 20 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423393356,
+    "timestamp": "2025-09-09T13:09:53.356Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: sabato 19 luglio 2025 alle ore 11:44\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1753091054824,
+    "id": 1757423408492,
+    "timestamp": "2025-09-09T13:10:08.492Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: domenica 20 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423463576,
+    "timestamp": "2025-09-09T13:11:03.576Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: domenica 20 luglio 2025 alle ore 13:08\nAutista: Ernesto/Andrea\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423646217,
+    "timestamp": "2025-09-09T13:14:06.217Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: domenica 20 luglio 2025 alle ore 13:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757423658294,
+    "timestamp": "2025-09-09T13:14:18.294Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: SISTEL\nIndirizzo: VIA BASALGHELLE, 40, MANSUE\nData: martedì 26 agosto 2025 alle ore 13:47\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756208862296,
+    "id": 1757423978818,
+    "timestamp": "2025-09-09T13:19:38.818Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: martedì 26 agosto 2025 alle ore 15:00\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756199823597,
+    "id": 1757423992811,
+    "timestamp": "2025-09-09T13:19:52.811Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1756208862296 - SISTEL",
+    "spedizioneId": "1756208862296",
+    "sender": {
+      "nome": "Ernesto/Andrea",
+      "mail": "autista2.eltek@gmail.com"
+    },
+    "id": 1757424024406,
+    "timestamp": "2025-09-09T13:20:24.406Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1756209497799 - FUTURA ELETTROTECNICA",
+    "spedizioneId": "1756209497799",
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1757424053882,
+    "timestamp": "2025-09-09T13:20:53.882Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: EL.CO ELETTRONICA SRL (2025-09-27T15:22)",
+    "tipo": "richiesta",
+    "id": 1757424173777,
+    "timestamp": "2025-09-09T13:22:53.777Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: EL.CO ELETTRONICA SRL\nIndirizzo: Via Roveredo, 2/A, 33170 Pordenone PN\nData: sabato 27 settembre 2025 alle ore 15:22\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757424173555,
+    "id": 1757424184898,
+    "timestamp": "2025-09-09T13:23:04.898Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: martedì 9 settembre 2025 alle ore 18:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757424301252,
+    "timestamp": "2025-09-09T13:25:01.252Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: martedì 9 settembre 2025 alle ore 19:00\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756199823597,
+    "id": 1757424313526,
+    "timestamp": "2025-09-09T13:25:13.526Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: DANIELA BOTEZATU\nIndirizzo: Via Villanova, 27/5, 33076 Pravisdomini PN\nData: martedì 9 settembre 2025 alle ore 18:37\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757421442168,
+    "id": 1757424333773,
+    "timestamp": "2025-09-09T13:25:33.773Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: EL.CO ELETTRONICA SRL\nIndirizzo: Via Roveredo, 2/A, 33170 Pordenone PN\nData: martedì 9 settembre 2025 alle ore 20:22\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757424173555,
+    "id": 1757424353615,
+    "timestamp": "2025-09-09T13:25:53.615Z"
   }
 ]

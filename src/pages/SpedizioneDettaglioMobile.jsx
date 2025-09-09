@@ -47,6 +47,33 @@ export default function SpedizioneDettaglioMobile() {
     } finally {
       setSaving(false);
     }
+
+    // Se la spedizione è stata marcata come Consegnata, invia automaticamente
+    // un messaggio di chat che notifica la consegna.
+    if (newStatus === 'Consegnata') {
+      try {
+        const spedizioneId = id;
+        const azienda = spedizione?.aziendaDestinazione || '';
+        const text = `Ho consegnato la spedizione #${spedizioneId}${azienda ? ' - ' + azienda : ''}`;
+        const body = { text, spedizioneId };
+        // Includiamo i dati mittente dal client (nome, mail) per compatibilità col formato messages.json
+        if (user) {
+          body.sender = { nome: user.nome || user.name || (user.mail ? user.mail.split('@')[0] : 'Autista'), mail: user.mail };
+        }
+        // Solo invia se abbiamo token
+        if (token) {
+          await fetch(`${BASE_URL}/api/messaggi`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+            body: JSON.stringify(body)
+          });
+        }
+      } catch (err) {
+        // Non bloccare l'utente: loggare errore e mostrare notifica leggera
+        console.warn('Errore nell\'invio del messaggio di consegna:', err);
+        setNotification({ text: 'Consegna registrata ma impossibile inviare messaggio di notifica', type: 'warning' });
+      }
+    }
   };
 
   if (loading) return (
@@ -172,7 +199,11 @@ export default function SpedizioneDettaglioMobile() {
             )}
             {spedizione.status === "In consegna" && (
               <button
-                onClick={() => updateStatus("Consegnata")}
+                onClick={() => {
+                  if (window.confirm('Sei sicuro di voler segnare questa spedizione come fallita?')) {
+                    updateStatus("Consegnata");
+                  }
+                }}
                 disabled={saving}
                 className="flex-1 bg-green-500 hover:bg-green-600 text-white text-xs py-2 px-3 rounded-md font-medium transition-colors flex items-center justify-center gap-1"
               >
