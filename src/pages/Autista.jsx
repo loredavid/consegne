@@ -37,7 +37,7 @@ export default function Autista() {
       setNotification({ text: "Permessi per le notifiche negati" });
     }
   };
-  
+
   useEffect(() => {
     if (user && token) {
       let isMounted = true;
@@ -551,6 +551,14 @@ export default function Autista() {
             <span className="material-icons">notifications</span>
           </button>
         )}
+        {/* Pulsante Mappa odierna */}
+        <button
+          onClick={() => navigate('/autista/mappa')}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-colors"
+          aria-label="Mappa odierna"
+        >
+          <span className="material-icons">map</span>
+        </button>
         
         {/* Pulsante Refresh */}
         <button

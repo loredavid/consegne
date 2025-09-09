@@ -17,6 +17,7 @@ import PosizioneDettaglio from "./pages/PosizioneDettaglio";
 import ChatMobile from "./pages/ChatMobile";
 import PreparazioneMagazzino from "./pages/PreparazioneMagazzino";
 import PushDebug from "./components/PushDebug";
+import SpedizioniMappa from "./pages/SpedizioniMappa";
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
@@ -50,6 +51,11 @@ function App() {
                 <Route path="/autista" element={
                   <ProtectedRoute allowedRoles={["admin", "autista"]}>
                     <Autista />
+                  </ProtectedRoute>
+                } />
+                <Route path="/autista/mappa" element={
+                  <ProtectedRoute allowedRoles={["admin", "autista"]}>
+                    <SpedizioniMappa />
                   </ProtectedRoute>
                 } />
                 <Route path="/pianificazione" element={
