@@ -36,6 +36,12 @@ export default function Richieste() {
   const [filtroData, setFiltroData] = useState("");
   const navigate = useNavigate();
 
+  // Helper formattazione data/ora: DD/MM/YYYY alle hh:mm
+  const pad = n => String(n).padStart(2, "0");
+  const formatDate = dt => `${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}/${dt.getFullYear()}`;
+  const formatTime = dt => `${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+  const formatDateTime = dt => `${formatDate(dt)} alle ${formatTime(dt)}`;
+
   useEffect(() => {
     if (user && token) {
       fetch(`${BASE_URL}/api/posizioni`, {
@@ -129,16 +135,19 @@ export default function Richieste() {
         body: JSON.stringify(payload)
       });
       if (!res.ok) throw new Error();
+      const created = await res.json();
       setSuccess("Richiesta di spedizione inviata!");
-      // Invia un messaggio di sistema per aggiornare la pagina Pianificazione
+      // Invia un messaggio in chat a nome dell'utente loggato con i dettagli della richiesta
       try {
+        const messageText = `${user?.nome || 'Utente'} ha inviato una richiesta: ${payload.aziendaDestinazione} per il ${formatDateTime(new Date(payload.dataRichiesta))}${payload.note ? `\nNote: ${payload.note}` : ''}`;
         await fetch(`${BASE_URL}/api/messaggi`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
           body: JSON.stringify({
-            sender: { nome: "Sistema" },
-            text: `Nuova richiesta di spedizione: ${payload.aziendaDestinazione} (${payload.dataRichiesta})`,
-            tipo: "richiesta"
+            sender: user ? { nome: user.nome, mail: user.mail, role: user.role } : { nome: 'Sconosciuto' },
+            text: messageText,
+            tipo: "richiesta",
+            spedizioneId: created?.id || null
           })
         });
       } catch {}
@@ -171,7 +180,7 @@ export default function Richieste() {
         if (s.dataRichiesta) {
           const dataRichiesta = new Date(s.dataRichiesta);
           const dataFiltro = new Date(filtroData);
-          matchData = dataRichiesta.toLocaleDateString() === dataFiltro.toLocaleDateString();
+          matchData = formatDate(dataRichiesta) === formatDate(dataFiltro);
         } else {
           matchData = false;
         }
@@ -245,10 +254,10 @@ export default function Richieste() {
                     <td className="px-2 py-3"><FaRegClock className="inline text-gray-400" /></td>
                     <td className="px-2 py-3">
                       <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
-                        {dt ? dt.toLocaleDateString() : "-"}
+                        {dt ? formatDate(dt) : "-"}
                       </span>
                     </td>
-                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3">{dt ? formatTime(dt) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
                     <td className="px-2 py-3">{s.tipo}</td>
@@ -288,10 +297,10 @@ export default function Richieste() {
                     <td className="px-2 py-3"><span className="inline text-green-400">&#10003;</span></td>
                     <td className="px-2 py-3">
                       <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
-                        {dt ? dt.toLocaleDateString() : "-"}
+                        {dt ? formatDate(dt) : "-"}
                       </span>
                     </td>
-                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3">{dt ? formatTime(dt) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
                     <td className="px-2 py-3">{s.tipo}</td>
@@ -346,10 +355,10 @@ export default function Richieste() {
                     <td className="px-2 py-3"><FaRegClock className="inline text-gray-400" /></td>
                     <td className="px-2 py-3">
                       <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
-                        {dt ? dt.toLocaleDateString() : "-"}
+                        {dt ? formatDate(dt) : "-"}
                       </span>
                     </td>
-                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3">{dt ? formatTime(dt) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
                     <td className="px-2 py-3">{s.tipo}</td>
@@ -387,10 +396,10 @@ export default function Richieste() {
                     <td className="px-2 py-3"><span className="inline text-green-400">&#10003;</span></td>
                     <td className="px-2 py-3">
                       <span className={isLate ? "bg-red-100 text-red-600 rounded px-2 py-1 text-xs font-semibold" : "bg-green-100 text-green-600 rounded px-2 py-1 text-xs font-semibold"}>
-                        {dt ? dt.toLocaleDateString() : "-"}
+                        {dt ? formatDate(dt) : "-"}
                       </span>
                     </td>
-                    <td className="px-2 py-3">{dt ? dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "-"}</td>
+                    <td className="px-2 py-3">{dt ? formatTime(dt) : "-"}</td>
                     <td className="px-2 py-3 truncate">{s.aziendaDestinazione || "-"}</td>
                     <td className="px-2 py-3">{s.status || "-"}</td>
                     <td className="px-2 py-3">{s.tipo}</td>

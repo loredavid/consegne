@@ -453,7 +453,7 @@
     "dataRichiesta": "2025-08-26T14:15",
     "dataPianificata": "2025-09-10T14:15",
     "tipo": "consegna",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -506,5 +506,93 @@
       "id": 1752761316202,
       "nome": "Ernesto/Andrea"
     }
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-09-10T15:15",
+    "dataPianificata": "2025-09-10T15:15",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "CYI.YL",
+    "id": 1757510160872,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-09-10T17:35",
+    "dataPianificata": "2025-09-10T17:35",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "xfmsf",
+    "id": 1757511363316,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
+    "dataRichiesta": "2025-09-10T15:39",
+    "dataPianificata": "2025-09-10T15:39",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1757511593277
+  },
+  {
+    "aziendaDestinazione": "AB PLAST",
+    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
+    "dataRichiesta": "2025-09-10T15:40",
+    "dataPianificata": "2025-09-10T15:40",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1757511661610
+  },
+  {
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
+    "dataRichiesta": "2025-09-10T15:41",
+    "dataPianificata": "2025-09-10T15:41",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1757511677074
   }
 ]

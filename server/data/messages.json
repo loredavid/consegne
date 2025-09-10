@@ -1911,5 +1911,135 @@
     "spedizioneId": 1756192323068,
     "id": 1757506446575,
     "timestamp": "2025-09-10T12:14:06.575Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Nuova richiesta di spedizione: ALINA ZAVATE (2025-09-10T15:15)",
+    "tipo": "richiesta",
+    "id": 1757510161182,
+    "timestamp": "2025-09-10T13:16:01.182Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: mercoledì 10 settembre 2025 alle ore 15:15\nAutista: ALL TRANSPORT\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757510160872,
+    "id": 1757510189164,
+    "timestamp": "2025-09-10T13:16:29.164Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "STH",
+    "id": 1757510243105,
+    "timestamp": "2025-09-10T13:17:23.105Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1756210510813 - AB PLAST",
+    "spedizioneId": 1756210510813,
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1757510435894,
+    "timestamp": "2025-09-10T13:20:35.894Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "GG",
+    "id": 1757510629825,
+    "timestamp": "2025-09-10T13:23:49.825Z"
+  },
+  {
+    "sender": {
+      "nome": "Ernesto/Andrea",
+      "mail": "autista2.eltek@gmail.com"
+    },
+    "text": "HG",
+    "id": 1757510642566,
+    "timestamp": "2025-09-10T13:24:02.566Z"
+  },
+  {
+    "sender": {
+      "nome": "Ernesto/Andrea",
+      "mail": "autista2.eltek@gmail.com"
+    },
+    "text": "HGM",
+    "id": 1757510711206,
+    "timestamp": "2025-09-10T13:25:11.206Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Lorenzo David ha inviato una richiesta: TEKNO 31 S.R.L.S. - 2025-09-10T17:35\nNote: xfmsf",
+    "tipo": "richiesta",
+    "spedizioneId": 1757511363316,
+    "id": 1757511363487,
+    "timestamp": "2025-09-10T13:36:03.487Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "prova messaggio",
+    "id": 1757511539211,
+    "timestamp": "2025-09-10T13:38:59.211Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: mercoledì 10 settembre 2025 alle ore 17:35\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757511363316,
+    "id": 1757511558818,
+    "timestamp": "2025-09-10T13:39:18.818Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Lorenzo David ha inviato una richiesta: FUTURA ELETTROTECNICA per il 2025-09-10T15:39",
+    "tipo": "richiesta",
+    "spedizioneId": 1757511593277,
+    "id": 1757511593466,
+    "timestamp": "2025-09-10T13:39:53.466Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Lorenzo David ha inviato una richiesta: AB PLAST per il 2025-09-10T15:40",
+    "tipo": "richiesta",
+    "spedizioneId": 1757511661610,
+    "id": 1757511661765,
+    "timestamp": "2025-09-10T13:41:01.765Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Lorenzo David ha inviato una richiesta: FUTURA ELETTROTECNICA per il 10/09/2025 alle 15:41",
+    "tipo": "richiesta",
+    "spedizioneId": 1757511677074,
+    "id": 1757511677232,
+    "timestamp": "2025-09-10T13:41:17.232Z"
   }
 ]
