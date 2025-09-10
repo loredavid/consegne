@@ -3,22 +3,22 @@
     "id": "1",
     "azienda": "ELTEK S.R.L",
     "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
-    "lat": 45.9636,
-    "lng": 12.6936,
+    "lat": 45.9626376231841,
+    "lng": 12.706801254284457,
     "referente": "ELTEK",
     "telefono": "0434 41299",
     "email": "info@elteksrl.it",
     "logo": "eltek.png"
   },
   {
-    "id": 2,
+    "id": "2",
     "azienda": "PALAZZETTI LELIO S.P.A.",
     "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "lat": 45.9632,
-    "lng": 12.6627,
+    "lat": "",
+    "lng": "",
     "referente": "Palazzetti",
-    "telefono": "",
-    "email": "PALAZZETTI",
+    "telefono": "v",
+    "email": "palazzetti@palazzetti.com",
     "logo": "palazzetti.png"
   },
   {
@@ -385,9 +385,9 @@
     "logo": "matermacc.png"
   },
   {
-    "id": 37,
+    "id": "37",
     "azienda": "LACRAMIOARA ENE",
-    "indirizzo": "Via Enrico Toti, 112/C, int. 7, 33082 Tiezzo di Azzano Decimo PN",
+    "indirizzo": "Via Enrico Toti, 112/C, 33082 Tiezzo di Azzano Decimo PN",
     "lat": "",
     "lng": "",
     "referente": "Lara Ene",

@@ -1792,5 +1792,124 @@
     "spedizioneId": 1757424173555,
     "id": 1757424353615,
     "timestamp": "2025-09-09T13:25:53.615Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: mercoledì 10 settembre 2025 alle ore 18:08\nAutista: ALL TRANSPORT\nTipo: entrambi\nRichiedente: Lorena Stolfo",
+    "spedizioneId": 1752750543903,
+    "id": 1757502039135,
+    "timestamp": "2025-09-10T11:00:39.135Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.\nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: mercoledì 10 settembre 2025 alle ore 09:11\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756192323068,
+    "id": 1757502047413,
+    "timestamp": "2025-09-10T11:00:47.413Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: AB PLAST\nIndirizzo: VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO\nData: mercoledì 10 settembre 2025 alle ore 14:15\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756210510813,
+    "id": 1757502057052,
+    "timestamp": "2025-09-10T11:00:57.052Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: mercoledì 10 settembre 2025 alle ore 19:00\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756199823597,
+    "id": 1757502136266,
+    "timestamp": "2025-09-10T11:02:16.266Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: mercoledì 10 settembre 2025 alle ore 18:37\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757421442168,
+    "id": 1757502829746,
+    "timestamp": "2025-09-10T11:13:49.746Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: PALAZZETTI LELIO S.P.A.\nIndirizzo: Via Roveredo, 103, 33080, Porcia\nData: mercoledì 10 settembre 2025 alle ore 20:22\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1757424173555,
+    "id": 1757502866986,
+    "timestamp": "2025-09-10T11:14:26.986Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1752750543903 - PALAZZETTI LELIO S.P.A.",
+    "spedizioneId": 1752750543903,
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1757503648008,
+    "timestamp": "2025-09-10T11:27:28.008Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1757421442168 - S.D. ELECTRIC S.N.C",
+    "spedizioneId": "1757421442168",
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1757504390462,
+    "timestamp": "2025-09-10T11:39:50.462Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALFA ELETTRONICA S.R.L\nIndirizzo: Via Amman, 35, 33084 Cordenons PN\nData: mercoledì 10 settembre 2025 alle ore 14:50\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756194358546,
+    "id": 1757505427629,
+    "timestamp": "2025-09-10T11:57:07.629Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: ALFA ELETTRONICA S.R.L\nIndirizzo: Via Amman, 35, 33084 Cordenons PN\nData: mercoledì 10 settembre 2025 alle ore 14:50\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756194358546,
+    "id": 1757505440831,
+    "timestamp": "2025-09-10T11:57:20.831Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: LACRAMIOARA ENE\nIndirizzo: Via Enrico Toti, 112/C, int. 7, 33082 Tiezzo di Azzano Decimo PN\nData: mercoledì 10 settembre 2025 alle ore 19:00\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756199823597,
+    "id": 1757505458769,
+    "timestamp": "2025-09-10T11:57:38.769Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA\nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: mercoledì 10 settembre 2025 alle ore 19:00\nAutista: Ernesto/Andrea\nTipo: ritiro\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756199823597,
+    "id": 1757505530373,
+    "timestamp": "2025-09-10T11:58:50.373Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: mercoledì 10 settembre 2025 alle ore 09:11\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756192323068,
+    "id": 1757506446575,
+    "timestamp": "2025-09-10T12:14:06.575Z"
   }
 ]

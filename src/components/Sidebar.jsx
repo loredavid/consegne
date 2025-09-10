@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { User, Wrench, Mail, Clock, MapPin, Truck, MessageCircle, Database, ChevronLeft, ChevronRight, Package } from "lucide-react";
+import { User, Wrench, Mail, Clock, MapPin, Map, Truck, MessageCircle, Database, ChevronLeft, ChevronRight, Package } from "lucide-react";
 import homeImage from '../assets/Image 30 giu 2025, 08_12_36.png';
 import { useNotification } from "../context/NotificationContext";
 import { useAuth } from "../context/AuthContext";
@@ -14,6 +14,7 @@ const menuItems = [
   { to: "/posizioni", label: "Posizioni", icon: <MapPin size={20} /> },
   // { to: "/autista", label: "Autista", icon: <Truck size={20} /> }, // nascosta
   { to: "/chat", label: "Chat", icon: <MessageCircle size={20} /> },
+    { to: "/spedizioni/mappa", label: "Mappa Spedizioni", icon: <Map size={20} /> },
   { to: "/admin", label: "Amministratore", icon: <Database size={20} /> },
 ];
 
@@ -29,13 +30,14 @@ export default function Sidebar() {
     if (!user) return false;
     // Sidebar per autista: solo Chat, Posizioni
     if (user.role === "autista") {
-      return ["/chat", "/posizioni"].includes(item.to);
+    return ["/chat", "/posizioni"].includes(item.to);
     }
     // Admin: tutte tranne gestione utenti se non admin
     if (item.to === "/admin" && user.role !== "admin") return false;
     if (item.to === "/gestione-utenti" && user.role !== "admin") return false;
     if (item.to === "/autista" && !(user.role === "autista" || user.role === "admin")) return false;
     if (item.to === "/preparazione-magazzino" && !(user.role === "admin" || user.role === "pianificatore")) return false;
+    if (item.to === "/spedizioni/mappa" && !(user.role === "admin" || user.role === "pianificatore" || user.role === "richiedente")) return false;
     return true;
   };
 

@@ -103,9 +103,9 @@
     "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
     "indirizzo": "Via Roveredo, 103, 33080, Porcia",
     "dataRichiesta": "2025-07-18T13:08",
-    "dataPianificata": "2025-09-09T18:08",
+    "dataPianificata": "2025-09-10T18:08",
     "tipo": "entrambi",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorena Stolfo",
@@ -308,10 +308,10 @@
     }
   },
   {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
+    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
     "dataRichiesta": "2025-08-29T09:11",
-    "dataPianificata": "2025-08-29T09:11",
+    "dataPianificata": "2025-09-10T09:11",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,
@@ -323,15 +323,15 @@
     "note": "",
     "id": 1756192323068,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
     }
   },
   {
     "aziendaDestinazione": "ALFA ELETTRONICA S.R.L",
     "indirizzo": "Via Amman, 35, 33084 Cordenons PN",
     "dataRichiesta": "2025-08-26T14:50",
-    "dataPianificata": "2025-08-26T14:50",
+    "dataPianificata": "2025-09-10T14:50",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,
@@ -343,8 +343,8 @@
     "note": "Prova note\naijdgoieig\naongoweinonvsd\nosnosodiv",
     "id": 1756194358546,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto/Andrea"
     }
   },
   {
@@ -388,10 +388,10 @@
     }
   },
   {
-    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
-    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
     "dataRichiesta": "2025-08-26T15:16",
-    "dataPianificata": "2025-09-09T19:00",
+    "dataPianificata": "2025-09-10T19:00",
     "tipo": "ritiro",
     "status": "In consegna",
     "daPianificare": false,
@@ -451,7 +451,7 @@
     "aziendaDestinazione": "AB PLAST",
     "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
     "dataRichiesta": "2025-08-26T14:15",
-    "dataPianificata": "2025-08-26T14:15",
+    "dataPianificata": "2025-09-10T14:15",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,
@@ -468,12 +468,12 @@
     }
   },
   {
-    "aziendaDestinazione": "DANIELA BOTEZATU",
-    "indirizzo": "Via Villanova, 27/5, 33076 Pravisdomini PN",
+    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
+    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
     "dataRichiesta": "2025-09-09T14:37",
-    "dataPianificata": "2025-09-09T18:37",
+    "dataPianificata": "2025-09-10T18:37",
     "tipo": "consegna",
-    "status": "In consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
@@ -488,10 +488,10 @@
     }
   },
   {
-    "aziendaDestinazione": "EL.CO ELETTRONICA SRL",
-    "indirizzo": "Via Roveredo, 2/A, 33170 Pordenone PN",
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
     "dataRichiesta": "2025-09-27T15:22",
-    "dataPianificata": "2025-09-09T20:22",
+    "dataPianificata": "2025-09-10T20:22",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,

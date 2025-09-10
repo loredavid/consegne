@@ -18,6 +18,7 @@ import ChatMobile from "./pages/ChatMobile";
 import PreparazioneMagazzino from "./pages/PreparazioneMagazzino";
 import PushDebug from "./components/PushDebug";
 import SpedizioniMappa from "./pages/SpedizioniMappa";
+import SpedizioniMappaAdmin from "./pages/SpedizioniMappaAdmin";
 import { NotificationProvider } from "./context/NotificationContext";
 import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
@@ -56,6 +57,11 @@ function App() {
                 <Route path="/autista/mappa" element={
                   <ProtectedRoute allowedRoles={["admin", "autista"]}>
                     <SpedizioniMappa />
+                  </ProtectedRoute>
+                } />
+                <Route path="/spedizioni/mappa" element={
+                  <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente"]}>
+                    <SpedizioniMappaAdmin />
                   </ProtectedRoute>
                 } />
                 <Route path="/pianificazione" element={
