@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Autista() {
   const { setNotification, sendPushNotification, pushNotificationsEnabled, requestNotificationPermission, subscribeForPush } = useNotification();
-  const { user, token } = useAuth();
+  const { user, token, logout } = useAuth();
   const { unreadCount } = useUnreadMessages();
   const [spedizioni, setSpedizioni] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -58,11 +58,18 @@ export default function Autista() {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => {
+            if (res.status === 401 || res.status === 403) {
+              // Token non valido o scaduto, logout e reindirizza al login
+              logout();
+              navigate('/login');
+              setNotification({ text: "Sessione scaduta. Effettua nuovamente il login.", type: 'error' });
+              return;
+            }
             if (!res.ok) throw new Error("Errore nel caricamento delle spedizioni");
             return res.json();
           })
           .then(data => {
-            if (!isMounted) return;
+            if (!isMounted || !data) return;
             
             // Filtra solo le spedizioni assegnate a questo autista e programmate per oggi
             const mieSpedizioni = data.filter(s => 
@@ -223,6 +230,14 @@ export default function Autista() {
         body: JSON.stringify({ status: newStatus })
       });
       
+      if (response.status === 401 || response.status === 403) {
+        // Token non valido o scaduto, logout e reindirizza al login
+        logout();
+        navigate('/login');
+        setNotification({ text: "Sessione scaduta. Effettua nuovamente il login.", type: 'error' });
+        return;
+      }
+      
       if (!response.ok) throw new Error();
       
       // Trova la spedizione per ottenere i dettagli
@@ -248,11 +263,19 @@ export default function Autista() {
           if (user) {
             body.sender = { nome: user.nome || user.name || (user.mail ? user.mail.split('@')[0] : 'Autista'), mail: user.mail };
           }
-          await fetch(`${BASE_URL}/api/messaggi`, {
+          const messageResponse = await fetch(`${BASE_URL}/api/messaggi`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
             body: JSON.stringify(body)
           });
+          
+          if (messageResponse.status === 401 || messageResponse.status === 403) {
+            // Token non valido o scaduto, logout e reindirizza al login
+            logout();
+            navigate('/login');
+            setNotification({ text: "Sessione scaduta. Effettua nuovamente il login.", type: 'error' });
+            return;
+          }
         } catch (err) {
           // Non bloccare l'utente: loggare errore e mostrare notifica leggera
           console.warn('Errore nell\'invio del messaggio di consegna:', err);

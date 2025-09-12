@@ -21,22 +21,42 @@ export function AuthProvider({ children }) {
     }
   }, [user]);
 
+  // Verifica la validità del token al caricamento dell'app
   useEffect(() => {
-    const token = user?.token;
-    if (!token) return;
-    fetch(`${BASE_URL}/api/utenti`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => res.json())
-      .then(data => {
-        setUsers(data);
+    const validateToken = async () => {
+      const token = user?.token;
+      if (!token) {
         setLoading(false);
-      })
-      .catch(err => {
+        return;
+      }
+
+      try {
+        const res = await fetch(`${BASE_URL}/api/utenti`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (res.status === 401 || res.status === 403) {
+          // Token non valido, rimuovi l'utente
+          setUser(null);
+          setError("Sessione scaduta");
+          setLoading(false);
+          return;
+        }
+
+        if (res.ok) {
+          const data = await res.json();
+          setUsers(data);
+        }
+      } catch (err) {
+        console.warn("Errore nella validazione del token:", err);
         setError("Errore nel caricamento utenti");
+      } finally {
         setLoading(false);
-      });
-  }, [user]);
+      }
+    };
+
+    validateToken();
+  }, [user?.token]);
 
   // Quando un utente è presente (es. al refresh o al login), proviamo automaticamente
   // ad associare qualsiasi PushSubscription esistente nel browser a questo userId.
@@ -72,13 +92,24 @@ export function AuthProvider({ children }) {
         body: JSON.stringify({ mail, password })
       });
       if (!res.ok) {
+        // Try to read backend error message for debugging
+        let body = null;
+        try { body = await res.json(); } catch (e) { body = null; }
+        console.warn('Login failed:', res.status, body);
         setUser(null);
-        setError("Credenziali non valide");
+        setError((body && body.error) ? body.error : "Credenziali non valide");
         return false;
       }
       const userData = await res.json();
       // Store all backend fields and token
       setUser({ ...userData });
+      // Persist immediately so callers can read it synchronously after login
+      try {
+        localStorage.setItem('user', JSON.stringify(userData));
+        console.log('[Auth] login success, user persisted to localStorage');
+      } catch (e) {
+        console.warn('Could not persist user to localStorage immediately:', e.message);
+      }
       setError(null);
 
       // After login, if a service worker subscription exists in the browser, associate it with this user

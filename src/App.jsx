@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-export const BASE_URL = "https://ideal-space-carnival-p4g9q6q659c7w7q-3001.app.github.dev";
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Pianificazione from "./pages/Pianificazione";
@@ -24,12 +23,20 @@ import NotificationBanner from "./components/NotificationBanner";
 import { SidebarProvider } from "./context/LayoutContext.jsx";
 import { UnreadMessagesProvider } from "./context/UnreadMessagesContext";
 import { useAuth } from "./context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 
 function ProtectedRoute({ allowedRoles, children }) {
-  const { user } = useAuth();
-  if (!user) return <Navigate to="/login" />;
-  if (allowedRoles && !allowedRoles.includes(user.role)) return <Navigate to="/" />;
+  const { user, error } = useAuth();
+  
+  // Se c'è un errore di sessione scaduta, reindirizza al login
+  if (error === "Sessione scaduta") {
+    return <Navigate to="/login" replace />;
+  }
+  
+  if (!user) return <Navigate to="/login" replace />;
+  if (allowedRoles && !allowedRoles.includes(user.role)) return <Navigate to="/" replace />;
   return children;
 }
 

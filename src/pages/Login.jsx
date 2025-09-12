@@ -8,9 +8,15 @@ export default function Login() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { login, users } = useAuth();
+  const { login, users, error: authError, logout } = useAuth();
   const { setNotification } = useNotification();
   const navigate = useNavigate();
+
+  // Pulisci eventuali errori di autenticazione quando si accede alla pagina di login
+  useEffect(() => {
+    // Nota: rimosso logout automatico per evitare che la pagina di login
+    // cancelli la sessione subito dopo il login (interferisce con il redirect).
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -64,7 +70,11 @@ export default function Login() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow w-80">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        {error && <div className="text-red-600 text-center mb-4">{error}</div>}
+        {(error || authError) && (
+          <div className="text-red-600 text-center mb-4">
+            {error || authError}
+          </div>
+        )}
         <input
           type="email"
           placeholder="Email"
