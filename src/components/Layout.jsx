@@ -13,16 +13,16 @@ export default function Layout({ children }) {
   if (shouldHideSidebar) {
     return (
       <div className="min-h-screen bg-gray-50">
-        {/* Header solo per autista/admin, non per login */}
-        {location.pathname !== "/login" && (
+        {/* Header solo per autista/admin, non per login. Protezione se `user` è null */}
+        {location.pathname !== "/login" && user && (
           <div className="bg-white shadow-sm border-b px-4 py-2 fixed top-0 left-0 w-full z-20">
             <div className="flex justify-between items-center">
               <div className="text-sm text-gray-600">
-                Benvenuto, <span className="font-medium">{user.nome}</span>
+                Benvenuto, <span className="font-medium">{user.nome || user.name || (user.mail ? user.mail.split('@')[0] : '')}</span>
               </div>
               <div className="flex items-center gap-2">
                 {/* Pulsante chat mobile solo per autista e admin */}
-                {(user.role === "autista" || user.role === "admin") && (
+                {((user?.role) === "autista" || (user?.role) === "admin") && (
                   <>
                     <button
                       onClick={() => window.location.href = "/chat-mobile"}
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
                       Chat
                     </button>
                     {/* Pulsante torna alle consegne solo per autista e solo su chat-mobile */}
-                    {user.role === "autista" && location.pathname === "/chat-mobile" && (
+                    {user?.role === "autista" && location.pathname === "/chat-mobile" && (
                       <button
                         onClick={() => window.location.href = "/autista"}
                         className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded font-semibold shadow"

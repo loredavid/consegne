@@ -1,80 +1,100 @@
-# Consegne
+Consegne
 
 Consegne è una web app per la gestione delle richieste e delle consegne, pensata per amministratori, autisti, pianificatori e utenti interni. L'app offre funzionalità di pianificazione, monitoraggio dello stato delle consegne, gestione delle destinazioni, messaggistica interna e un pannello di amministrazione con gestione utenti e ruoli.
 
-## Funzionalità principali
+**Panoramica:**
+- Applicazione single-page (SPA) frontend realizzata con React + Vite.
+- Backend leggero in Node.js (cartella `server/`) per API, gestione push e dati di esempio.
+- Dati d'esempio e upload in `server/data/`.
 
-- **Login con email e password**
-- **Gestione utenti e ruoli** (Admin, Pianificatore, Richiedente, Autista)
-- **Pianificazione:** Gestione delle richieste e delle consegne
-- **Richieste:** Creazione e monitoraggio delle richieste
-- **Stato Consegne:** Visualizzazione dello stato delle consegne in tempo reale
-- **Posizioni:** Gestione delle destinazioni
-- **Autista:** Visualizzazione delle consegne assegnate agli autisti
-- **Chat:** Messaggistica istantanea interna
-- **Admin:** Pannello di gestione database e utenti
+**Funzionalità principali:**
+- Login con email e password
+- Gestione utenti e ruoli (Admin, Pianificatore, Richiedente, Autista)
+- Pianificazione e assegnazione consegne
+- Gestione e visualizzazione posizioni/destinazioni
+- Chat interna e notifiche push
+- Pannello Admin per dati e utenti
 
-## Ruoli e permessi
+**Tecnologie principali:**
+- Frontend: React, React Router, Vite, Tailwind CSS
+- Backend: Node.js (express), script per push notifications
 
-- **Admin:** Accesso a tutte le pagine e gestione utenti
-- **Pianificatore:** Accesso a Pianificazione, Stato Consegne, Posizioni
-- **Richiedente:** Accesso a Richieste, Stato Consegne, Posizioni
-- **Autista:** Accesso a Autista, Posizioni
-- **Tutti i ruoli:** Accesso a Chat e Home
+**Requisiti:**
+- Node.js 16+ e npm
 
-## Tecnologie utilizzate
+## Avvio rapido (sviluppo)
 
-- [React](https://react.dev/)
-- [React Router](https://reactrouter.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-- [Lucide React Icons](https://lucide.dev/)
+Segui questi passi per avviare sia il frontend che il server in locale.
 
-## Avvio rapido
+1) Clona la repository e entra nella cartella del progetto
 
-1. **Clona il repository:**
-   ```sh
-   git clone https://github.com/tuo-utente/consegne.git
-   cd consegne
-   ```
+```bash
+git clone https://github.com/loredavid/consegne.git
+cd consegne
+```
 
-2. **Installa le dipendenze:**
-   ```sh
-   npm install
-   ```
+2) Installa le dipendenze (root contiene il `package.json` del frontend e `server/package.json` per il backend)
 
-3. **Avvia l'ambiente di sviluppo:**
-   ```sh
-   npm run dev
-   ```
+```bash
+npm install
+cd server && npm install
+cd ..
+```
 
-4. Apri [http://localhost:5173](http://localhost:5173) nel browser.
+3) Avvia il server di sviluppo del backend (porta di default: 3001)
 
-## Struttura del progetto
+```bash
+cd server
+npm start
+# oppure: node index.js
+```
+
+4) Avvia il frontend in modalità sviluppo (porta di default: 3000)
+
+```bash
+cd ..
+npm run dev
+```
+
+5) Apri l'app nel browser
+
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:3001`
+
+Nota: se usi un'altra porta, aggiorna le variabili d'ambiente o i file di configurazione del client.
+
+## Struttura del progetto (sintesi)
 
 ```
-src/
-  App.jsx
-  main.jsx
-  index.css
-  context/
-    AuthContext.jsx
-  components/
-    HomeCard.jsx
-    Layout.jsx
-    Sidebar.jsx
-  pages/
-    Admin.jsx
-    Autista.jsx
-    Chat.jsx
-    Home.jsx
-    Pianificazione.jsx
-    Posizioni.jsx
-    Richieste.jsx
-    StatoConsegne.jsx
-    GestioneUtenti.jsx
+.
+├─ public/                 # file statici e service worker
+├─ server/                 # backend Node.js (API, push, dati di esempio)
+│  ├─ data/                # dati d'esempio e upload
+│  ├─ index.js
+│  └─ push.js
+├─ src/                    # frontend React
+│  ├─ components/
+│  ├─ context/
+│  ├─ hooks/
+│  └─ pages/
+├─ package.json            # script e dipendenze frontend
+└─ README.md
 ```
+
+## Script utili
+- `npm run dev` — avvia il dev server Vite (frontend)
+- `npm run build` — builda la versione di produzione del frontend
+- `cd server && npm start` — avvia il backend Node.js
+
+## Dati di esempio
+- I file di demo si trovano in `server/data/` (utenti, spedizioni, posizioni, sottoscrizioni push).
+
+## Contributi
+- Apri una issue per bug o richieste di funzionalità.
+- Per contributi: crea una branch, implementa la modifica e invia una pull request.
+
+## Contatti
+- Autore: Loredavid
 
 ## Licenza
-
 Questo progetto è distribuito con licenza MIT.

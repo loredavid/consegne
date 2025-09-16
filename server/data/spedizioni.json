@@ -311,7 +311,7 @@
     "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
     "indirizzo": "Via Braglio, 74, 36015 Schio VI",
     "dataRichiesta": "2025-08-29T09:11",
-    "dataPianificata": "2025-09-10T09:11",
+    "dataPianificata": "2025-09-12T09:11",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,
@@ -328,10 +328,10 @@
     }
   },
   {
-    "aziendaDestinazione": "ALFA ELETTRONICA S.R.L",
-    "indirizzo": "Via Amman, 35, 33084 Cordenons PN",
+    "aziendaDestinazione": "SISTEL",
+    "indirizzo": "VIA BASALGHELLE, 40, MANSUE",
     "dataRichiesta": "2025-08-26T14:50",
-    "dataPianificata": "2025-09-10T14:50",
+    "dataPianificata": "2025-09-12T14:50",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,

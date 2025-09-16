@@ -25,7 +25,7 @@ import { UnreadMessagesProvider } from "./context/UnreadMessagesContext";
 import { useAuth } from "./context/AuthContext";
 import { useEffect } from "react";
 
-export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'https://ideal-space-carnival-p4g9q6q659c7w7q-3001.app.github.dev';
 
 function ProtectedRoute({ allowedRoles, children }) {
   const { user, error } = useAuth();

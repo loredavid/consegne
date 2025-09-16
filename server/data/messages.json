@@ -2041,5 +2041,23 @@
     "spedizioneId": 1757511677074,
     "id": 1757511677232,
     "timestamp": "2025-09-10T13:41:17.232Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: S.D. ELECTRIC S.N.C\nIndirizzo: Via Braglio, 74, 36015 Schio VI\nData: venerdì 12 settembre 2025 alle ore 09:11\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756192323068,
+    "id": 1757671923072,
+    "timestamp": "2025-09-12T10:12:03.072Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: SISTEL\nIndirizzo: VIA BASALGHELLE, 40, MANSUE\nData: venerdì 12 settembre 2025 alle ore 14:50\nAutista: Ernesto/Andrea\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1756194358546,
+    "id": 1757671957460,
+    "timestamp": "2025-09-12T10:12:37.460Z"
   }
 ]
