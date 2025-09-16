@@ -551,17 +551,21 @@
     "aziendaDestinazione": "FUTURA ELETTROTECNICA",
     "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
     "dataRichiesta": "2025-09-10T15:39",
-    "dataPianificata": "2025-09-10T15:39",
+    "dataPianificata": "2025-09-16T15:39",
     "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
+    "status": "In consegna",
+    "daPianificare": false,
     "richiedente": {
       "nome": "Lorenzo David",
       "mail": "lorenzo.david@elteksrl.it",
       "role": "admin"
     },
     "note": "",
-    "id": 1757511593277
+    "id": 1757511593277,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   },
   {
     "aziendaDestinazione": "AB PLAST",
