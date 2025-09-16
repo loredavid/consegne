@@ -8,6 +8,8 @@ import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+const PORT = 3001;
+
 const app = express();
 // Middleware per loggare ogni richiesta ricevuta e orario
 app.use((req, res, next) => {
@@ -15,7 +17,7 @@ app.use((req, res, next) => {
   console.log(`[REQUEST] ${req.method} ${req.originalUrl} @ ${now}`);
   next();
 });
-const PORT = 3001;
+
 
 app.use(cors());
 app.use(express.json());
@@ -276,6 +278,6 @@ app.post('/api/messaggi', requireAuth, (req, res) => {
   res.json(nuovo);
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend attivo su http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Backend attivo su http://0.0.0.0:${PORT}`);
 });
