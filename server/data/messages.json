@@ -2077,5 +2077,24 @@
     "text": "t",
     "id": 1758015172978,
     "timestamp": "2025-09-16T09:32:52.978Z"
+  },
+  {
+    "text": "Ho consegnato la spedizione #1757511593277 - FUTURA ELETTROTECNICA",
+    "spedizioneId": 1757511593277,
+    "sender": {
+      "nome": "ALL TRANSPORT",
+      "mail": "autista1.eltek@gmail.com"
+    },
+    "id": 1758043429394,
+    "timestamp": "2025-09-16T17:23:49.394Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it"
+    },
+    "text": "rtdekh",
+    "id": 1758043444396,
+    "timestamp": "2025-09-16T17:24:04.396Z"
   }
 ]

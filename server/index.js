@@ -278,6 +278,6 @@ app.post('/api/messaggi', requireAuth, (req, res) => {
   res.json(nuovo);
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend attivo su http://0.0.0.0:${PORT}`);
+app.listen(PORT, '::', () => {
+  console.log(`Backend attivo su http://[::]:${PORT}`);
 });

@@ -25,7 +25,7 @@ import { UnreadMessagesProvider } from "./context/UnreadMessagesContext";
 import { useAuth } from "./context/AuthContext";
 import { useEffect } from "react";
 
-export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://192.168.6.234:3001';
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 
 function ProtectedRoute({ allowedRoles, children }) {
   const { user, error } = useAuth();
