@@ -10,8 +10,8 @@ export default defineConfig({
     port: 3000,
     allowedHosts:["thetransporters.elteksrl.it"],
     https: {
-      key: fs.readFileSync('./server/server.key'),
-      cerc: fs.readFileSync('./server/server.crt'),
+      key: fs.readFileSync('./server.key'),
+      cert: fs.readFileSync('./server.crt'),
 	},
   },
   define: {
