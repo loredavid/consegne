@@ -10,8 +10,8 @@ export default defineConfig({
     port: 3000,
     allowedHosts:["thetransporters.elteksrl.it"],
     https: {
-      key: fs.readFileSync('./server.key'),
-      cert: fs.readFileSync('./server.crt'),
+      key: fs.readFileSync('./etc/letsencrypt/live/thetransporters.elteksrl.it/privkey.pem'),
+      cert: fs.readFileSync('./etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem'),
 	},
   },
   define: {

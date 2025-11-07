@@ -10,8 +10,8 @@ import jwt from 'jsonwebtoken';
 import https from 'https';
 
 // Carica i file del certificato self-signed
-const privateKey = fs.readFileSync('./server.key', 'utf8');
-const certificate = fs.readFileSync('./server.crt', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/thetransporters.elteksrl.it/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem', 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 const app = express();
 // Server HTTPS (Porta 443)
