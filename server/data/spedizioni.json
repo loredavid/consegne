@@ -598,5 +598,45 @@
     },
     "note": "",
     "id": 1757511677074
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.      ",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-11-04T09:01",
+    "dataPianificata": "2025-11-04T09:01",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Michele Di Gennaro",
+      "mail": "michele.digennaro@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1762241426802,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
+  },
+  {
+    "aziendaDestinazione": "FUTURA ELETTROTECNICA     ",
+    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
+    "dataRichiesta": "2025-11-14T12:21",
+    "dataPianificata": "2025-11-04T13:21",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "note": "",
+    "id": 1762244499292,
+    "autista": {
+      "id": 2,
+      "nome": "ALL TRANSPORT"
+    }
   }
 ]

@@ -7,10 +7,21 @@ import multer from 'multer';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import https from 'https';
+
+// Carica i file del certificato self-signed
+const privateKey = fs.readFileSync('./server.key', 'utf8');
+const certificate = fs.readFileSync('./server.crt', 'utf8');
+const credentials = { key: privateKey, cert: certificate };
+const app = express();
+// Server HTTPS (Porta 443)
+const httpsServer = https.createServer(credentials, app);
+
 
 const PORT = 3001;
 
-const app = express();
+
+
 // Middleware per loggare ogni richiesta ricevuta e orario
 app.use((req, res, next) => {
   const now = new Date().toISOString();
@@ -278,6 +289,10 @@ app.post('/api/messaggi', requireAuth, (req, res) => {
   res.json(nuovo);
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend attivo su http://0.0.0.0:${PORT}`);
+//app.listen(PORT, "0.0.0.0", () => {
+  // console.log(`Backend attivo su http://0.0.0.0:${PORT}`);
+//});
+
+httpsServer.listen(PORT,"0.0.0.0", () => {
+    console.log('HTTPS Server in ascolto sulla porta 3001');
 });

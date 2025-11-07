@@ -2096,5 +2096,47 @@
     "text": "rtdekh",
     "id": 1758043444396,
     "timestamp": "2025-09-16T17:24:04.396Z"
+  },
+  {
+    "sender": {
+      "nome": "Michele Di Gennaro",
+      "mail": "michele.digennaro@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Michele Di Gennaro ha inviato una richiesta: TEKNO 31 S.R.L.S.       per il 04/11/2025 alle 09:01\nNote: gay",
+    "tipo": "richiesta",
+    "spedizioneId": 1762241426802,
+    "id": 1762241426841,
+    "timestamp": "2025-11-04T07:30:26.841Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: TEKNO 31 S.R.L.S.      \nIndirizzo: Via Taglio, 101, 33070, BRUGNERA\nData: martedì 4 novembre 2025 alle ore 09:01\nAutista: ALL TRANSPORT\nTipo: ritiro\nRichiedente: Michele Di Gennaro",
+    "spedizioneId": 1762241426802,
+    "id": 1762241505897,
+    "timestamp": "2025-11-04T07:31:45.897Z"
+  },
+  {
+    "sender": {
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
+    },
+    "text": "Lorenzo David ha inviato una richiesta: FUTURA ELETTROTECNICA      per il 14/11/2025 alle 12:21",
+    "tipo": "richiesta",
+    "spedizioneId": 1762244499292,
+    "id": 1762244499331,
+    "timestamp": "2025-11-04T08:21:39.331Z"
+  },
+  {
+    "sender": {
+      "nome": "Sistema"
+    },
+    "text": "Spedizione pianificata:\nDestinazione: FUTURA ELETTROTECNICA     \nIndirizzo: ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais\nData: martedì 4 novembre 2025 alle ore 13:21\nAutista: ALL TRANSPORT\nTipo: consegna\nRichiedente: Lorenzo David",
+    "spedizioneId": 1762244499292,
+    "id": 1762244557733,
+    "timestamp": "2025-11-04T08:22:37.733Z"
   }
 ]

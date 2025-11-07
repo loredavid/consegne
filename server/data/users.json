@@ -54,5 +54,13 @@
     "mail": "riccardo.brenelli@elteksrl.it",
     "role": "admin",
     "id": 1756210601282
+  },
+  {
+    "username": "MDG",
+    "password": "$2b$10$AYmgjPLInLzywyg0KzaOHu3chwEtX5GddWEaZzgR0pJywfoAtgXoK",
+    "nome": "Michele Di Gennaro",
+    "mail": "michele.digennaro@elteksrl.it",
+    "role": "admin",
+    "id": 1762235130532
   }
 ]
