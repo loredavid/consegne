@@ -7,6 +7,7 @@ import multer from 'multer';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import https from 'https';
 
 const PORT = 3001;
 
@@ -278,6 +279,11 @@ app.post('/api/messaggi', requireAuth, (req, res) => {
   res.json(nuovo);
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend attivo su http://0.0.0.0:${PORT}`);
+const httpsOptions = {
+  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
+  cert: fs.readFileSync(path.join(__dirname, 'cert.pem'))
+};
+
+https.createServer(httpsOptions, app).listen(PORT, '0.0.0.0', () => {
+  console.log(`Backend attivo su https://0.0.0.0:${PORT}`);
 });

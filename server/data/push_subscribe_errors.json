@@ -39,5 +39,18 @@
     "error": "registration.pushManager is undefined in this browser (Push API not supported or restricted)",
     "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/604.1",
     "timestamp": "2025-08-26T11:39:52.952Z"
+  },
+  {
+    "note": "debug-existing-sub",
+    "sub": {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/dcs_CJkeXZk:APA91bFpP-sVodTHuho_Olt3Q4Et8N1M-pMEdoKfUnp3UTkRjZOoslI9p8S04Sk1KVYSjgfeuX1A6Kxd2kN0w-tbkD-jDbYLWOPIrB8q30J1utuO4Tt7W_2z8U0FOeI7EzdyzMyVGdKt",
+      "expirationTime": null,
+      "keys": {
+        "p256dh": "BIV23xOJbi40rUS_fcBCMMp194n0vuo0MHxmxlWzGPWUK67m7R49ZaOHx-5bMS6KVubBsIh2Z1PQ0wVeYsGm6gA",
+        "auth": "8usQwQMhaPLUwtp263tXLw"
+      }
+    },
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+    "timestamp": "2025-11-04T09:18:08.469Z"
   }
 ]
