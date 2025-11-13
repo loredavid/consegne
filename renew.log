@@ -1,0 +1,186 @@
+Fri Nov  7 12:52:38 UTC 2025: esecuzione cron avviata da root
+Fri Nov  7 12:52:41 UTC 2025: Certificati rinnovati e server riavviato.
+Fri Nov  7 12:58:50 UTC 2025: esecuzione cron avviata da root
+Fri Nov  7 12:58:53 UTC 2025: Certificati rinnovati e server riavviato.
+Fri Nov  7 13:13:03 UTC 2025: esecuzione cron avviata da root
+Fri Nov  7 13:13:06 UTC 2025: Certificati rinnovati e server riavviato.
+Sat Nov  8 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Sat Nov  8 03:00:03 UTC 2025: Certificati rinnovati e server riavviato.
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /root/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/root/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-08T03_00_05_127Z-debug.log
+Sat Nov  8 09:23:28 UTC 2025: esecuzione cron avviata da root
+Sat Nov  8 09:23:30 UTC 2025: Certificati rinnovati e server riavviato.
+Sun Nov  9 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Sun Nov  9 03:00:04 UTC 2025: Certificati rinnovati e server riavviato.
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /root/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/root/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-09T03_00_05_620Z-debug.log
+Mon Nov 10 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Mon Nov 10 03:00:04 UTC 2025: Certificati rinnovati e server riavviato.
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /root/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/root/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-10T03_00_05_721Z-debug.log
+Tue Nov 11 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Tue Nov 11 03:00:03 UTC 2025: Certificati rinnovati e server riavviato.
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /root/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/root/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-11T03_00_05_125Z-debug.log
+Tue Nov 11 07:11:28 UTC 2025: esecuzione cron avviata da root
+Tue Nov 11 07:11:31 UTC 2025: Certificati rinnovati e server riavviato.
+Wed Nov 12 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Wed Nov 12 03:00:04 UTC 2025: Certificati rinnovati e server riavviato.
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /root/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/root/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T03_00_05_351Z-debug.log
+Wed Nov 12 06:57:08 UTC 2025: esecuzione cron avviata da root
+Wed Nov 12 06:57:11 UTC 2025: Certificati rinnovati e server riavviato.
+Wed Nov 12 11:04:58 UTC 2025: esecuzione cron avviata da root
+Wed Nov 12 11:05:01 UTC 2025: Certificati rinnovati e server riavviato.
+Wed Nov 12 12:04:41 UTC 2025: esecuzione cron avviata da root
+Wed Nov 12 12:04:43 UTC 2025: Certificati rinnovati e server riavviato.
+Thu Nov 13 03:00:01 UTC 2025: esecuzione cron avviata da root
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thetransporters.elteksrl.it.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The following certs are not due for renewal yet:
+  /etc/letsencrypt/live/thetransporters.elteksrl.it/fullchain.pem expires on 2026-02-05 (skipped)
+No renewals were attempted.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+> consegne@0.0.1 dev:all /home/ubuntu/consegne
+> concurrently "npm run dev" "npm --prefix server start"
+
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T03_00_05_863Z-debug.log
+Thu Nov 13 03:00:05 UTC 2025: Certificati rinnovati e server riavviato.
+Thu Nov 13 07:00:20 UTC 2025: esecuzione cron avviata da root

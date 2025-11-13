@@ -1,0 +1,2475 @@
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_25_21_041Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_25_28_918Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_25_36_638Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_25_44_440Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_25_52_333Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_00_118Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_07_831Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_15_625Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_23_536Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_31_421Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_39_037Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_46_938Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_26_54_536Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_02_431Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_10_022Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_17_618Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_25_339Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_32_942Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_40_726Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_49_130Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_27_56_825Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_04_530Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_12_327Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_20_819Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_29_128Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_36_919Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_44_618Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_28_53_025Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_00_436Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_08_339Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_16_736Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_24_638Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_32_322Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_39_830Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_47_530Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_29_55_421Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_03_139Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_10_918Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_18_634Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_26_917Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_34_620Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_42_320Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_50_024Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_30_57_838Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_05_520Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_13_039Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_20_743Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_28_522Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_36_333Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_43_549Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_50_535Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_31_57_459Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_04_265Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_11_258Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_18_226Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_25_031Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_31_741Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_38_538Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_45_241Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_52_025Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_32_58_826Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_05_761Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_12_744Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_19_520Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_26_243Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_33_022Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_39_741Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_46_529Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_33_53_252Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_00_239Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_07_051Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_14_035Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_21_046Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_28_030Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_34_744Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_41_520Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_48_237Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_34_55_020Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_01_746Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_08_533Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_15_246Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_22_243Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_29_020Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_35_764Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_42_756Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_49_535Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_35_56_242Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-12T15_36_03_161Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_58_50_722Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_58_57_528Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_04_235Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_11_018Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_17_726Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_24_448Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_31_739Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_38_832Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_45_737Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_52_523Z-debug.log
+/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015
+        throw Error(`yargs parser supports a minimum Node.js version of ${minNodeVersion}. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions`);
+        ^
+
+Error: yargs parser supports a minimum Node.js version of 12. Read our version support policy: https://github.com/yargs/yargs-parser#supported-nodejs-versions
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs-parser/build/index.cjs:1015:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/consegne/node_modules/yargs/build/index.cjs:1:60570)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! consegne@0.0.1 dev:all: `concurrently "npm run dev" "npm --prefix server start"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the consegne@0.0.1 dev:all script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-11-13T06_59_59_242Z-debug.log

@@ -1,642 +1,683 @@
 [
   {
-    "aziendaDestinazione": "ELTEK S.R.L",
-    "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
-    "dataRichiesta": "2025-07-03T08:46",
-    "dataPianificata": "2025-07-03T08:46",
+    "aziendaDestinazione": "BASSETTO SILVANA",
+    "indirizzo": "Via Postumia, 16, 33170 Pordenone PN",
+    "dataRichiesta": "2025-11-07T16:00",
+    "dataPianificata": "2025-11-11T16:00",
     "tipo": "consegna",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorena Stolfo",
-      "mail": "lorena.stolfo@elteksrl.it",
-      "role": "richiedente"
+      "nome": "Lorenzo David",
+      "mail": "lorenzo.david@elteksrl.it",
+      "role": "admin"
     },
-    "note": "Urgente\n3 ",
-    "id": 1752734807579,
+    "note": "Prova Note\nADIGNewig",
+    "id": 1762520667401,
     "autista": {
       "id": 2,
       "nome": "ALL TRANSPORT"
     }
   },
   {
-    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
-    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
-    "dataRichiesta": "2025-07-04T09:30",
-    "dataPianificata": "2025-07-04T09:30",
-    "tipo": "ritiro",
+    "aziendaDestinazione": "AB PLAST",
+    "indirizzo": "VIA OBERDAN 43, S.VITO AL TAGLIAMENTO",
+    "dataRichiesta": "2025-11-12T00:06",
+    "dataPianificata": "2025-11-12T00:06",
+    "tipo": "entrambi",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Cristina Zaccarin",
-      "mail": "cristina.zaccarin@elteksrl.it",
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
       "role": "richiedente"
     },
-    "note": "Documenti allegati",
-    "id": 1752734807580,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
+    "note": "HELLOO",
+    "id": 1762849141297
   },
   {
     "aziendaDestinazione": "ALINA ZAVATE",
     "indirizzo": "Via Comugne Di Mezzo, 1, 33082 Azzano Decimo",
-    "dataRichiesta": "2025-07-05T11:00",
-    "dataPianificata": "2025-08-26T11:00",
+    "dataRichiesta": "2025-11-12T09:00",
+    "dataPianificata": "2025-11-12T09:00",
     "tipo": "consegna",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorena Stolfo",
-      "mail": "lorena.stolfo@elteksrl.it",
-      "role": "richiedente"
-    },
-    "note": "Fragile",
-    "id": 1752734807581,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "AB PLAST",
-    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
-    "dataRichiesta": "2025-07-06T14:15",
-    "dataPianificata": "2025-07-06T14:15",
-    "tipo": "ritiro",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Cristina Zaccarin",
-      "mail": "cristina.zaccarin@elteksrl.it",
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
       "role": "richiedente"
     },
     "note": "",
-    "id": 1752734807582,
+    "id": 1762871358207,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto"
     }
   },
   {
-    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
-    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
-    "dataRichiesta": "2025-07-07T16:00",
-    "dataPianificata": "2025-07-07T16:00",
+    "aziendaDestinazione": "RUBERT LUCIANO ",
+    "indirizzo": "Via Crosera, 18/A, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-11-12T08:00",
+    "dataPianificata": "2025-11-12T09:00",
     "tipo": "consegna",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorena Stolfo",
-      "mail": "lorena.stolfo@elteksrl.it",
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
       "role": "richiedente"
     },
     "note": "",
-    "id": 1752734807583,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-07-18T13:08",
-    "dataPianificata": "2025-09-10T18:08",
-    "tipo": "entrambi",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorena Stolfo",
-      "mail": "lorena.stolfo@elteksrl.it",
-      "role": "richiedente"
-    },
-    "note": "ihbyb\nmoif\nnuova nota",
-    "id": 1752750543903,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-07-17T15:35",
-    "dataPianificata": "2025-07-17T15:35",
-    "tipo": "ritiro",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1752759067738,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-07-21T11:40",
-    "dataPianificata": "2025-07-21T11:40",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1753090841270
-  },
-  {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-07-19T11:44",
-    "dataPianificata": "2025-07-19T11:44",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1753091054824,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "CRISTINA APREOTESE",
-    "indirizzo": "Via Olimpia, 7, 33082 Azzano Decimo PN",
-    "dataRichiesta": "2025-07-21T11:45",
-    "dataPianificata": "2025-07-21T11:45",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1753091117331
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-07-27T16:11",
-    "dataPianificata": "2025-07-31T16:11",
-    "tipo": "entrambi",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "Prova note\nsfbhdf\nNote 4",
-    "id": 1753096332021
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-07-25T13:16",
-    "dataPianificata": "2025-07-25T13:16",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1753096586040,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-08-29T08:50",
-    "dataPianificata": "2025-08-29T08:50",
-    "tipo": "ritiro",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756191040917,
+    "id": 1762873864737,
     "autista": {
       "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
+      "nome": "Ernesto"
     }
   },
   {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-08-26T09:02",
-    "dataPianificata": "2025-08-26T09:00",
+    "aziendaDestinazione": "BUSILA CAMELIA",
+    "indirizzo": "Via M. Buonarroti, 13/3, 33080 Prata di Pordenone",
+    "dataRichiesta": "2025-11-12T08:00",
+    "dataPianificata": "2025-11-12T08:00",
     "tipo": "consegna",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756191743615,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "TEKNO 31 S.R.L.S.",
-    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-08-26T09:09",
-    "dataPianificata": "2025-08-26T09:00",
-    "tipo": "entrambi",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756192176421,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "DAVE S.R.L",
-    "indirizzo": "Via Talponedo, 29/A, 33080 Porcia PN",
-    "dataRichiesta": "2025-08-26T14:11",
-    "dataPianificata": "2025-08-26T14:11",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "PROVA NOTE",
-    "id": 1756192283960,
-    "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
-    }
-  },
-  {
-    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
-    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
-    "dataRichiesta": "2025-08-29T09:11",
-    "dataPianificata": "2025-09-12T09:11",
-    "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756192323068,
-    "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
-    }
-  },
-  {
-    "aziendaDestinazione": "SISTEL",
-    "indirizzo": "VIA BASALGHELLE, 40, MANSUE",
-    "dataRichiesta": "2025-08-26T14:50",
-    "dataPianificata": "2025-09-12T14:50",
-    "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "Prova note\naijdgoieig\naongoweinonvsd\nosnosodiv",
-    "id": 1756194358546,
-    "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
-    }
-  },
-  {
-    "aziendaDestinazione": "ELTEK S.R.L",
-    "indirizzo": "Via Chiavornicco, 26, 33084 Cordenons PN",
-    "dataRichiesta": "2025-08-26T09:00",
-    "dataPianificata": "2025-08-26T09:00",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorena",
-      "mail": "lorena.stolfo@elteksrl.it",
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
       "role": "richiedente"
     },
     "note": "",
-    "id": 1756197483102,
+    "id": 1762873906896,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto"
     }
   },
   {
-    "aziendaDestinazione": "ALMACAB di Domeneghetti Marzia",
-    "indirizzo": "Vial di Romans, 71, 33084 Cordenons PN",
-    "dataRichiesta": "2025-08-26T09:00",
-    "dataPianificata": "2025-08-26T09:00",
+    "aziendaDestinazione": "BOTEZATU MARIOARA",
+    "indirizzo": "Via Comugne Di Mezzo, 3, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-11-12T08:00",
+    "dataPianificata": "2025-11-12T09:00",
     "tipo": "consegna",
     "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorena",
-      "mail": "lorena.stolfo@elteksrl.it",
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
       "role": "richiedente"
     },
     "note": "",
-    "id": 1756197497394,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-08-26T15:16",
-    "dataPianificata": "2025-09-10T19:00",
-    "tipo": "ritiro",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756199823597,
+    "id": 1762873936300,
     "autista": {
       "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
+      "nome": "Ernesto"
     }
-  },
-  {
-    "aziendaDestinazione": "SISTEL",
-    "indirizzo": "VIA BASALGHELLE, 40, MANSUE",
-    "dataRichiesta": "2025-08-26T13:47",
-    "dataPianificata": "2025-08-26T13:47",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756208862296,
-    "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
-    }
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-08-26T13:58",
-    "dataPianificata": "2025-08-26T13:58",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1756209497799,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "AB PLAST",
-    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
-    "dataRichiesta": "2025-08-26T14:15",
-    "dataPianificata": "2025-09-10T14:15",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "lJSNFBOER\nERJBNOIAERB\nADJBOADIB\nEDJBOAFB",
-    "id": 1756210510813,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
-    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
-    "dataRichiesta": "2025-09-09T14:37",
-    "dataPianificata": "2025-09-10T18:37",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "Prova note\nasmfo\najsnf",
-    "id": 1757421442168,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-09-27T15:22",
-    "dataPianificata": "2025-09-10T20:22",
-    "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1757424173555,
-    "autista": {
-      "id": 1752761316202,
-      "nome": "Ernesto/Andrea"
-    }
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-09-10T15:15",
-    "dataPianificata": "2025-09-10T15:15",
-    "tipo": "ritiro",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "CYI.YL",
-    "id": 1757510160872,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
-    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
-    "dataRichiesta": "2025-09-10T17:35",
-    "dataPianificata": "2025-09-10T17:35",
-    "tipo": "consegna",
-    "status": "In consegna",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "xfmsf",
-    "id": 1757511363316,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-09-10T15:39",
-    "dataPianificata": "2025-09-16T15:39",
-    "tipo": "consegna",
-    "status": "Consegnata",
-    "daPianificare": false,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1757511593277,
-    "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
-    }
-  },
-  {
-    "aziendaDestinazione": "AB PLAST",
-    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
-    "dataRichiesta": "2025-09-10T15:40",
-    "dataPianificata": "2025-09-10T15:40",
-    "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1757511661610
-  },
-  {
-    "aziendaDestinazione": "FUTURA ELETTROTECNICA",
-    "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-09-10T15:41",
-    "dataPianificata": "2025-09-10T15:41",
-    "tipo": "consegna",
-    "status": "In attesa",
-    "daPianificare": true,
-    "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
-    },
-    "note": "",
-    "id": 1757511677074
   },
   {
     "aziendaDestinazione": "TEKNO 31 S.R.L.S.      ",
     "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
-    "dataRichiesta": "2025-11-04T09:01",
-    "dataPianificata": "2025-11-04T09:01",
-    "tipo": "ritiro",
-    "status": "In consegna",
+    "dataRichiesta": "2025-11-12T08:00",
+    "dataPianificata": "2025-11-12T08:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Michele Di Gennaro",
-      "mail": "michele.digennaro@elteksrl.it",
-      "role": "admin"
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "CONSEGNARE 3 PALETTE - SONIA",
+    "id": 1762874300831,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.      ",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-11-12T08:00",
+    "dataPianificata": "2025-11-12T08:00",
+    "tipo": "entrambi",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "4 palette",
+    "id": 1762874342719,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-11-12T11:00",
+    "dataPianificata": "2025-11-12T11:00",
+    "tipo": "entrambi",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "ritiro tassativo 1 paletta di schede in C/L 002520581 urgenti",
+    "id": 1762874619567,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "ALFA ELETTRONICA S.R.L ",
+    "indirizzo": "Via Amman, 35, 33084 Cordenons PN ",
+    "dataRichiesta": "2025-11-12T10:00",
+    "dataPianificata": "2025-11-12T10:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
     },
     "note": "",
-    "id": 1762241426802,
+    "id": 1762875836479,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "BELLIO ORIETTA ",
+    "indirizzo": "Via Fiume, 21/A, 33083 Chions PN ",
+    "dataRichiesta": "2025-11-12T00:00",
+    "dataPianificata": "2025-11-12T09:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorena",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1762876705210,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "IONITA ELENA",
+    "indirizzo": "Via Ceresere, 53, 33076 Pravisdomini PN",
+    "dataRichiesta": "2025-11-12T00:00",
+    "dataPianificata": "2025-11-12T09:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Lorena",
+      "mail": "lorena.stolfo@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "CONSEGNA 1 SCATOLA",
+    "id": 1762876842692,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "SAVIO MACCHINE TESSILI S.P.A",
+    "indirizzo": "Via Udine, 105, 33170 Pordenone PN",
+    "dataRichiesta": "2025-11-12T11:00",
+    "dataPianificata": "2025-11-12T11:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it",
+      "role": "pianificatore"
+    },
+    "note": "",
+    "id": 1762936379221,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "LACRAMIOARA ENE",
+    "indirizzo": "Via Enrico Toti, 112/C, int. 7, 33082 Tiezzo di Azzano Decimo PN ",
+    "dataRichiesta": "2025-11-12T11:00",
+    "dataPianificata": "2025-11-12T11:00",
+    "tipo": "entrambi",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it",
+      "role": "pianificatore"
+    },
+    "note": "consegna 1 pallet + ritiro",
+    "id": 1762937451898,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
     }
   },
   {
     "aziendaDestinazione": "FUTURA ELETTROTECNICA     ",
     "indirizzo": "ZONA INDUSTRIALE PINEDO 11/A, 33080, cimolais",
-    "dataRichiesta": "2025-11-14T12:21",
-    "dataPianificata": "2025-11-04T13:21",
+    "dataRichiesta": "2025-11-12T15:00",
+    "dataPianificata": "2025-11-12T15:00",
+    "tipo": "consegna",
+    "status": "Consegnata",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it",
+      "role": "pianificatore"
+    },
+    "note": "",
+    "id": 1762943386122,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "NECTO GROUP SRL ",
+    "indirizzo": "Via Dell'Artigianato, 15, 33070 Brugnera PN ",
+    "dataRichiesta": "2025-11-13T08:00",
+    "dataPianificata": "2025-11-13T12:00",
     "tipo": "consegna",
     "status": "In consegna",
     "daPianificare": false,
     "richiedente": {
-      "nome": "Lorenzo David",
-      "mail": "lorenzo.david@elteksrl.it",
-      "role": "admin"
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "La consegna la farà Ernesto il 13/11 o il 14/11 comunque è importante entro venerdì 14, da lunedì 17 la sede di Brugnera sarà chiusa",
+    "id": 1762951355194,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "RUBERT LUCIANO ",
+    "indirizzo": "Via Crosera, 18/A, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-11-13T13:00",
+    "dataPianificata": "2025-11-13T11:00",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
     },
     "note": "",
-    "id": 1762244499292,
+    "id": 1762955023409,
     "autista": {
-      "id": 2,
-      "nome": "ALL TRANSPORT"
+      "id": 1752761316202,
+      "nome": "Ernesto"
     }
+  },
+  {
+    "aziendaDestinazione": "TEKNO 31 S.R.L.S.      ",
+    "indirizzo": "Via Taglio, 101, 33070, BRUGNERA",
+    "dataRichiesta": "2025-11-13T12:00",
+    "dataPianificata": "2025-11-13T12:00",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it",
+      "role": "pianificatore"
+    },
+    "note": "1 PALLET | SONIA ",
+    "id": 1762961016154,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "ALINA ZAVATE",
+    "indirizzo": "Via Comugne Di Mezzo, 1, 33082 Azzano Decimo",
+    "dataRichiesta": "2025-11-13T11:00",
+    "dataPianificata": "2025-11-13T11:00",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1762961812831,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "ZETA DUE ASSEMBLY LINE SNC",
+    "indirizzo": "Via Del Cason, 16, Villa D'Arco Di Cordenons pn ",
+    "dataRichiesta": "2025-11-13T13:37",
+    "dataPianificata": "2025-11-13T13:00",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1762961844035,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "S.D. ELECTRIC S.N.C",
+    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
+    "dataRichiesta": "2025-11-13T07:00",
+    "dataPianificata": "2025-11-13T07:00",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1762961981052,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "BOTEZATU MARIOARA",
+    "indirizzo": "Via Comugne Di Mezzo, 3, 33082 Azzano Decimo PN",
+    "dataRichiesta": "2025-11-13T13:00",
+    "dataPianificata": "2025-11-13T11:00",
+    "tipo": "consegna",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1762962764183,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "D.G. ASSEMBLAGGI DI GUIOTTO DANIELA",
+    "indirizzo": "Via Portolana, 24, 33084 Cordenons PN ",
+    "dataRichiesta": "2025-11-13T13:00",
+    "dataPianificata": "2025-11-13T13:00",
+    "tipo": "ritiro",
+    "status": "In consegna",
+    "daPianificare": false,
+    "richiedente": {
+      "nome": "Fabiola",
+      "mail": "logistica2@elteksrl.it",
+      "role": "pianificatore"
+    },
+    "note": "",
+    "id": 1763017632336,
+    "autista": {
+      "id": 1752761316202,
+      "nome": "Ernesto"
+    }
+  },
+  {
+    "aziendaDestinazione": "CRISTINA APREOTESE",
+    "indirizzo": "Via Olimpia, 7, 33082 Azzano Decimo PN ",
+    "dataRichiesta": "2025-11-14T08:00",
+    "dataPianificata": "2025-11-14T08:00",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763027332091
+  },
+  {
+    "aziendaDestinazione": "DANIELA BOTEZATU",
+    "indirizzo": "Via Villanova, 27/5, 33076 Pravisdomini PN ",
+    "dataRichiesta": "2025-11-14T08:00",
+    "dataPianificata": "2025-11-14T08:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "CONSEGNARE PRESSO TEKNO 31.\nTERZISTA NON E' A CASA.",
+    "id": 1763028225417
+  },
+  {
+    "aziendaDestinazione": "BELLIO ORIETTA ",
+    "indirizzo": "Via Fiume, 21/A, 33083 Chions PN ",
+    "dataRichiesta": "2025-11-14T10:00",
+    "dataPianificata": "2025-11-14T10:00",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763039032185
+  },
+  {
+    "aziendaDestinazione": "LACRAMIOARA ENE",
+    "indirizzo": "Via Enrico Toti, 112/C, int. 7, 33082 Tiezzo di Azzano Decimo PN ",
+    "dataRichiesta": "2025-11-14T09:30",
+    "dataPianificata": "2025-11-14T09:30",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763039325029
+  },
+  {
+    "aziendaDestinazione": "PALAZZETTI LELIO S.P.A.",
+    "indirizzo": "Via Roveredo, 103, 33080, Porcia",
+    "dataRichiesta": "2025-11-14T11:00",
+    "dataPianificata": "2025-11-14T11:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "consegna 3 o 4 palette",
+    "id": 1763039377973
+  },
+  {
+    "aziendaDestinazione": "ALFA ELETTRONICA S.R.L ",
+    "indirizzo": "Via Amman, 35, 33084 Cordenons PN ",
+    "dataRichiesta": "2025-11-14T13:00",
+    "dataPianificata": "2025-11-14T13:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "consegna 1 paletta",
+    "id": 1763039444597
+  },
+  {
+    "aziendaDestinazione": "FRIULINOX S.R.L",
+    "indirizzo": "Via Treviso, 4, 33083 Taiedo Di Chions PN",
+    "dataRichiesta": "2025-11-14T14:00",
+    "dataPianificata": "2025-11-14T14:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "consegna 1 paletta",
+    "id": 1763039520172
+  },
+  {
+    "aziendaDestinazione": "P.D.C. ASSEMBLAGGI DI PATRIZIA DALLA CIA ",
+    "indirizzo": "Via Firenze, 12, 33020 Cinto Caomaggiore VE",
+    "dataRichiesta": "2025-11-14T15:00",
+    "dataPianificata": "2025-11-14T15:00",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Cristina",
+      "mail": "cristina.zaccarin@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763039579394
+  },
+  {
+    "aziendaDestinazione": "AB PLAST",
+    "indirizzo": "VIA OBERDAN 43, S.VITO AL TAGLIAMENTO",
+    "dataRichiesta": "2025-11-14T13:01",
+    "dataPianificata": "2025-11-14T13:01",
+    "tipo": "ritiro",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Silvia",
+      "mail": "silvia.marson@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763040883112
+  },
+  {
+    "aziendaDestinazione": "IONITA ELENA",
+    "indirizzo": "Via Ceresere, 53, 33076 Pravisdomini PN",
+    "dataRichiesta": "2025-11-14T09:00",
+    "dataPianificata": "2025-11-14T09:00",
+    "tipo": "entrambi",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763040894145
+  },
+  {
+    "aziendaDestinazione": "ALINA ZAVATE",
+    "indirizzo": "Via Comugne Di Mezzo, 1, 33082 Azzano Decimo",
+    "dataRichiesta": "2025-11-14T09:00",
+    "dataPianificata": "2025-11-14T09:00",
+    "tipo": "entrambi",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763040917159
+  },
+  {
+    "aziendaDestinazione": "NICOLETA ZAVATE",
+    "indirizzo": "Via Borgo Colle, 16, 33082 Azzano Decimo PN ",
+    "dataRichiesta": "2025-11-13T09:00",
+    "dataPianificata": "2025-11-13T09:00",
+    "tipo": "entrambi",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763040951941,
+    "autista": null
+  },
+  {
+    "aziendaDestinazione": "MASCHIO GASPARDO SPA",
+    "indirizzo": "Via Musson, 7, 33075 Morsano Al Tagliamento",
+    "dataRichiesta": "2025-11-13T13:30",
+    "dataPianificata": "2025-11-13T13:30",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "",
+    "id": 1763040991602
+  },
+  {
+    "aziendaDestinazione": "MARCO ZORZI",
+    "indirizzo": "Via E. Fermi, 4/2, 31040 Gorgo Al Monticano TV",
+    "dataRichiesta": "2025-11-14T09:00",
+    "dataPianificata": "2025-11-14T09:00",
+    "tipo": "consegna",
+    "status": "In attesa",
+    "daPianificare": true,
+    "richiedente": {
+      "nome": "Sara",
+      "mail": "sara.bortolussi@elteksrl.it",
+      "role": "richiedente"
+    },
+    "note": "consegna pannelli di collaudo/montaggio",
+    "id": 1763044934504
   }
 ]

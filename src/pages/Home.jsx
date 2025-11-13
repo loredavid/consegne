@@ -77,7 +77,7 @@ export default function Home() {
       <NotificationPermissionBanner className="mb-6 rounded-lg" />
       <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <HomeCard title="Pianificazione" desc="Pagina di gestione delle richieste e delle consegne." to="/pianificazione" icon={<Wrench />} />
-        {(user?.role === "admin" || user?.role === "pianificatore") && (
+        {(user?.role === "admin" || user?.role === "pianificatore" || user?.role === "richiedente") && (
           <HomeCard title="Preparazione Magazzino" desc="Organizzazione spedizioni per la preparazione in magazzino" to="/preparazione-magazzino" icon={<Package />} />
         )}
         <HomeCard title="Richieste" desc="Pagina di gestione delle richieste. Qui è possibile creare le richieste e controllarne lo stato." to="/richieste" icon={<Mail />} />

@@ -26,14 +26,14 @@ export default function PreparazioneMagazzino() {
 
   // Controlla accesso (solo pianificatori e admin)
   useEffect(() => {
-    if (user && user.role !== "admin" && user.role !== "pianificatore") {
+    if (user && user.role !== "admin" && user.role !== "pianificatore" && user.role !== "richiedente") {
       setNotification({ text: "Accesso negato. Solo pianificatori e admin possono accedere a questa pagina." });
       return;
     }
   }, [user, setNotification]);
 
   useEffect(() => {
-    if (user && token && (user.role === "admin" || user.role === "pianificatore")) {
+    if (user && token && (user.role === "admin" || user.role === "pianificatore" || user.role === "richiedente")) {
       fetchSpedizioni();
     }
   }, [selectedDate, user, token]);
@@ -61,7 +61,7 @@ export default function PreparazioneMagazzino() {
       // Filtra per data selezionata e ordina per ora
       const spedizioniDelGiorno = data.filter(spedizione => {
         const dataSpedizione = new Date(spedizione.dataPianificata).toISOString().split('T')[0];
-        return dataSpedizione === selectedDate && spedizione.status !== "Consegnata";
+        return dataSpedizione === selectedDate && spedizione.status !== "Consegnata" && spedizione.daPianificare === false;
       }).sort((a, b) => {
         const oraA = new Date(a.dataPianificata).toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
         const oraB = new Date(b.dataPianificata).toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
@@ -195,7 +195,7 @@ export default function PreparazioneMagazzino() {
 
   const groupedSpedizioni = groupSpedizioniByAutista();
 
-  if (!user || (user.role !== "admin" && user.role !== "pianificatore")) {
+  if (!user || (user.role !== "admin" && user.role !== "pianificatore" && user.role !== "richiedente" )) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">

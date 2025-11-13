@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo "$(date): esecuzione cron avviata da $(whoami)" >> /home/ubuntu/consegne/renew.log
+
 # Script per rinnovare i certificati Let's Encrypt, fermare e riavviare il server
 # Deve essere eseguito come root
 
@@ -14,6 +17,7 @@ sleep 2
 certbot renew
 
 # Riavvia il server usando start.sh
-/workspaces/consegne/start.sh
+/home/ubuntu/consegne/start.sh
 
-echo "Certificati rinnovati e server riavviato."
+
+echo "$(date): Certificati rinnovati e server riavviato." >> /home/ubuntu/consegne/renew.log

@@ -77,12 +77,12 @@ function App() {
                   </ProtectedRoute>
                 } />
                 <Route path="/preparazione-magazzino" element={
-                  <ProtectedRoute allowedRoles={["admin", "pianificatore"]}>
+                  <ProtectedRoute allowedRoles={["admin", "pianificatore", "richiedente"]}>
                     <PreparazioneMagazzino />
                   </ProtectedRoute>
                 } />
                 <Route path="/richieste" element={
-                  <ProtectedRoute allowedRoles={["admin", "richiedente"]}>
+                  <ProtectedRoute allowedRoles={["admin", "richiedente", "pianificatore"]}>
                     <Richieste />
                   </ProtectedRoute>
                 } />

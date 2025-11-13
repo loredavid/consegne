@@ -76,7 +76,8 @@ export default function Autista() {
               s.autista && 
               s.autista.id === user.id && 
               s.status !== "Consegnata" &&
-              isToday(s.dataPianificata)
+              isToday(s.dataPianificata) &&
+              s.daPianificare === false
             );
             
             // Controlla se ci sono nuove spedizioni assegnate a questo autista
@@ -92,13 +93,13 @@ export default function Autista() {
               // Invia notifiche SOLO per le spedizioni effettivamente assegnate a questo autista
               if (nuoveSpedizioniIds.length > 0) {
                 const nuoveSpedizioni = mieSpedizioni.filter(s => 
-                  nuoveSpedizioniIds.includes(s.id)
+                  nuoveSpedizioniIds.includes(s.id) && s.daPianificare === false
                 );
                 
                 nuoveSpedizioni.forEach((spedizione) => {
                   // Notifica in-app
                   setNotification({ 
-                    text: `Nuova spedizione assegnata: ${spedizione.aziendaDestinazione}` 
+                    text: `Nuova spedizione assegnata: ${spedizione.aziendaDestinazione} ${note}` 
                   });
                   
                   // Notifica push nativa con tipo specifico

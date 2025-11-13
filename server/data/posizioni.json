@@ -57,7 +57,7 @@
   {
     "id": "6",
     "azienda": "AB PLAST",
-    "indirizzo": "VIA G. OBERDAN 43, S.VITO AL TAGLIAMENTO",
+    "indirizzo": "VIA OBERDAN 43, S.VITO AL TAGLIAMENTO",
     "lat": "",
     "lng": "",
     "referente": "Alessandro Bozzetto",
@@ -166,7 +166,7 @@
   },
   {
     "id": "16",
-    "azienda": "DANIELA BOTEZATU",
+    "azienda": "BOTEZATU DANIELA",
     "indirizzo": "Via Villanova, 27/5, 33076 Pravisdomini PN ",
     "lat": 45.8215364,
     "lng": 12.6983793,
@@ -602,17 +602,6 @@
     "referente": "REALCABLE SRL",
     "telefono": "0434593630",
     "email": "info@realcable.it",
-    "logo": ""
-  },
-  {
-    "id": "56",
-    "azienda": "S.D. ELECTRIC S.N.C. ",
-    "indirizzo": "Via Braglio, 74, 36015 Schio VI",
-    "lat": 45.7216718,
-    "lng": 11.3768706,
-    "referente": "S.D. ELECTRIC S.N.C. ",
-    "telefono": "0445510017",
-    "email": "ANDREA.DALDOSSO@SDELECTRIC.IT",
     "logo": ""
   },
   {

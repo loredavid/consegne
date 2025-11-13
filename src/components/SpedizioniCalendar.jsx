@@ -7,20 +7,27 @@ const localizer = momentLocalizer(moment);
 
 export default function SpedizioniCalendar({ spedizioni }) {
   // Prepara eventi per il calendario
-  const events = spedizioni.map(s => {
-    const start = s.dataPianificata ? new Date(s.dataPianificata) : null;
-    const end = start ? new Date(start.getTime() + 60 * 60 * 1000) : null;
-    // Colore: arancione se da pianificare, blu se pianificata
-    const color = s.daPianificare === true ? "#f59e42" : "#2563eb";
-    return {
-      id: s.id,
-      title: `${s.aziendaDestinazione || ""} (${s.tipo})`,
-      start,
-      end,
-      resource: s,
-      color
-    };
-  });
+	const events = spedizioni.map(s => {
+	  const start = s.dataPianificata ? new Date(s.dataPianificata) : null;
+	  const end = start ? new Date(start.getTime() + 60 * 60 * 1000) : null;
+
+	  let color = "#2563eb"; // blu default
+
+	  if (s.status === "Consegnata" || s.status === "Completata") {
+	    color = "#22c55e"; // verde
+	  } else if (s.daPianificare === true || s.daPianificare === "Si") {
+	    color = "#f59e42"; // arancione
+	  }
+
+	  return {
+	    id: s.id,
+	    title: `${s.aziendaDestinazione || ""} (${s.tipo})`,
+	    start,
+	    end,
+	    resource: s,
+	    color
+	  };
+	});
 
   return (
     <div className="bg-white rounded shadow p-6 mt-8">

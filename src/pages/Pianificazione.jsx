@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../App";
 import SpedizioneEditModal from "../components/SpedizioneEditModal";
 import useChatNotifications from "../hooks/useChatNotifications";
-
+import SpedizioniCalendar from "../components/SpedizioniCalendar";
 function isMobile() {
   if (typeof window === "undefined") return false;
   return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(window.navigator.userAgent);
@@ -342,6 +342,8 @@ export default function Pianificazione() {
       {editSpedizione && (
         <SpedizioneEditModal spedizione={editSpedizione} onClose={handleCloseModal} onSave={handleSave} />
       )}
+      {/* Visualizzazione calendario settimanale */}
+      <SpedizioniCalendar spedizioni={spedizioni}/>
     </div>
   );
 }

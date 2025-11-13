@@ -33,10 +33,11 @@ export default function Sidebar() {
     return ["/chat", "/posizioni"].includes(item.to);
     }
     // Admin: tutte tranne gestione utenti se non admin
+    if (item.to === "/pianificazione" && !(user.role === "admin"|| user.role ==="pianificatore")) return false;
     if (item.to === "/admin" && user.role !== "admin") return false;
     if (item.to === "/gestione-utenti" && user.role !== "admin") return false;
     if (item.to === "/autista" && !(user.role === "autista" || user.role === "admin")) return false;
-    if (item.to === "/preparazione-magazzino" && !(user.role === "admin" || user.role === "pianificatore")) return false;
+    if (item.to === "/preparazione-magazzino" && !(user.role === "admin" || user.role === "pianificatore" || user.role === "richiedente")) return false;
     if (item.to === "/spedizioni/mappa" && !(user.role === "admin" || user.role === "pianificatore" || user.role === "richiedente")) return false;
     return true;
   };

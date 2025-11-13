@@ -205,6 +205,22 @@ export default function Richieste() {
     }
   };
 
+useEffect(() => {
+  if (showModal) {
+    const d = new Date();
+    d.setHours(9, 0, 0, 0);
+
+    setForm({
+      destinazione: "",
+      dataRichiesta: d.toISOString().slice(0, 16),
+      tipo: "consegna",
+      status: "In consegna",
+      note: ""
+    });
+  }
+}, [showModal]);
+
+
   return (
     <div className={mobile ? "w-full flex flex-col items-center" : `p-8 w-full transition-all duration-300 ${sidebarOpen ? "max-w-[1800px]" : "max-w-full"}`}>
       <h1 className={mobile ? "text-xl font-bold mb-4" : "text-2xl font-bold mb-4"}>Richieste di Spedizione</h1>
@@ -421,7 +437,9 @@ export default function Richieste() {
               <label className="font-semibold">Destinazione
                 <select name="destinazione" value={form.destinazione} onChange={handleChange} className="border p-2 rounded w-full mt-1" required>
                   <option value="">Seleziona destinazione...</option>
-                  {destinazioni.map(d => (
+                  {destinazioni
+                    .sort((a,b) => a.azienda.localeCompare(b.azienda))
+                    .map(d => (
                     <option key={d.id} value={d.id}>{d.azienda} - {d.indirizzo}</option>
                   ))}
                 </select>
@@ -452,7 +470,7 @@ export default function Richieste() {
         </div>
       )}
       {/* Visualizzazione calendario settimanale */}
-      <SpedizioniCalendar spedizioni={spedizioni.filter(s => (s.status === "In attesa" || s.status === "In consegna") && s.status !== "Consegnata")}/>
+      <SpedizioniCalendar spedizioni={spedizioni}/>
     </div>
   );
 }

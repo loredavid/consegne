@@ -2,7 +2,7 @@
   {
     "id": 1,
     "username": "lorenzodavid",
-    "password": "$2b$10$EUgl5GrxnBhpfpDL.EML4uRna0.SpckJaGVolQH0pDmt470wXvW2q",
+    "password": "$2b$10$1AAcX1dyznvVr/AGyhwjM.jlEPbKy29CsLu9K3EJ6gRq0RvwUram.",
     "role": "admin",
     "nome": "Lorenzo David",
     "mail": "lorenzo.david@elteksrl.it"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "username": "alltransport",
-    "password": "$2b$10$zIcWp0qqkbVkHFVa4x0dnuhd1K/ATEe7BCva8cXsbh6bQhoh8Snwm",
+    "password": "$2b$10$mlFaOdit7GoKeXn4c7Nh0eGwyEkbrS.Mb1xioPWBzRReTSAjEjurW",
     "role": "autista",
     "nome": "ALL TRANSPORT",
     "mail": "autista1.eltek@gmail.com"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "username": "Fabiola",
-    "password": "$2b$10$WEIIbKzU2inMKONdYYap1.iGpjz324U.CYcpzdUaHEuTUq7t7AFI6",
+    "password": "$2b$10$kMOJtAFJ.etiKBofeWcZp.1xDYATyD.pSTCuUGGx73l8ix7fAW99q",
     "role": "pianificatore",
     "nome": "Fabiola",
     "mail": "logistica2@elteksrl.it"
@@ -26,30 +26,30 @@
   {
     "id": 4,
     "username": "Lorena",
-    "password": "$2b$10$Uj0.1.Tai0TSyYIW25sYHO6Fzk./GcpXRopAaQJLkEDIJvaQ/aeWS",
+    "password": "$2b$10$0vPX3ROWVk4jZI/HSD/jhOG1t.WiXqBYd1Ygu86xlhz02ZQMRzrXe",
     "role": "richiedente",
     "nome": "Lorena",
     "mail": "lorena.stolfo@elteksrl.it"
   },
   {
     "username": "Cristina",
-    "password": "$2b$10$YEzzuNzGtf274oGrC5djIO2AWqL4nXlOXjYunJOYaWIA7bKxF5YhO",
+    "password": "$2b$10$gimng4AoEZ1UYIIhuLMtZuKh16kev6EVge/HXjxuMTiC0Y57LYyX2",
     "nome": "Cristina",
     "mail": "cristina.zaccarin@elteksrl.it",
     "role": "richiedente",
     "id": 1752734734308
   },
   {
-    "username": "E/A",
-    "password": "$2b$10$QESwe2kbegTZTUhJ5ad3DeEquj.kuPo7GLx5VrNuh.hU51/DB1Otu",
-    "nome": "Ernesto/Andrea",
+    "username": "Ernesto",
+    "password": "$2b$10$ih3EG3dVMyXl/W5t7knTje71BqlDuT.//7blh/f8bl530Ooag/sZW",
+    "nome": "Ernesto",
     "mail": "autista2.eltek@gmail.com",
     "role": "autista",
     "id": 1752761316202
   },
   {
-    "username": "riccardo.brenelli@elteksrl.it",
-    "password": "$2b$10$xL2YUeZazWE9Gkxvg4hgJOwt3UOLrjphE/YE81flToIgm3.B8ZJLS",
+    "username": "riccardobrenelli",
+    "password": "$2b$10$qyZPM8ebDp/PAI1NqJeCSOcWM1pLbcmfxh1dS.yI8a6KhfgTy9i72",
     "nome": "Riccardo Brenelli",
     "mail": "riccardo.brenelli@elteksrl.it",
     "role": "admin",
@@ -62,5 +62,45 @@
     "mail": "michele.digennaro@elteksrl.it",
     "role": "admin",
     "id": 1762235130532
+  },
+  {
+    "username": "Sara",
+    "password": "$2b$10$qNFNUYHEkRXZGFEA24uCmuf.Y2g1BEk47CXQYEJRITHMrCSiB89dC",
+    "nome": "Sara",
+    "mail": "sara.bortolussi@elteksrl.it",
+    "role": "richiedente",
+    "id": 1762521530332
+  },
+  {
+    "username": "Silvia",
+    "password": "$2b$10$eh1w9ELhCJ2Wu1CKUblB4uQ2kdd1uW6DgYZ75.Z8iuMNMJHc8U86S",
+    "nome": "Silvia",
+    "mail": "silvia.marson@elteksrl.it",
+    "role": "richiedente",
+    "id": 1762521563255
+  },
+  {
+    "username": "UfficioAcquisti",
+    "password": "$2b$10$QqSsrH35.ZHNfhRA4y1hROTOqjuBSrmOyJK0lOcGsSeYqMscxUmCe",
+    "nome": "Ufficio Acquisti",
+    "mail": "acquisti@elteksrl.it",
+    "role": "richiedente",
+    "id": 1762521679621
+  },
+  {
+    "username": "Ufficio Commerciale",
+    "password": "$2b$10$DoOHKS/3PGxrhzGI/WqS3uHEHvbGP3wQe4lw2RuWJtz3aJtYRbUza",
+    "nome": "Ufficio Commerciale",
+    "mail": "commerciale@elteksrl.it",
+    "role": "richiedente",
+    "id": 1762521709932
+  },
+  {
+    "username": "logistica",
+    "password": "$2b$10$00E9E/zEvbxAx1CLdRr22ujvWMLYcHrSOkPl6CIN8l8XFZQfhvRki",
+    "nome": "Marco Ongaro",
+    "mail": "logistica@elteksrl.it",
+    "role": "richiedente",
+    "id": 1763042237133
   }
 ]
